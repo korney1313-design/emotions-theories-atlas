@@ -1,0 +1,1212 @@
+{
+  "title": "Транзактный анализ Эрика Берна",
+  "nodes": [
+    {
+      "id": "ta",
+      "label": "Транзактный анализ",
+      "section": "Теория",
+      "definition": "Подход к анализу личности и взаимодействия",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 2
+      }
+    },
+    {
+      "id": "ego",
+      "label": "Эго-состояние",
+      "section": "Эго-состояния",
+      "definition": "Согласованная система чувств, мыслей и поведения",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 3
+      }
+    },
+    {
+      "id": "struct",
+      "label": "Структурная модель",
+      "section": "Эго-состояния",
+      "definition": "Различает Родителя, Взрослого и Ребёнка по происхождению опыта",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 4
+      }
+    },
+    {
+      "id": "func",
+      "label": "Функциональная модель",
+      "section": "Эго-состояния",
+      "definition": "Различает поведенческие проявления эго-состояний",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 5
+      }
+    },
+    {
+      "id": "parent",
+      "label": "Родитель",
+      "section": "Эго-состояния",
+      "definition": "Эго-состояние, содержащее усвоенные образцы значимых взрослых",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 6
+      }
+    },
+    {
+      "id": "adult",
+      "label": "Взрослый",
+      "section": "Эго-состояния",
+      "definition": "Эго-состояние переработки информации и оценки текущей действительности",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 7
+      }
+    },
+    {
+      "id": "child",
+      "label": "Ребёнок",
+      "section": "Эго-состояния",
+      "definition": "Эго-состояние переживаний и способов реагирования раннего опыта",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 8
+      }
+    },
+    {
+      "id": "cp",
+      "label": "Критический Родитель",
+      "section": "Эго-состояния",
+      "definition": "Функциональная форма Родителя: предписания, оценка, контроль",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 9
+      }
+    },
+    {
+      "id": "np",
+      "label": "Заботливый Родитель",
+      "section": "Эго-состояния",
+      "definition": "Функциональная форма Родителя: поддержка, забота, защита",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 10
+      }
+    },
+    {
+      "id": "fc",
+      "label": "Свободный Ребёнок",
+      "section": "Эго-состояния",
+      "definition": "Функциональная форма Ребёнка: спонтанность, выражение чувств",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 11
+      }
+    },
+    {
+      "id": "ac",
+      "label": "Адаптированный Ребёнок",
+      "section": "Эго-состояния",
+      "definition": "Функциональная форма Ребёнка: приспособление к ожиданиям и требованиям",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 12
+      }
+    },
+    {
+      "id": "observ",
+      "label": "Наблюдение поведения",
+      "section": "Метод анализа",
+      "definition": "Наблюдаемые признаки речи и невербального поведения",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 13
+      }
+    },
+    {
+      "id": "calib",
+      "label": "Калибровка гипотез",
+      "section": "Метод анализа",
+      "definition": "Проверка предположений об эго-состоянии по контексту и отклику",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 14
+      }
+    },
+    {
+      "id": "words",
+      "label": "Речевые признаки",
+      "section": "Метод анализа",
+      "definition": "Слова, формулировки, оценочные суждения, вопросы",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 15
+      }
+    },
+    {
+      "id": "nonverb",
+      "label": "Невербальные признаки",
+      "section": "Метод анализа",
+      "definition": "Интонация, мимика, поза, жесты",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 16
+      }
+    },
+    {
+      "id": "trans",
+      "label": "Трансакция",
+      "section": "Трансакции",
+      "definition": "Единица социального взаимодействия: стимул и ответ",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 17
+      }
+    },
+    {
+      "id": "stim",
+      "label": "Трансакционный стимул",
+      "section": "Трансакции",
+      "definition": "Обращение одного участника взаимодействия к другому",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 18
+      }
+    },
+    {
+      "id": "resp",
+      "label": "Трансакционный ответ",
+      "section": "Трансакции",
+      "definition": "Ответ на трансакционный стимул",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 19
+      }
+    },
+    {
+      "id": "comp",
+      "label": "Дополнительная трансакция",
+      "section": "Трансакции",
+      "definition": "Ответ идёт из ожидаемого эго-состояния в адресованное",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 20
+      }
+    },
+    {
+      "id": "cross",
+      "label": "Пересекающаяся трансакция",
+      "section": "Трансакции",
+      "definition": "Ответ нарушает ожидаемую направленность трансакции",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 21
+      }
+    },
+    {
+      "id": "ulterior",
+      "label": "Скрытая трансакция",
+      "section": "Трансакции",
+      "definition": "Взаимодействие одновременно на социальном и психологическом уровнях",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 22
+      }
+    },
+    {
+      "id": "social",
+      "label": "Социальный уровень",
+      "section": "Трансакции",
+      "definition": "Открытое содержание взаимодействия",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 23
+      }
+    },
+    {
+      "id": "psych",
+      "label": "Психологический уровень",
+      "section": "Трансакции",
+      "definition": "Скрытое сообщение или подтекст взаимодействия",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 24
+      }
+    },
+    {
+      "id": "strokes",
+      "label": "Поглаживания",
+      "section": "Структурирование времени",
+      "definition": "Единицы признания в общении, положительные или отрицательные",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 25
+      }
+    },
+    {
+      "id": "time",
+      "label": "Структурирование времени",
+      "section": "Структурирование времени",
+      "definition": "Способы организации социального времени",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 26
+      }
+    },
+    {
+      "id": "withdraw",
+      "label": "Уход",
+      "section": "Структурирование времени",
+      "definition": "Минимизация внешнего контакта",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 27
+      }
+    },
+    {
+      "id": "ritual",
+      "label": "Ритуалы",
+      "section": "Структурирование времени",
+      "definition": "Повторяющиеся социальные формы взаимодействия",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 28
+      }
+    },
+    {
+      "id": "pastime",
+      "label": "Времяпрепровождение",
+      "section": "Структурирование времени",
+      "definition": "Привычное общение на общие темы",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 29
+      }
+    },
+    {
+      "id": "activity",
+      "label": "Деятельность",
+      "section": "Структурирование времени",
+      "definition": "Взаимодействие вокруг задачи",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 30
+      }
+    },
+    {
+      "id": "games",
+      "label": "Психологические игры",
+      "section": "Игры и изменение",
+      "definition": "Повторяющиеся последовательности со скрытым мотивом и предсказуемым итогом",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 31
+      }
+    },
+    {
+      "id": "intimacy",
+      "label": "Близость",
+      "section": "Структурирование времени",
+      "definition": "Непосредственный, открытый контакт без игры",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 32
+      }
+    },
+    {
+      "id": "payoff",
+      "label": "Выигрыш игры",
+      "section": "Игры и изменение",
+      "definition": "Предсказуемый психологический результат игры",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 33
+      }
+    },
+    {
+      "id": "switch",
+      "label": "Переключение в игре",
+      "section": "Игры и изменение",
+      "definition": "Поворот взаимодействия, изменяющий переживание участников",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 34
+      }
+    },
+    {
+      "id": "repeat",
+      "label": "Повторяемый паттерн",
+      "section": "Игры и изменение",
+      "definition": "Устойчивый способ организации взаимодействия",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 35
+      }
+    },
+    {
+      "id": "change",
+      "label": "Изменение взаимодействия",
+      "section": "Игры и изменение",
+      "definition": "Осознанное изменение собственного ответа и хода общения",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 36
+      }
+    },
+    {
+      "id": "choice",
+      "label": "Выбор ответа",
+      "section": "Игры и изменение",
+      "definition": "Выбор иной реакции на обращение партнёра",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 37
+      }
+    },
+    {
+      "id": "bound",
+      "label": "Обозначение границ",
+      "section": "Игры и изменение",
+      "definition": "Прояснение допустимых и недопустимых условий общения",
+      "provenance": {
+        "file": "berne_nodes.csv",
+        "row": 38
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "e0",
+      "source": "ta",
+      "target": "ego",
+      "relation": "включает",
+      "rawRelation": "включает",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 2,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e1",
+      "source": "ta",
+      "target": "trans",
+      "relation": "включает",
+      "rawRelation": "включает",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 3,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e2",
+      "source": "ta",
+      "target": "time",
+      "relation": "включает",
+      "rawRelation": "включает",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 4,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e3",
+      "source": "ta",
+      "target": "games",
+      "relation": "включает",
+      "rawRelation": "включает",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 5,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e4",
+      "source": "ta",
+      "target": "strokes",
+      "relation": "включает",
+      "rawRelation": "включает",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 6,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e5",
+      "source": "ego",
+      "target": "struct",
+      "relation": "описывается моделью",
+      "rawRelation": "описывается_моделью",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 7,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e6",
+      "source": "ego",
+      "target": "func",
+      "relation": "описывается моделью",
+      "rawRelation": "описывается_моделью",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 8,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e7",
+      "source": "struct",
+      "target": "parent",
+      "relation": "различает",
+      "rawRelation": "различает",
+      "weight": 3.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 9,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e8",
+      "source": "struct",
+      "target": "adult",
+      "relation": "различает",
+      "rawRelation": "различает",
+      "weight": 3.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 10,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e9",
+      "source": "struct",
+      "target": "child",
+      "relation": "различает",
+      "rawRelation": "различает",
+      "weight": 3.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 11,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e10",
+      "source": "func",
+      "target": "cp",
+      "relation": "различает",
+      "rawRelation": "различает",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 12,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e11",
+      "source": "func",
+      "target": "np",
+      "relation": "различает",
+      "rawRelation": "различает",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 13,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e12",
+      "source": "func",
+      "target": "fc",
+      "relation": "различает",
+      "rawRelation": "различает",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 14,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e13",
+      "source": "func",
+      "target": "ac",
+      "relation": "различает",
+      "rawRelation": "различает",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 15,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e14",
+      "source": "func",
+      "target": "adult",
+      "relation": "различает",
+      "rawRelation": "различает",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 16,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e15",
+      "source": "parent",
+      "target": "cp",
+      "relation": "имеет функциональное проявление",
+      "rawRelation": "имеет_функциональное_проявление",
+      "weight": 3.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 17,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e16",
+      "source": "parent",
+      "target": "np",
+      "relation": "имеет функциональное проявление",
+      "rawRelation": "имеет_функциональное_проявление",
+      "weight": 3.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 18,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e17",
+      "source": "child",
+      "target": "fc",
+      "relation": "имеет функциональное проявление",
+      "rawRelation": "имеет_функциональное_проявление",
+      "weight": 3.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 19,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e18",
+      "source": "child",
+      "target": "ac",
+      "relation": "имеет функциональное проявление",
+      "rawRelation": "имеет_функциональное_проявление",
+      "weight": 3.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 20,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e19",
+      "source": "ego",
+      "target": "observ",
+      "relation": "исследуется через",
+      "rawRelation": "исследуется_через",
+      "weight": 1.0,
+      "status": "методическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 21,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e20",
+      "source": "ego",
+      "target": "calib",
+      "relation": "исследуется через",
+      "rawRelation": "исследуется_через",
+      "weight": 1.0,
+      "status": "методическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 22,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e21",
+      "source": "observ",
+      "target": "words",
+      "relation": "опирается на",
+      "rawRelation": "опирается_на",
+      "weight": 2.0,
+      "status": "методическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 23,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e22",
+      "source": "observ",
+      "target": "nonverb",
+      "relation": "опирается на",
+      "rawRelation": "опирается_на",
+      "weight": 2.0,
+      "status": "методическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 24,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e23",
+      "source": "calib",
+      "target": "observ",
+      "relation": "проверяет интерпретацию",
+      "rawRelation": "проверяет_интерпретацию",
+      "weight": 2.0,
+      "status": "методическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 25,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e24",
+      "source": "trans",
+      "target": "stim",
+      "relation": "включает или различает",
+      "rawRelation": "включает_или_различает",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 26,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e25",
+      "source": "trans",
+      "target": "resp",
+      "relation": "включает или различает",
+      "rawRelation": "включает_или_различает",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 27,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e26",
+      "source": "trans",
+      "target": "comp",
+      "relation": "включает или различает",
+      "rawRelation": "включает_или_различает",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 28,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e27",
+      "source": "trans",
+      "target": "cross",
+      "relation": "включает или различает",
+      "rawRelation": "включает_или_различает",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 29,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e28",
+      "source": "trans",
+      "target": "ulterior",
+      "relation": "включает или различает",
+      "rawRelation": "включает_или_различает",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 30,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e29",
+      "source": "ulterior",
+      "target": "social",
+      "relation": "имеет уровень",
+      "rawRelation": "имеет_уровень",
+      "weight": 3.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 31,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e30",
+      "source": "ulterior",
+      "target": "psych",
+      "relation": "имеет уровень",
+      "rawRelation": "имеет_уровень",
+      "weight": 3.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 32,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e31",
+      "source": "trans",
+      "target": "parent",
+      "relation": "связывает эго состояния",
+      "rawRelation": "связывает_эго_состояния",
+      "weight": 1.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 33,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e32",
+      "source": "trans",
+      "target": "adult",
+      "relation": "связывает эго состояния",
+      "rawRelation": "связывает_эго_состояния",
+      "weight": 1.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 34,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e33",
+      "source": "trans",
+      "target": "child",
+      "relation": "связывает эго состояния",
+      "rawRelation": "связывает_эго_состояния",
+      "weight": 1.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 35,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e34",
+      "source": "time",
+      "target": "withdraw",
+      "relation": "форма",
+      "rawRelation": "форма",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 36,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e35",
+      "source": "time",
+      "target": "ritual",
+      "relation": "форма",
+      "rawRelation": "форма",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 37,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e36",
+      "source": "time",
+      "target": "pastime",
+      "relation": "форма",
+      "rawRelation": "форма",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 38,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e37",
+      "source": "time",
+      "target": "activity",
+      "relation": "форма",
+      "rawRelation": "форма",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 39,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e38",
+      "source": "time",
+      "target": "games",
+      "relation": "форма",
+      "rawRelation": "форма",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 40,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e39",
+      "source": "time",
+      "target": "intimacy",
+      "relation": "форма",
+      "rawRelation": "форма",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 41,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e40",
+      "source": "games",
+      "target": "ulterior",
+      "relation": "связана с",
+      "rawRelation": "связана_с",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 42,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e41",
+      "source": "games",
+      "target": "payoff",
+      "relation": "связана с",
+      "rawRelation": "связана_с",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 43,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e42",
+      "source": "games",
+      "target": "switch",
+      "relation": "связана с",
+      "rawRelation": "связана_с",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 44,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e43",
+      "source": "games",
+      "target": "repeat",
+      "relation": "связана с",
+      "rawRelation": "связана_с",
+      "weight": 2.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 45,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e44",
+      "source": "games",
+      "target": "strokes",
+      "relation": "может обеспечивать",
+      "rawRelation": "может_обеспечивать",
+      "weight": 1.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 46,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e45",
+      "source": "strokes",
+      "target": "time",
+      "relation": "мотивирует контакт",
+      "rawRelation": "мотивирует_контакт",
+      "weight": 1.0,
+      "status": "теоретическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 47,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e46",
+      "source": "games",
+      "target": "change",
+      "relation": "объект изменения",
+      "rawRelation": "объект_изменения",
+      "weight": 1.0,
+      "status": "аналитическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 48,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e47",
+      "source": "change",
+      "target": "choice",
+      "relation": "может включать",
+      "rawRelation": "может_включать",
+      "weight": 2.0,
+      "status": "методическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 49,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e48",
+      "source": "change",
+      "target": "bound",
+      "relation": "может включать",
+      "rawRelation": "может_включать",
+      "weight": 2.0,
+      "status": "методическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 50,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e49",
+      "source": "change",
+      "target": "calib",
+      "relation": "может включать",
+      "rawRelation": "может_включать",
+      "weight": 2.0,
+      "status": "методическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 51,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e50",
+      "source": "calib",
+      "target": "comp",
+      "relation": "помогает распознавать",
+      "rawRelation": "помогает_распознавать",
+      "weight": 1.0,
+      "status": "методическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 52,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e51",
+      "source": "calib",
+      "target": "cross",
+      "relation": "помогает распознавать",
+      "rawRelation": "помогает_распознавать",
+      "weight": 1.0,
+      "status": "методическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 53,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e52",
+      "source": "calib",
+      "target": "ulterior",
+      "relation": "помогает распознавать",
+      "rawRelation": "помогает_распознавать",
+      "weight": 1.0,
+      "status": "методическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 54,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e53",
+      "source": "choice",
+      "target": "resp",
+      "relation": "реализуется через",
+      "rawRelation": "реализуется_через",
+      "weight": 2.0,
+      "status": "методическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 55,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e54",
+      "source": "bound",
+      "target": "choice",
+      "relation": "может реализоваться через",
+      "rawRelation": "может_реализоваться_через",
+      "weight": 1.0,
+      "status": "методическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 56,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e55",
+      "source": "repeat",
+      "target": "trans",
+      "relation": "состоит из последовательности",
+      "rawRelation": "состоит_из_последовательности",
+      "weight": 1.0,
+      "status": "аналитическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 57,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e56",
+      "source": "comp",
+      "target": "repeat",
+      "relation": "может поддерживать",
+      "rawRelation": "может_поддерживать",
+      "weight": 1.0,
+      "status": "аналитическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 58,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e57",
+      "source": "cross",
+      "target": "repeat",
+      "relation": "может прерывать",
+      "rawRelation": "может_прерывать",
+      "weight": 1.0,
+      "status": "аналитическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 59,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    },
+    {
+      "id": "e58",
+      "source": "psych",
+      "target": "payoff",
+      "relation": "связан с",
+      "rawRelation": "связан_с",
+      "weight": 1.0,
+      "status": "аналитическая",
+      "provenance": {
+        "file": "berne_edges.csv",
+        "row": 60,
+        "direction": "Source → Target; интерпретация порядка CSV, GEXF — undirected"
+      }
+    }
+  ],
+  "provenance": {
+    "kind": "Найденная экспериментальная сеть",
+    "bibliography": "Библиографические ссылки и страницы в исходниках не указаны. Определения и отношения перенесены из экспериментальных CSV без научной верификации.",
+    "comparison": {
+      "node_labels_match": true,
+      "edge_triples_match": true,
+      "direction_difference": "GEXF undirected; рабочая модель направлена по Source → Target CSV"
+    }
+  }
+}
