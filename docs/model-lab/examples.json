@@ -1,0 +1,25 @@
+{
+  "phase": "design-before-implementation",
+  "claimExample": {
+    "id": "berne.response-rule",
+    "theoryId": "berne.structural",
+    "predicate": "complementary-iff-reversed-endpoints",
+    "roles": [{"role": "stimulus", "conceptId": "berne.stimulus"}, {"role": "response", "conceptId": "berne.response"}, {"role": "framework", "conceptId": "berne.transaction"}],
+    "status": "accepted-within-theory",
+    "sourceIds": ["atlas.berne", "berne.official-overview"],
+    "scope": "Two explicitly assigned ego-state vectors; not an inference from real speech.",
+    "limitation": "The formal class does not predict whether communication will continue."
+  },
+  "ruleExample": {
+    "id": "socialComplementary",
+    "expr": {"op": "and", "args": [{"op": "eq", "args": [{"ref": "input.responseFrom"}, {"ref": "input.stimulusTo"}]}, {"op": "eq", "args": [{"ref": "input.responseTo"}, {"ref": "input.stimulusFrom"}]}]},
+    "claimIds": ["berne.response-rule"]
+  },
+  "adapterExample": {
+    "id": "affect-report",
+    "modelId": "emotions.dimensions",
+    "mapping": {"valence": "reportedValence", "arousal": "reportedArousal"},
+    "excluded": ["goalConduciveness", "perceivedControl", "expectation"]
+  },
+  "unknownExample": {"reportedValence": null, "reportedArousal": null}
+}
