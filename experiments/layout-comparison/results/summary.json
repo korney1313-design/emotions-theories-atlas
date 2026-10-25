@@ -1,0 +1,150 @@
+{
+  "A_section": {
+    "stress": {
+      "mean": 0.44818697322316386,
+      "min": 0.44342616198803747,
+      "max": 0.4521128599109748
+    },
+    "expert_triplet_accuracy": {
+      "mean": 0.8,
+      "min": 0.7777777777777778,
+      "max": 0.8333333333333334
+    },
+    "edge_neighbor_recall": {
+      "mean": 0.2700644841269841,
+      "min": 0.24038525132275135,
+      "max": 0.31063988095238093
+    },
+    "target_neighborhood_recall5_tie_permissive": {
+      "mean": 0.6566666666666666,
+      "min": 0.6333333333333333,
+      "max": 0.6791666666666667
+    },
+    "crossings_projection_mean": {
+      "mean": 195.73333333333335,
+      "min": 183.0,
+      "max": 204.33333333333334
+    },
+    "edge_near_approaches_3d": {
+      "mean": 27.0,
+      "min": 18.0,
+      "max": 34.0
+    },
+    "section_silhouette_exploratory": {
+      "mean": 0.7060645008089511,
+      "min": 0.7048178832294969,
+      "max": 0.7073234401611513
+    }
+  },
+  "B0_d3_unweighted": {
+    "stress": {
+      "mean": 0.32239346174632033,
+      "min": 0.2953866280165397,
+      "max": 0.3477858471499581
+    },
+    "expert_triplet_accuracy": {
+      "mean": 0.9111111111111111,
+      "min": 0.8333333333333334,
+      "max": 1.0
+    },
+    "edge_neighbor_recall": {
+      "mean": 0.39434523809523814,
+      "min": 0.3100529100529101,
+      "max": 0.46796461640211645
+    },
+    "target_neighborhood_recall5_tie_permissive": {
+      "mean": 0.5841666666666666,
+      "min": 0.5333333333333333,
+      "max": 0.6958333333333334
+    },
+    "crossings_projection_mean": {
+      "mean": 117.4,
+      "min": 104.0,
+      "max": 138.33333333333334
+    },
+    "edge_near_approaches_3d": {
+      "mean": 4.8,
+      "min": 2.0,
+      "max": 8.0
+    },
+    "section_silhouette_exploratory": {
+      "mean": -0.03210639269303817,
+      "min": -0.09261479777950155,
+      "max": 0.061369697896861274
+    }
+  },
+  "Bw_d3_weighted": {
+    "stress": {
+      "mean": 0.32239346174632033,
+      "min": 0.2953866280165397,
+      "max": 0.3477858471499581
+    },
+    "expert_triplet_accuracy": {
+      "mean": 0.9111111111111111,
+      "min": 0.8333333333333334,
+      "max": 1.0
+    },
+    "edge_neighbor_recall": {
+      "mean": 0.39434523809523814,
+      "min": 0.3100529100529101,
+      "max": 0.46796461640211645
+    },
+    "target_neighborhood_recall5_tie_permissive": {
+      "mean": 0.5841666666666666,
+      "min": 0.5333333333333333,
+      "max": 0.6958333333333334
+    },
+    "crossings_projection_mean": {
+      "mean": 117.4,
+      "min": 104.0,
+      "max": 138.33333333333334
+    },
+    "edge_near_approaches_3d": {
+      "mean": 4.8,
+      "min": 2.0,
+      "max": 8.0
+    },
+    "section_silhouette_exploratory": {
+      "mean": -0.03210639269303817,
+      "min": -0.09261479777950155,
+      "max": 0.061369697896861274
+    }
+  },
+  "C_kamada_kawai": {
+    "stress": {
+      "mean": 0.18374275987886493,
+      "min": 0.17890618690801416,
+      "max": 0.1895015649401895
+    },
+    "expert_triplet_accuracy": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "edge_neighbor_recall": {
+      "mean": 0.6510565476190476,
+      "min": 0.6330853174603174,
+      "max": 0.6646494708994709
+    },
+    "target_neighborhood_recall5_tie_permissive": {
+      "mean": 0.8424999999999999,
+      "min": 0.8208333333333333,
+      "max": 0.8583333333333333
+    },
+    "crossings_projection_mean": {
+      "mean": 66.8,
+      "min": 62.333333333333336,
+      "max": 73.66666666666667
+    },
+    "edge_near_approaches_3d": {
+      "mean": 0.4,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "section_silhouette_exploratory": {
+      "mean": 0.09350733177066911,
+      "min": 0.047496444328118705,
+      "max": 0.10794451019390856
+    }
+  }
+}

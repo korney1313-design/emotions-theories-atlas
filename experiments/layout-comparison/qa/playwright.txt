@@ -1,0 +1,37 @@
+
+> knowledge-atlas-berne-v2@0.3.0 test
+> playwright test
+
+
+Running 26 tests using 1 worker
+
+(node:227429) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 tests/atlas.spec.js:29:1 › semantic model, deterministic physical layout and actual non-planar 3D (320ms)
+  ✓   2 tests/atlas.spec.js:68:1 › WebGL 3D rendering, mouse orbit, pan, wheel zoom and saved coordinates (7.5s)
+  ✓   3 tests/atlas.spec.js:162:3 › exploration: Взрослый, focus, neighbors, relations and history (4.0s)
+  ✓   4 tests/atlas.spec.js:162:3 › exploration: Трансакция, focus, neighbors, relations and history (3.9s)
+  ✓   5 tests/atlas.spec.js:162:3 › exploration: Психологические игры, focus, neighbors, relations and history (4.0s)
+  ✓   6 tests/atlas.spec.js:277:1 › filtering, live 3D regrouping preserves selection, cache and semantic provenance (6.3s)
+  ✓   7 tests/atlas.spec.js:322:1 › responsive scene and keyboard navigation (1.8s)
+  ✓   8 tests/emotions.spec.js:41:1 › lecture coverage, source integrity and separation from cancelled prototype (231ms)
+  ✓   9 tests/emotions.spec.js:83:1 › emotions overview, graph inspection and preserved Berne atlas (5.5s)
+  ✓  10 tests/emotions.spec.js:124:3 › interactive content: levels (2.8s)
+  ✓  11 tests/emotions.spec.js:124:3 › interactive content: evidence (3.5s)
+  ✓  12 tests/emotions.spec.js:124:3 › interactive content: development (2.0s)
+  ✓  13 tests/emotions.spec.js:124:3 › interactive content: compare (2.0s)
+  ✓  14 tests/emotions.spec.js:124:3 › interactive content: affect (2.1s)
+  ✓  15 tests/emotions.spec.js:124:3 › interactive content: construction (2.1s)
+  ✓  16 tests/emotions.spec.js:124:3 › interactive content: appraisal (2.2s)
+  ✓  17 tests/emotions.spec.js:124:3 › interactive content: process (2.2s)
+  ✓  18 tests/emotions.spec.js:124:3 › interactive content: recognition (2.1s)
+  ✓  19 tests/emotions.spec.js:124:3 › interactive content: grief (2.8s)
+  ✓  20 tests/emotions.spec.js:124:3 › interactive content: synchrony (1.9s)
+  ✓  21 tests/emotions.spec.js:124:3 › interactive content: functions (2.1s)
+  ✓  22 tests/emotions.spec.js:124:3 › interactive content: regulation (1.9s)
+  ✓  23 tests/emotions.spec.js:124:3 › interactive content: vocabulary (2.1s)
+  ✓  24 tests/emotions.spec.js:124:3 › interactive content: inquiry (2.2s)
+  ✓  25 tests/emotions.spec.js:202:1 › responsive conceptual model (1.5s)
+  ✓  26 tests/inspection.spec.js:6:1 › semantic directions, predicate group counts and immutable global layouts (176ms)
+
+  26 passed (1.2m)

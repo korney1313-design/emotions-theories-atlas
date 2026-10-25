@@ -1,0 +1,13 @@
+{
+  "capture": "Playwright Chromium 1600×1000; npm test and npm run test:production; 2026-10-25 Asia/Yekaterinburg",
+  "private_original_notes_visible": false,
+  "sha256": {
+    "emotions-overview.png": "9d81db3afd2b6efd6c596def61ff89163f04f4c134e39f575e95199b604eaec2",
+    "emotions-construction-graph.png": "a6b048c8eaa963cce403d40424f974843d0fc879e531ac92b4bf6e256981d118",
+    "emotions-model-appraisal.png": "a5d4c4632a6ec77a92a8a9e5a9f42ad919204f958b28967e9230a116f854c9d6",
+    "emotions-production-regulation.png": "b1b52948f8ae0d3d3659c7aee1c7866740888b5468438371ffde56b218c08459",
+    "3d-adult.png": "c49364fb63d66870c5ae441bad4bd2ae985681f76013be039724da97ed3bdaff",
+    "3d-trans.png": "543bbb1e714552294d2931ff98a48370b507bc9b9e19558af85a7e56d1acc679",
+    "3d-games.png": "b39f7223d5fa79fcb9311135eae809e085b315ae94e2354853020aab950a7f22"
+  }
+}

@@ -1,0 +1,9 @@
+test_crossing_is_not_3d_intersection (test_analysis.AnalysisTests.test_crossing_is_not_3d_intersection) ... ok
+test_geometry_invariance_and_stress (test_analysis.AnalysisTests.test_geometry_invariance_and_stress) ... ok
+test_saved_experiment_contract (test_analysis.AnalysisTests.test_saved_experiment_contract) ... ok
+test_weights_and_paths (test_analysis.AnalysisTests.test_weights_and_paths) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.011s
+
+OK

@@ -1,0 +1,5 @@
+
+> knowledge-atlas-berne-v2@0.3.0 test:production
+> node tests/production.mjs
+
+{"passed":true,"nodes":37,"relations":59,"webgl":true,"emotions":{"nodes":48,"relations":77,"regulationModel":true},"concept":"Взрослый","consoleAndHttpErrors":[]}
