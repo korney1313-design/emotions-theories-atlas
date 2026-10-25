@@ -1,0 +1,468 @@
+{
+  "version": 1,
+  "author": "Codex: интерпретационный эталон по лекции, без независимого человеческого рецензирования",
+  "independence": "Сформулирован до вычисления новых раскладок; знакомство с существующим UI и разделами не позволяет назвать оценку слепой. Не используется для обучения, подбора параметров или изменения весов.",
+  "input_sha256": "7c26c22530a4297a8e452b7ea05a41258ded1c70f7422ecb75d00fa1e1ade18b",
+  "sources": {
+    "slides": 39,
+    "slidesWithNotes": 39,
+    "files": {
+      "Эмоции_представления_и_научные_аргументы.pptx": "9e5b2805a96ebbf9fbe32623fb77efd392aca831e1fbf172f2b1df9d9b09bc8d",
+      "Эмоции_сценарий_и_комментарии.md": "ddbad6b82f10c7b5bcd941a748635faf410ba63078583521962b65ddf3dfe29a"
+    }
+  },
+  "protocol": {
+    "seeds": [
+      92481,
+      17,
+      2026,
+      31415,
+      27182
+    ],
+    "perturbations": [
+      {
+        "id": "base",
+        "amplitude": 0,
+        "seed": 0
+      },
+      {
+        "id": "jitter10a",
+        "amplitude": 0.1,
+        "seed": 1001
+      },
+      {
+        "id": "jitter10b",
+        "amplitude": 0.1,
+        "seed": 1002
+      },
+      {
+        "id": "jitter20a",
+        "amplitude": 0.2,
+        "seed": 2001
+      },
+      {
+        "id": "jitter20b",
+        "amplitude": 0.2,
+        "seed": 2002
+      }
+    ],
+    "ticks": 360,
+    "triplet_margin_median": 0.05,
+    "knn": 5,
+    "selection": "Все seeds и сценарии публикуются; для иллюстраций только заранее выбранный seed 92481/base. Настройки не подбираются по эталону.",
+    "weights": "Все исходные веса=1. Нулевой/пропущенный вес заменяется нейтральным 1, отрицательный/нечисловой отклоняется. Не считать статус научной силой."
+  },
+  "triplets": [
+    {
+      "id": "T01",
+      "anchor": "emotion",
+      "near": "reaction",
+      "far": "regulation",
+      "expectation": "d(anchor,near) < d(anchor,far) - 0.05 * median(all distances)",
+      "slides": [
+        4
+      ],
+      "notes": true,
+      "relation_type": "различение",
+      "rationale": "Эпизод задаёт уровни описания; регуляция отвечает на другой вопрос.",
+      "confidence": 0.9,
+      "alternative": "Уровни не являются частями одной строгой последовательности."
+    },
+    {
+      "id": "T02",
+      "anchor": "evidence",
+      "near": "animal",
+      "far": "suppression",
+      "expectation": "d(anchor,near) < d(anchor,far) - 0.05 * median(all distances)",
+      "slides": [
+        5,
+        6,
+        7
+      ],
+      "notes": true,
+      "relation_type": "аргумент",
+      "rationale": "Признаки используются для косвенного вывода о животном опыте.",
+      "confidence": 0.9,
+      "alternative": "Близость не означает прямое наблюдение субъективности."
+    },
+    {
+      "id": "T03",
+      "anchor": "development",
+      "near": "infant",
+      "far": "stages",
+      "expectation": "d(anchor,near) < d(anchor,far) - 0.05 * median(all distances)",
+      "slides": [
+        9,
+        10
+      ],
+      "notes": true,
+      "relation_type": "аргумент",
+      "rationale": "Ранние индикаторы относятся к развитию, а стадии здесь о горевании.",
+      "confidence": 0.9,
+      "alternative": "Возраст не задаёт универсальную дату появления каждой категории."
+    },
+    {
+      "id": "T04",
+      "anchor": "culture",
+      "near": "concepts",
+      "far": "reflex",
+      "expectation": "d(anchor,near) < d(anchor,far) - 0.05 * median(all distances)",
+      "slides": [
+        11,
+        16
+      ],
+      "notes": true,
+      "relation_type": "механизм",
+      "rationale": "Социальное обучение организует доступные понятия.",
+      "confidence": 0.85,
+      "alternative": "Телесные ограничения сохраняются, культурный произвол не следует."
+    },
+    {
+      "id": "T05",
+      "anchor": "basic",
+      "near": "evolution",
+      "far": "suppression",
+      "expectation": "d(anchor,near) < d(anchor,far) - 0.05 * median(all distances)",
+      "slides": [
+        13,
+        17
+      ],
+      "notes": true,
+      "relation_type": "аргумент",
+      "rationale": "Эволюционная повторяемость поддерживает биологическую подготовленность.",
+      "confidence": 0.85,
+      "alternative": "Это не доказательство отдельного центра каждой эмоции."
+    },
+    {
+      "id": "T06",
+      "anchor": "affect",
+      "near": "valence",
+      "far": "practice",
+      "expectation": "d(anchor,near) < d(anchor,far) - 0.05 * median(all distances)",
+      "slides": [
+        14
+      ],
+      "notes": true,
+      "relation_type": "различение",
+      "rationale": "Валентность является осью описания аффекта.",
+      "confidence": 0.95,
+      "alternative": "Ось не объясняет конкретную эмоциональную категорию."
+    },
+    {
+      "id": "T07",
+      "anchor": "construction",
+      "near": "concepts",
+      "far": "stages",
+      "expectation": "d(anchor,near) < d(anchor,far) - 0.05 * median(all distances)",
+      "slides": [
+        15,
+        16,
+        17
+      ],
+      "notes": true,
+      "relation_type": "положение подхода",
+      "rationale": "Опыт и понятия участвуют в контекстной категоризации.",
+      "confidence": 0.9,
+      "alternative": "Не означает произвольного выбора переживания."
+    },
+    {
+      "id": "T08",
+      "anchor": "appraisal",
+      "near": "goals",
+      "far": "animal",
+      "expectation": "d(anchor,near) < d(anchor,far) - 0.05 * median(all distances)",
+      "slides": [
+        22,
+        24
+      ],
+      "notes": true,
+      "relation_type": "механизм",
+      "rationale": "Оценка анализирует значимость относительно целей и контроля.",
+      "confidence": 0.9,
+      "alternative": "Сходная оценка не предписывает одинаковую эмоцию всем."
+    },
+    {
+      "id": "T09",
+      "anchor": "grief",
+      "near": "dual",
+      "far": "valence",
+      "expectation": "d(anchor,near) < d(anchor,far) - 0.05 * median(all distances)",
+      "slides": [
+        25
+      ],
+      "notes": true,
+      "relation_type": "положение подхода",
+      "rationale": "Двойной процесс описывает колебания переживания утраты.",
+      "confidence": 0.9,
+      "alternative": "Это альтернативная схема, а не универсальная норма."
+    },
+    {
+      "id": "T10",
+      "anchor": "expression",
+      "near": "face",
+      "far": "situation",
+      "expectation": "d(anchor,near) < d(anchor,far) - 0.05 * median(all distances)",
+      "slides": [
+        19,
+        20,
+        21
+      ],
+      "notes": true,
+      "relation_type": "аргумент",
+      "rationale": "Мимика — один канал экспрессии.",
+      "confidence": 0.9,
+      "alternative": "Один паттерн не декодирует чувство однозначно."
+    },
+    {
+      "id": "T11",
+      "anchor": "contagion",
+      "near": "synchrony",
+      "far": "reappraisal",
+      "expectation": "d(anchor,near) < d(anchor,far) - 0.05 * median(all distances)",
+      "slides": [
+        28,
+        29
+      ],
+      "notes": true,
+      "relation_type": "механизм",
+      "rationale": "Синхронность — возможный канал заражения.",
+      "confidence": 0.85,
+      "alternative": "Синхронность не устанавливает одинаковости чувств."
+    },
+    {
+      "id": "T12",
+      "anchor": "functions",
+      "near": "coordination",
+      "far": "infant",
+      "expectation": "d(anchor,near) < d(anchor,far) - 0.05 * median(all distances)",
+      "slides": [
+        26
+      ],
+      "notes": true,
+      "relation_type": "различение",
+      "rationale": "Социальная координация — функциональный аспект эмоций.",
+      "confidence": 0.85,
+      "alternative": "Функция не гарантирует полезность отдельного исхода."
+    },
+    {
+      "id": "T13",
+      "anchor": "regulation",
+      "near": "situation",
+      "far": "evolution",
+      "expectation": "d(anchor,near) < d(anchor,far) - 0.05 * median(all distances)",
+      "slides": [
+        30,
+        31,
+        32
+      ],
+      "notes": true,
+      "relation_type": "положение подхода",
+      "rationale": "Выбор и изменение ситуации — семейства регуляции.",
+      "confidence": 0.95,
+      "alternative": "Разные стратегии пересекаются и зависят от целей."
+    },
+    {
+      "id": "T14",
+      "anchor": "attend",
+      "near": "attention",
+      "far": "animal",
+      "expectation": "d(anchor,near) < d(anchor,far) - 0.05 * median(all distances)",
+      "slides": [
+        23,
+        31
+      ],
+      "notes": true,
+      "relation_type": "механизм",
+      "rationale": "Регуляция внимания воздействует на выделение значимого.",
+      "confidence": 0.9,
+      "alternative": "Это разные уровни: процесс и стратегия вмешательства."
+    },
+    {
+      "id": "T15",
+      "anchor": "reappraisal",
+      "near": "appraisal",
+      "far": "reflex",
+      "expectation": "d(anchor,near) < d(anchor,far) - 0.05 * median(all distances)",
+      "slides": [
+        24,
+        31,
+        32
+      ],
+      "notes": true,
+      "relation_type": "механизм",
+      "rationale": "Переоценка изменяет значение ситуации.",
+      "confidence": 0.9,
+      "alternative": "Изменение оценки не гарантирует изменения чувства."
+    },
+    {
+      "id": "T16",
+      "anchor": "granularity",
+      "near": "concepts",
+      "far": "stages",
+      "expectation": "d(anchor,near) < d(anchor,far) - 0.05 * median(all distances)",
+      "slides": [
+        18,
+        34
+      ],
+      "notes": true,
+      "relation_type": "механизм",
+      "rationale": "Дифференциация предполагает более точные понятия о переживаниях.",
+      "confidence": 0.85,
+      "alternative": "Ассоциация с регуляцией не доказывает причинности."
+    },
+    {
+      "id": "T17",
+      "anchor": "coregulation",
+      "near": "regulation",
+      "far": "valence",
+      "expectation": "d(anchor,near) < d(anchor,far) - 0.05 * median(all distances)",
+      "slides": [
+        9,
+        10,
+        11
+      ],
+      "notes": true,
+      "relation_type": "механизм",
+      "rationale": "Внешнее успокоение связано со становлением самостоятельной регуляции.",
+      "confidence": 0.8,
+      "alternative": "Развитие не сводится к переносу готовой стратегии."
+    },
+    {
+      "id": "T18",
+      "anchor": "practice",
+      "near": "inquiry",
+      "far": "arousal",
+      "expectation": "d(anchor,near) < d(anchor,far) - 0.05 * median(all distances)",
+      "slides": [
+        2,
+        20,
+        35,
+        36,
+        37
+      ],
+      "notes": true,
+      "relation_type": "ограничение",
+      "rationale": "Учебная проба соотносится с аргументированным уточнением.",
+      "confidence": 0.8,
+      "alternative": "Упражнение не является лабораторной проверкой теории."
+    }
+  ],
+  "logical_conflicts": [
+    {
+      "a": "reaction",
+      "b": "experience",
+      "slides": [
+        4,
+        5,
+        7
+      ],
+      "notes": true,
+      "relation_type": "ограничение",
+      "expected_proximity": "related_but_distinct: нет численной нормы расстояния",
+      "rationale": "Обсуждаются вместе, но наблюдение реакции не доказывает переживание.",
+      "confidence": 0.9,
+      "alternative": "Близость полезна для сравнения при явно видимом типе и направлении отношения; удаление также может скрыть важную полемику."
+    },
+    {
+      "a": "basic",
+      "b": "construction",
+      "slides": [
+        12,
+        13,
+        15,
+        17
+      ],
+      "notes": true,
+      "relation_type": "спор подходов",
+      "expected_proximity": "related_but_distinct: нет численной нормы расстояния",
+      "rationale": "Общий предмет эмоций скрывает расхождение о статусе категорий.",
+      "confidence": 0.9,
+      "alternative": "Близость полезна для сравнения при явно видимом типе и направлении отношения; удаление также может скрыть важную полемику."
+    },
+    {
+      "a": "affect",
+      "b": "category",
+      "slides": [
+        12,
+        14,
+        15
+      ],
+      "notes": true,
+      "relation_type": "ограничение",
+      "expected_proximity": "related_but_distinct: нет численной нормы расстояния",
+      "rationale": "Измерения аффекта не определяют смысл категории.",
+      "confidence": 0.9,
+      "alternative": "Близость полезна для сравнения при явно видимом типе и направлении отношения; удаление также может скрыть важную полемику."
+    },
+    {
+      "a": "grief",
+      "b": "stages",
+      "slides": [
+        25
+      ],
+      "notes": true,
+      "relation_type": "ограничение",
+      "expected_proximity": "related_but_distinct: нет численной нормы расстояния",
+      "rationale": "Близость темы не подтверждает обязательную последовательность стадий.",
+      "confidence": 0.9,
+      "alternative": "Близость полезна для сравнения при явно видимом типе и направлении отношения; удаление также может скрыть важную полемику."
+    },
+    {
+      "a": "face",
+      "b": "experience",
+      "slides": [
+        19,
+        20,
+        21
+      ],
+      "notes": true,
+      "relation_type": "ограничение",
+      "expected_proximity": "related_but_distinct: нет численной нормы расстояния",
+      "rationale": "Описание лица не является однозначным кодом субъективного чувства.",
+      "confidence": 0.9,
+      "alternative": "Близость полезна для сравнения при явно видимом типе и направлении отношения; удаление также может скрыть важную полемику."
+    },
+    {
+      "a": "synchrony",
+      "b": "experience",
+      "slides": [
+        28,
+        29
+      ],
+      "notes": true,
+      "relation_type": "ограничение",
+      "expected_proximity": "related_but_distinct: нет численной нормы расстояния",
+      "rationale": "Согласование внешних или физиологических сигналов не доказывает одинаковое чувство.",
+      "confidence": 0.9,
+      "alternative": "Близость полезна для сравнения при явно видимом типе и направлении отношения; удаление также может скрыть важную полемику."
+    },
+    {
+      "a": "consequences",
+      "b": "valence",
+      "slides": [
+        26,
+        27
+      ],
+      "notes": true,
+      "relation_type": "различение",
+      "expected_proximity": "related_but_distinct: нет численной нормы расстояния",
+      "rationale": "Неприятность не тождественна вредности.",
+      "confidence": 0.9,
+      "alternative": "Близость полезна для сравнения при явно видимом типе и направлении отношения; удаление также может скрыть важную полемику."
+    },
+    {
+      "a": "suppression",
+      "b": "experience",
+      "slides": [
+        30,
+        32
+      ],
+      "notes": true,
+      "relation_type": "ограничение",
+      "expected_proximity": "related_but_distinct: нет численной нормы расстояния",
+      "rationale": "Сдерживание выражения может сохранять внутреннее переживание.",
+      "confidence": 0.9,
+      "alternative": "Близость полезна для сравнения при явно видимом типе и направлении отношения; удаление также может скрыть важную полемику."
+    }
+  ]
+}
