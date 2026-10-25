@@ -1,3 +1,5 @@
+import { laboratoryForConcept } from "./lab/registry.js";
+import { openLaboratory } from "./lab/view.js";
 const esc = (s) =>
   String(s).replace(
     /[&<>"']/g,
@@ -685,6 +687,20 @@ export async function openConceptModel(node, data) {
   const content = dialog.querySelector("#model-content");
   dialog.querySelector("#model-title").textContent = model.title;
   content.innerHTML = `<p class="model-question">${esc(model.question)}</p><div class="model-concept"><strong>${esc(node.label)}</strong><p>${esc(node.definition)}</p></div><div class="model-grid"><form id="model-controls">${model.controls()}<button type="button" id="model-reset" class="secondary">Сбросить параметры</button></form><div id="model-result" aria-live="polite"></div></div><p class="concept-boundary"><b>Ограничение выбранного понятия:</b> ${esc(node.limit)}</p><details id="model-sources"><summary>Источник: слайды ${node.provenance.slides.join(", ")} и заметки преподавателя</summary><div id="source-text">Загрузка исходных заметок…</div></details><details><summary>Научные источники лекции (не новая независимая проверка)</summary><p>${data.references.map((r) => `<a href="${r.url}" target="_blank" rel="noreferrer">[${r.id}] ${esc(r.title)}</a>`).join("<br>")}</p></details>`;
+  const laboratory = laboratoryForConcept("emotions", node.id);
+  if (laboratory) {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.id = "open-lab-from-model";
+    button.className = "lab-card-entry lab-model-entry";
+    button.textContent = "Сопоставить объяснения в Model Laboratory ↗";
+    button.onclick = () =>
+      openLaboratory(laboratory.id, {
+        conceptId: node.id,
+        conceptLabel: node.label,
+      });
+    content.querySelector(".model-concept").after(button);
+  }
   const form = content.querySelector("form"),
     history = [];
   const initial =

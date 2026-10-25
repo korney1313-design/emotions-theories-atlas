@@ -58,6 +58,16 @@ try {
   const count = await page.locator("#status").textContent();
   if (count !== "37 понятий · 59 отношений")
     throw Error(`Unexpected graph ${count}`);
+  await page.locator("#search").fill("Трансакция");
+  await page.locator('[data-result="trans"]').click();
+  await page.locator("#open-lab").click();
+  await page.locator("#lab-responseFrom").selectOption("P");
+  if (
+    (await page.locator('[data-output="kind"]').innerText()) !==
+    "Пересекающаяся"
+  )
+    throw Error("Production transaction runtime failed");
+  await page.locator("#lab-close").click();
   await page.locator("#search").fill("Взрослый");
   await page.locator('[data-result="adult"]').click();
   await page.waitForTimeout(900);
@@ -87,6 +97,26 @@ try {
   await page.screenshot({
     path: "artifacts/emotions-production-regulation.png",
   });
+  await page.locator("#model-close").click();
+  await page.locator("#search").fill("Оценка ситуации");
+  await page.locator('[data-result="appraisal"]').click();
+  await page.locator("#open-lab-from-model").click();
+  await page.locator("#lab-reportedValence").selectOption("unpleasant");
+  await page.locator("#lab-reportedArousal").selectOption("high");
+  await page.locator('[data-lab-event="capture"]').click();
+  await page.locator("#lab-control").selectOption("high");
+  const laboratory = await page.evaluate(() =>
+    window.atlas.laboratory().getObservables(),
+  );
+  if (
+    !laboratory.appraisal.options.includes("change-conditions") ||
+    laboratory.dimensions.point.valence !== "unpleasant" ||
+    laboratory.changedFields.join() !== "control"
+  )
+    throw Error("Production comparison adapter failed");
+  await page.screenshot({
+    path: "artifacts/qa/model-lab/production-comparison.png",
+  });
   if (errors.length) throw Error(errors.join("\n"));
   const report = {
     passed: true,
@@ -95,6 +125,7 @@ try {
     webgl: true,
     emotions: { nodes: 48, relations: 77, regulationModel: true },
     concept: "Взрослый",
+    modelLaboratory: { berne: true, emotions: true, adapterIsolation: true },
     consoleAndHttpErrors: errors,
   };
   writeFileSync(

@@ -1,3 +1,6 @@
+import "./lab/lab.css";
+import { laboratoryForConcept } from "./lab/registry.js";
+import { openLaboratory, getActiveLaboratory } from "./lab/view.js";
 import { openConceptModel, ensureModelDialog } from "./content-models.js";
 import { createModel, palette, layoutFingerprint } from "./model.js";
 import { AtlasScene } from "./scene.js";
@@ -270,7 +273,7 @@ try {
         edges = graph.edges(selected).filter((e) => visibleEdges.has(e));
       const edge = focusedEdge ? graph.getEdgeAttributes(focusedEdge) : null;
       $("#card").innerHTML =
-        `<div class="card-nav"><button id="back" ${historyIndex <= 0 ? "disabled" : ""}>← Назад</button><button id="forward" ${historyIndex >= history.length - 1 ? "disabled" : ""} aria-label="Вперёд">→</button><button id="clear" aria-label="Закрыть понятие">×</button></div><div class="eyebrow">${esc(node.section)}</div><h2>${esc(node.label)}</h2><p class="definition">${esc(node.definition)}</p>${isEmotions ? `<p class="concept-kind">${esc(node.kind)}</p><button id="open-model" class="primary">Открыть интерактивную модель ↗</button><p class="hint">${esc(node.limit)}</p>` : ""}<div class="metrics"><span><strong>${graph.degree(selected)}</strong> связей</span><span><strong>${node.pagerank.toFixed(3)}</strong> PageRank</span></div><p class="hint">PageRank — положение в этой сети, не теоретическая значимость.</p><div class="depth-control"><button id="expand" class="primary">${expanded ? "Глубина 2 · свернуть до 1 шага" : "Глубина 1 · раскрыть 2-й шаг"}</button><button id="fit-neighbors" class="secondary">Все соседи в кадре ↗</button></div>${edge ? `<section id="edge-inspector"><div class="eyebrow">ВЫБРАННОЕ ОТНОШЕНИЕ</div><p><strong>${esc(graph.getNodeAttribute(graph.source(focusedEdge), "label"))}</strong><br><span>↓ ${esc(edge.relation)}</span><br><strong>${esc(graph.getNodeAttribute(graph.target(focusedEdge), "label"))}</strong></p><small>${esc(edge.status)} · ${esc(provenanceLabel(edge.provenance))}</small><p class="hint">${esc(directionExplanation)}</p></section>` : ""}<div class="label">ОТНОШЕНИЯ · ${edges.length}</div><p class="hint">Нажмите тип связи для подробностей, понятие — для перехода. На карте одинаковые отношения объединены подписью с числом связей. Слева — источники входящих, справа — цели исходящих.</p><div id="relations">${
+        `<div class="card-nav"><button id="back" ${historyIndex <= 0 ? "disabled" : ""}>← Назад</button><button id="forward" ${historyIndex >= history.length - 1 ? "disabled" : ""} aria-label="Вперёд">→</button><button id="clear" aria-label="Закрыть понятие">×</button></div><div class="eyebrow">${esc(node.section)}</div><h2>${esc(node.label)}</h2><p class="definition">${esc(node.definition)}</p>${isEmotions ? `<p class="concept-kind">${esc(node.kind)}</p><button id="open-model" class="primary">Открыть интерактивную модель ↗</button><p class="hint">${esc(node.limit)}</p>` : ""}${laboratoryForConcept(atlasId, selected) ? `<button id="open-lab" class="lab-card-entry">${esc(laboratoryForConcept(atlasId, selected).label)} ↗</button>` : ""}<div class="metrics"><span><strong>${graph.degree(selected)}</strong> связей</span><span><strong>${node.pagerank.toFixed(3)}</strong> PageRank</span></div><p class="hint">PageRank — положение в этой сети, не теоретическая значимость.</p><div class="depth-control"><button id="expand" class="primary">${expanded ? "Глубина 2 · свернуть до 1 шага" : "Глубина 1 · раскрыть 2-й шаг"}</button><button id="fit-neighbors" class="secondary">Все соседи в кадре ↗</button></div>${edge ? `<section id="edge-inspector"><div class="eyebrow">ВЫБРАННОЕ ОТНОШЕНИЕ</div><p><strong>${esc(graph.getNodeAttribute(graph.source(focusedEdge), "label"))}</strong><br><span>↓ ${esc(edge.relation)}</span><br><strong>${esc(graph.getNodeAttribute(graph.target(focusedEdge), "label"))}</strong></p><small>${esc(edge.status)} · ${esc(provenanceLabel(edge.provenance))}</small><p class="hint">${esc(directionExplanation)}</p></section>` : ""}<div class="label">ОТНОШЕНИЯ · ${edges.length}</div><p class="hint">Нажмите тип связи для подробностей, понятие — для перехода. На карте одинаковые отношения объединены подписью с числом связей. Слева — источники входящих, справа — цели исходящих.</p><div id="relations">${
           edges.length
             ? edges
                 .map((id) => {
@@ -285,6 +288,13 @@ try {
         }</div><details><summary>Происхождение и анализ</summary><p class="hint">${esc(provenanceLabel(node.provenance))}.<br>Сообщество Louvain: ${node.community + 1}.<br>${esc(directionExplanation)}<br>${isEmotions ? "Источники и полные заметки доступны в интерактивной модели." : "Страницы первоисточников не указаны."}</p></details>`;
       if (isEmotions)
         $("#open-model").onclick = () => openConceptModel(node, data);
+      const laboratory = laboratoryForConcept(atlasId, selected);
+      if (laboratory)
+        $("#open-lab").onclick = () =>
+          openLaboratory(laboratory.id, {
+            conceptId: selected,
+            conceptLabel: node.label,
+          });
       $("#back").onclick = () => goHistory(historyIndex - 1);
       $("#forward").onclick = () => goHistory(historyIndex + 1);
       $("#clear").onclick = overview;
@@ -370,7 +380,8 @@ try {
     if (
       event.key === "Escape" &&
       !$("#info").open &&
-      !document.querySelector("#concept-model")?.open
+      !document.querySelector("#concept-model")?.open &&
+      !document.querySelector("#model-laboratory")?.open
     )
       overview();
   });
@@ -403,6 +414,7 @@ try {
     graph,
     scene,
     data,
+    laboratory: getActiveLaboratory,
     getState: () => ({
       selected,
       mode,
