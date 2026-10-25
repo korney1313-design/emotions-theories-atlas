@@ -1,1 +1,28 @@
-{"name":"knowledge-atlas-berne-v2","version":"0.3.0","private":true,"type":"module","scripts":{"dev":"vite --host 127.0.0.1","build":"vite build","preview":"vite preview --host 127.0.0.1","test":"playwright test","start":"bash start.sh --no-open","test:production":"node tests/production.mjs"},"dependencies":{"3d-force-graph":"^1.80.1","d3-force-3d":"^3.0.6","graphology":"^0.26.0","graphology-communities-louvain":"^2.0.2","graphology-metrics":"^2.4.2","three":"^0.186.1"},"devDependencies":{"@playwright/test":"^1.64.1","prettier":"^3.9.10","vite":"^6.3.5"}}
+{
+  "name": "knowledge-atlas-berne-v2",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "npm run test:lab && playwright test",
+    "start": "bash start.sh --no-open",
+    "test:production": "node tests/production.mjs",
+    "test:lab": "node tests-unit/model-lab.test.mjs"
+  },
+  "dependencies": {
+    "3d-force-graph": "^1.80.1",
+    "d3-force-3d": "^3.0.6",
+    "graphology": "^0.26.0",
+    "graphology-communities-louvain": "^2.0.2",
+    "graphology-metrics": "^2.4.2",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "prettier": "^3.9.10",
+    "vite": "^6.3.5"
+  }
+}

@@ -1,0 +1,1634 @@
+{
+  "schemaVersion": "model-package/0.1",
+  "id": "emotions-pilot",
+  "theories": [
+    {
+      "id": "russell-descriptive",
+      "label": "Измерения аффекта · Russell",
+      "scope": "Описание приятности и возбуждения; без предсказания категории.",
+      "sourceIds": [
+        "e-lecture",
+        "e-russell"
+      ]
+    },
+    {
+      "id": "appraisal-qualitative",
+      "label": "Оценочная перспектива · по лекции / Scherer",
+      "scope": "Значимость цели, предполагаемый контроль и ожидание исхода.",
+      "sourceIds": [
+        "e-lecture",
+        "e-scherer"
+      ]
+    },
+    {
+      "id": "comparison-didactic",
+      "label": "Сопоставление объяснений",
+      "scope": "Учебный протокол сравнения, не объединённая теория эмоций.",
+      "sourceIds": [
+        "e-design"
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "id": "e-affect",
+      "term": "Эмоция",
+      "theoryId": "russell-descriptive",
+      "definition": "Здесь описывается аффект по приятности и возбуждению; не механизм всей категории.",
+      "sourceIds": [
+        "e-lecture"
+      ],
+      "atlasBinding": {
+        "atlas": "emotions",
+        "conceptId": "affect"
+      }
+    },
+    {
+      "id": "e-valence",
+      "term": "Валентность",
+      "theoryId": "russell-descriptive",
+      "definition": "Приятность/неприятность в заданном самоописании.",
+      "sourceIds": [
+        "e-lecture"
+      ],
+      "atlasBinding": {
+        "atlas": "emotions",
+        "conceptId": "valence"
+      }
+    },
+    {
+      "id": "e-arousal",
+      "term": "Возбуждение",
+      "theoryId": "russell-descriptive",
+      "definition": "Описательный уровень активации, не измерение частоты пульса.",
+      "sourceIds": [
+        "e-lecture"
+      ],
+      "atlasBinding": {
+        "atlas": "emotions",
+        "conceptId": "arousal"
+      }
+    },
+    {
+      "id": "e-episode",
+      "term": "Эмоция",
+      "theoryId": "appraisal-qualitative",
+      "definition": "Эпизод рассматривается через оценку значимости и возможного ответа.",
+      "sourceIds": [
+        "e-lecture"
+      ],
+      "atlasBinding": {
+        "atlas": "emotions",
+        "conceptId": "appraisal"
+      }
+    },
+    {
+      "id": "e-goals",
+      "term": "Цели, вероятность и контроль",
+      "theoryId": "appraisal-qualitative",
+      "definition": "Параметры субъективной оценки ситуации.",
+      "sourceIds": [
+        "e-lecture"
+      ],
+      "atlasBinding": {
+        "atlas": "emotions",
+        "conceptId": "goals"
+      }
+    },
+    {
+      "id": "e-action",
+      "term": "Готовность к действию",
+      "theoryId": "appraisal-qualitative",
+      "definition": "Вопрос о возможном ответе, без однозначного эмоционального предсказания.",
+      "sourceIds": [
+        "e-lecture"
+      ],
+      "atlasBinding": {
+        "atlas": "emotions",
+        "conceptId": "action"
+      }
+    },
+    {
+      "id": "e-scenario",
+      "term": "Задержка результата",
+      "theoryId": "comparison-didactic",
+      "definition": "Результат работы задерживается, срок неизвестен.",
+      "sourceIds": [
+        "e-lecture"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "e-dimensions",
+      "theoryId": "russell-descriptive",
+      "text": "Приятность и возбуждение описывают разные стороны аффективного состояния.",
+      "status": "accepted-within-theory",
+      "sourceIds": [
+        "e-lecture",
+        "e-russell"
+      ],
+      "scope": "Описание введённых пользователем характеристик.",
+      "limitation": "Положение на плоскости не определяет, почему это страх, гнев или другое переживание.",
+      "predicate": "describes-along-dimensions",
+      "roles": [
+        {
+          "role": "description",
+          "conceptId": "e-affect"
+        },
+        {
+          "role": "pleasantness",
+          "conceptId": "e-valence"
+        },
+        {
+          "role": "activation",
+          "conceptId": "e-arousal"
+        }
+      ]
+    },
+    {
+      "id": "e-no-category",
+      "theoryId": "russell-descriptive",
+      "text": "По двум заданным координатам этот пилот не присваивает название эмоции.",
+      "status": "didactic",
+      "sourceIds": [
+        "e-lecture",
+        "e-design"
+      ],
+      "scope": "Граница модели-пилота.",
+      "limitation": "Не воспроизводится весь circumplex или все утверждения автора о структуре аффекта.",
+      "predicate": "limits-inference",
+      "roles": [
+        {
+          "role": "description",
+          "conceptId": "e-affect"
+        },
+        {
+          "role": "pleasantness",
+          "conceptId": "e-valence"
+        },
+        {
+          "role": "activation",
+          "conceptId": "e-arousal"
+        }
+      ]
+    },
+    {
+      "id": "e-ordinal",
+      "theoryId": "russell-descriptive",
+      "text": "Положение маркера — схема категорий самоописания, не измеренная величина и не расстояние между эмоциями.",
+      "status": "didactic",
+      "sourceIds": [
+        "e-design"
+      ],
+      "scope": "Три видимых уровня каждой оси.",
+      "limitation": "Шаги сетки не калиброваны и не являются психометрической шкалой.",
+      "predicate": "display-convention",
+      "roles": [
+        {
+          "role": "description",
+          "conceptId": "e-affect"
+        },
+        {
+          "role": "pleasantness",
+          "conceptId": "e-valence"
+        },
+        {
+          "role": "activation",
+          "conceptId": "e-arousal"
+        }
+      ]
+    },
+    {
+      "id": "e-appraisal",
+      "theoryId": "appraisal-qualitative",
+      "text": "Один факт получает разное значение относительно целей, ожиданий и возможности влияния.",
+      "status": "accepted-within-theory",
+      "sourceIds": [
+        "e-lecture",
+        "e-scherer"
+      ],
+      "scope": "Качественная оценочная перспектива, слайды 22–24.",
+      "limitation": "Это не полный CPM: последовательность всех проверок, синхронизация тела и временная динамика не реализованы.",
+      "predicate": "appraises",
+      "roles": [
+        {
+          "role": "episode",
+          "conceptId": "e-episode"
+        },
+        {
+          "role": "appraisal",
+          "conceptId": "e-goals"
+        },
+        {
+          "role": "response",
+          "conceptId": "e-action"
+        }
+      ]
+    },
+    {
+      "id": "e-affordance",
+      "theoryId": "appraisal-qualitative",
+      "text": "Если цель затронута, различение доступного влияния меняет набор рассматриваемых действий: изменение условий или поиск поддержки и адаптации.",
+      "status": "didactic",
+      "sourceIds": [
+        "e-lecture",
+        "e-design"
+      ],
+      "scope": "Учебный набор вариантов ответа в сценарии задержки.",
+      "limitation": "Набор не предсказывает реальное действие, эмоцию, эффективность стратегии или единственно правильный выбор.",
+      "predicate": "illustrative-affordance-rule",
+      "roles": [
+        {
+          "role": "episode",
+          "conceptId": "e-episode"
+        },
+        {
+          "role": "appraisal",
+          "conceptId": "e-goals"
+        },
+        {
+          "role": "response",
+          "conceptId": "e-action"
+        }
+      ]
+    },
+    {
+      "id": "e-unknown",
+      "theoryId": "comparison-didactic",
+      "text": "Неуказанные переменные остаются «не представлено»; неизвестное возбуждение не равно низкому, неизвестная валентность — нейтральной.",
+      "status": "didactic",
+      "sourceIds": [
+        "e-design"
+      ],
+      "scope": "Правило представления пропущенных данных.",
+      "limitation": "Программа не восстанавливает отсутствующий самоотчёт по обстоятельствам.",
+      "predicate": "unknown-is-not-zero",
+      "roles": [
+        {
+          "role": "dimensions",
+          "conceptId": "e-affect"
+        },
+        {
+          "role": "appraisal",
+          "conceptId": "e-episode"
+        }
+      ]
+    },
+    {
+      "id": "e-isolation",
+      "theoryId": "comparison-didactic",
+      "text": "Условия оценки и самоописание аффекта поступают в разные модели; изменение контроля не перемещает маркер без нового самоописания.",
+      "status": "didactic",
+      "sourceIds": [
+        "e-design",
+        "e-lecture"
+      ],
+      "scope": "Протокол сравнения данного пилота.",
+      "limitation": "Это ограничение адаптеров, а не утверждение, что контроль никогда не влияет на реальное переживание.",
+      "predicate": "separates-inputs",
+      "roles": [
+        {
+          "role": "dimensions",
+          "conceptId": "e-affect"
+        },
+        {
+          "role": "appraisal",
+          "conceptId": "e-episode"
+        }
+      ]
+    },
+    {
+      "id": "e-scenario-claim",
+      "theoryId": "comparison-didactic",
+      "text": "Общий факт: результат работы задерживается, срок неизвестен. Участник по-разному оценивает последствия для своей цели.",
+      "status": "didactic",
+      "sourceIds": [
+        "e-lecture"
+      ],
+      "scope": "Учебный сценарий слайда 24.",
+      "limitation": "Сценарий не является эмпирическим наблюдением или экспериментом над человеком.",
+      "predicate": "stipulates",
+      "roles": [
+        {
+          "role": "scenario",
+          "conceptId": "e-scenario"
+        },
+        {
+          "role": "episode",
+          "conceptId": "e-episode"
+        }
+      ]
+    },
+    {
+      "id": "e-snapshot",
+      "theoryId": "comparison-didactic",
+      "text": "Сохранённое условие позволяет сравнить вычисленные представления до и после вмешательства.",
+      "status": "didactic",
+      "sourceIds": [
+        "e-design"
+      ],
+      "scope": "Контрфактическое сравнение заданных входов.",
+      "limitation": "Стрелка между снимками не задаёт временной закон развития эмоции.",
+      "predicate": "compares-interventions",
+      "roles": [
+        {
+          "role": "scenario",
+          "conceptId": "e-scenario"
+        },
+        {
+          "role": "description",
+          "conceptId": "e-affect"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "e-compare-relation",
+      "predicate": "contrasts-explanatory-tasks",
+      "roles": [
+        {
+          "role": "description",
+          "conceptId": "e-affect"
+        },
+        {
+          "role": "explanation",
+          "conceptId": "e-episode"
+        },
+        {
+          "role": "common-scenario",
+          "conceptId": "e-scenario"
+        }
+      ],
+      "claimIds": [
+        "e-isolation"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "e-lecture",
+      "title": "Расширенная лекция «Эмоции: представления и научные аргументы»",
+      "kind": "lecture",
+      "locator": "Слайды 12,14,17,22–24; заметки преподавателя",
+      "access": "local-only",
+      "verification": "Локальные слайды и заметки прочитаны; полный оригинал не публикуется."
+    },
+    {
+      "id": "e-russell",
+      "title": "Russell (1980), A circumplex model of affect",
+      "kind": "publication",
+      "locator": "JPSP 39(6), 1161–1178; doi:10.1037/h0077714",
+      "access": "public",
+      "verification": "Библиография лекции; сверено различение pleasantness/arousal с текстом первичной статьи, без переноса эмпирических коэффициентов.",
+      "url": "https://doi.org/10.1037/h0077714"
+    },
+    {
+      "id": "e-scherer",
+      "title": "Scherer (2009), The dynamic architecture of emotion",
+      "kind": "publication",
+      "locator": "Cognition and Emotion 23(7), 1307–1351; doi:10.1080/02699930902928969",
+      "access": "public",
+      "verification": "Лекция и авторский abstract; полный CPM здесь не реализован.",
+      "url": "https://doi.org/10.1080/02699930902928969"
+    },
+    {
+      "id": "e-design",
+      "title": "Учебная операционализация Model Laboratory",
+      "kind": "design",
+      "locator": "docs/model-lab/DESIGN.md",
+      "access": "public",
+      "verification": "Сверено с указанным материалом; не независимая экспертиза."
+    }
+  ],
+  "mechanisms": [
+    {
+      "id": "e-dim-mechanism",
+      "theoryId": "russell-descriptive",
+      "claimIds": [
+        "e-dimensions",
+        "e-ordinal"
+      ],
+      "conceptIds": [
+        "e-affect",
+        "e-valence",
+        "e-arousal"
+      ],
+      "description": "Сохранить два независимых дескриптора; отметить отсутствие полной пары."
+    },
+    {
+      "id": "e-app-mechanism",
+      "theoryId": "appraisal-qualitative",
+      "claimIds": [
+        "e-appraisal",
+        "e-affordance"
+      ],
+      "conceptIds": [
+        "e-episode",
+        "e-goals",
+        "e-action"
+      ],
+      "description": "Построить качественный профиль и множество учебных вариантов действия из условий."
+    },
+    {
+      "id": "e-compare-mechanism",
+      "theoryId": "comparison-didactic",
+      "claimIds": [
+        "e-isolation",
+        "e-snapshot"
+      ],
+      "conceptIds": [
+        "e-affect",
+        "e-episode",
+        "e-scenario"
+      ],
+      "description": "Передать релевантные входы двум адаптерам; сравнить условие с сохранённым снимком."
+    }
+  ],
+  "models": [
+    {
+      "id": "emotions-dimensions",
+      "version": "0.1.0",
+      "label": "Две координаты аффекта",
+      "engine": "rules-v1",
+      "theoryId": "russell-descriptive",
+      "mechanismIds": [
+        "e-dim-mechanism"
+      ],
+      "conceptIds": [
+        "e-affect",
+        "e-valence",
+        "e-arousal"
+      ],
+      "claimIds": [
+        "e-dimensions",
+        "e-no-category",
+        "e-ordinal"
+      ],
+      "sourceIds": [
+        "e-lecture",
+        "e-russell",
+        "e-design"
+      ],
+      "inputs": {
+        "valence": {
+          "type": "enum",
+          "label": "Самоописание: приятность",
+          "enum": [
+            "unpleasant",
+            "neutral",
+            "pleasant"
+          ],
+          "initial": null,
+          "nullable": true
+        },
+        "arousal": {
+          "type": "enum",
+          "label": "Самоописание: возбуждение",
+          "enum": [
+            "low",
+            "moderate",
+            "high"
+          ],
+          "initial": null,
+          "nullable": true
+        }
+      },
+      "states": {},
+      "events": {},
+      "rules": [
+        {
+          "id": "complete",
+          "expr": {
+            "op": "known",
+            "args": [
+              {
+                "ref": "input.valence"
+              },
+              {
+                "ref": "input.arousal"
+              }
+            ]
+          },
+          "claimIds": [
+            "e-dimensions"
+          ]
+        },
+        {
+          "id": "missing",
+          "expr": {
+            "op": "compact",
+            "args": [
+              [
+                {
+                  "op": "if",
+                  "args": [
+                    {
+                      "op": "eq",
+                      "args": [
+                        {
+                          "ref": "input.valence"
+                        },
+                        null
+                      ]
+                    },
+                    "valence",
+                    null
+                  ]
+                },
+                {
+                  "op": "if",
+                  "args": [
+                    {
+                      "op": "eq",
+                      "args": [
+                        {
+                          "ref": "input.arousal"
+                        },
+                        null
+                      ]
+                    },
+                    "arousal",
+                    null
+                  ]
+                }
+              ]
+            ]
+          },
+          "claimIds": [
+            "e-unknown"
+          ]
+        }
+      ],
+      "outputs": {
+        "point": {
+          "expr": {
+            "record": {
+              "valence": {
+                "ref": "input.valence"
+              },
+              "arousal": {
+                "ref": "input.arousal"
+              }
+            }
+          },
+          "type": "object",
+          "claimIds": [
+            "e-dimensions",
+            "e-ordinal"
+          ],
+          "nullable": false
+        },
+        "complete": {
+          "expr": {
+            "ref": "derived.complete"
+          },
+          "type": "boolean",
+          "claimIds": [
+            "e-unknown"
+          ],
+          "nullable": false
+        },
+        "missing": {
+          "expr": {
+            "ref": "derived.missing"
+          },
+          "type": "array",
+          "claimIds": [
+            "e-unknown"
+          ],
+          "nullable": false
+        },
+        "emotionCategory": {
+          "expr": null,
+          "type": "string",
+          "claimIds": [
+            "e-no-category"
+          ],
+          "nullable": true
+        }
+      },
+      "assumptions": [
+        "e-no-category",
+        "e-ordinal"
+      ],
+      "validityDomain": "Только описание введённых значений, без вывода из события.",
+      "limitations": [
+        "Нет вывода категории, интенсивности или причин эмоции."
+      ],
+      "invariants": [
+        {
+          "id": "known-iff-both",
+          "expr": {
+            "op": "eq",
+            "args": [
+              {
+                "ref": "derived.complete"
+              },
+              {
+                "op": "known",
+                "args": [
+                  {
+                    "ref": "input.valence"
+                  },
+                  {
+                    "ref": "input.arousal"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "emotions-appraisal",
+      "version": "0.1.0",
+      "label": "Оценка значимости и возможностей",
+      "engine": "rules-v1",
+      "theoryId": "appraisal-qualitative",
+      "mechanismIds": [
+        "e-app-mechanism"
+      ],
+      "conceptIds": [
+        "e-episode",
+        "e-goals",
+        "e-action"
+      ],
+      "claimIds": [
+        "e-appraisal",
+        "e-affordance",
+        "e-unknown"
+      ],
+      "sourceIds": [
+        "e-lecture",
+        "e-scherer",
+        "e-design"
+      ],
+      "inputs": {
+        "goal": {
+          "type": "enum",
+          "label": "Влияние на цель",
+          "enum": [
+            "hinders",
+            "supports",
+            "irrelevant"
+          ],
+          "initial": "hinders",
+          "nullable": true
+        },
+        "control": {
+          "type": "enum",
+          "label": "Возможность влиять",
+          "enum": [
+            "low",
+            "high"
+          ],
+          "initial": "low",
+          "nullable": true
+        },
+        "expectation": {
+          "type": "enum",
+          "label": "Ожидание исхода",
+          "enum": [
+            "unfavorable",
+            "favorable"
+          ],
+          "initial": null,
+          "nullable": true
+        }
+      },
+      "states": {},
+      "events": {},
+      "rules": [
+        {
+          "id": "relevance",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "input.goal"
+                  },
+                  null
+                ]
+              },
+              null,
+              {
+                "op": "ne",
+                "args": [
+                  {
+                    "ref": "input.goal"
+                  },
+                  "irrelevant"
+                ]
+              }
+            ]
+          },
+          "claimIds": [
+            "e-appraisal"
+          ]
+        },
+        {
+          "id": "obstruction",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "input.goal"
+                  },
+                  null
+                ]
+              },
+              null,
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "input.goal"
+                  },
+                  "hinders"
+                ]
+              }
+            ]
+          },
+          "claimIds": [
+            "e-appraisal"
+          ]
+        },
+        {
+          "id": "canInfluence",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "input.control"
+                  },
+                  null
+                ]
+              },
+              null,
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "input.control"
+                  },
+                  "high"
+                ]
+              }
+            ]
+          },
+          "claimIds": [
+            "e-appraisal"
+          ]
+        },
+        {
+          "id": "expectedObstacle",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "input.expectation"
+                  },
+                  null
+                ]
+              },
+              null,
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "input.expectation"
+                  },
+                  "unfavorable"
+                ]
+              }
+            ]
+          },
+          "claimIds": [
+            "e-appraisal"
+          ]
+        },
+        {
+          "id": "missing",
+          "expr": {
+            "op": "compact",
+            "args": [
+              [
+                {
+                  "op": "if",
+                  "args": [
+                    {
+                      "op": "eq",
+                      "args": [
+                        {
+                          "ref": "input.goal"
+                        },
+                        null
+                      ]
+                    },
+                    "goal",
+                    null
+                  ]
+                },
+                {
+                  "op": "if",
+                  "args": [
+                    {
+                      "op": "eq",
+                      "args": [
+                        {
+                          "ref": "input.control"
+                        },
+                        null
+                      ]
+                    },
+                    "control",
+                    null
+                  ]
+                },
+                {
+                  "op": "if",
+                  "args": [
+                    {
+                      "op": "eq",
+                      "args": [
+                        {
+                          "ref": "input.expectation"
+                        },
+                        null
+                      ]
+                    },
+                    "expectation",
+                    null
+                  ]
+                }
+              ]
+            ]
+          },
+          "claimIds": [
+            "e-unknown"
+          ]
+        },
+        {
+          "id": "options",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "derived.relevance"
+                  },
+                  null
+                ]
+              },
+              [
+                "clarify-goal"
+              ],
+              {
+                "op": "if",
+                "args": [
+                  {
+                    "op": "eq",
+                    "args": [
+                      {
+                        "ref": "derived.relevance"
+                      },
+                      false
+                    ]
+                  },
+                  [],
+                  {
+                    "op": "if",
+                    "args": [
+                      {
+                        "op": "eq",
+                        "args": [
+                          {
+                            "ref": "derived.canInfluence"
+                          },
+                          null
+                        ]
+                      },
+                      [
+                        "clarify-control"
+                      ],
+                      {
+                        "op": "if",
+                        "args": [
+                          {
+                            "op": "eq",
+                            "args": [
+                              {
+                                "ref": "derived.canInfluence"
+                              },
+                              true
+                            ]
+                          },
+                          {
+                            "op": "if",
+                            "args": [
+                              {
+                                "op": "eq",
+                                "args": [
+                                  {
+                                    "ref": "derived.obstruction"
+                                  },
+                                  true
+                                ]
+                              },
+                              [
+                                "change-conditions",
+                                "request-deadline"
+                              ],
+                              [
+                                "use-available-time"
+                              ]
+                            ]
+                          },
+                          {
+                            "op": "concat",
+                            "args": [
+                              [
+                                "seek-support",
+                                "adapt-plan"
+                              ],
+                              {
+                                "op": "if",
+                                "args": [
+                                  {
+                                    "op": "eq",
+                                    "args": [
+                                      {
+                                        "ref": "derived.expectedObstacle"
+                                      },
+                                      true
+                                    ]
+                                  },
+                                  [
+                                    "prepare-alternative"
+                                  ],
+                                  []
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "claimIds": [
+            "e-affordance"
+          ]
+        }
+      ],
+      "outputs": {
+        "relevance": {
+          "expr": {
+            "ref": "derived.relevance"
+          },
+          "type": "boolean",
+          "claimIds": [
+            "e-appraisal"
+          ],
+          "nullable": true
+        },
+        "obstruction": {
+          "expr": {
+            "ref": "derived.obstruction"
+          },
+          "type": "boolean",
+          "claimIds": [
+            "e-appraisal"
+          ],
+          "nullable": true
+        },
+        "canInfluence": {
+          "expr": {
+            "ref": "derived.canInfluence"
+          },
+          "type": "boolean",
+          "claimIds": [
+            "e-appraisal"
+          ],
+          "nullable": true
+        },
+        "expectedObstacle": {
+          "expr": {
+            "ref": "derived.expectedObstacle"
+          },
+          "type": "boolean",
+          "claimIds": [
+            "e-appraisal"
+          ],
+          "nullable": true
+        },
+        "missing": {
+          "expr": {
+            "ref": "derived.missing"
+          },
+          "type": "array",
+          "claimIds": [
+            "e-unknown"
+          ],
+          "nullable": false
+        },
+        "options": {
+          "expr": {
+            "ref": "derived.options"
+          },
+          "type": "array",
+          "claimIds": [
+            "e-affordance"
+          ],
+          "nullable": false
+        },
+        "emotionCategory": {
+          "expr": null,
+          "type": "string",
+          "claimIds": [
+            "e-appraisal"
+          ],
+          "nullable": true
+        }
+      },
+      "assumptions": [
+        "e-affordance"
+      ],
+      "validityDomain": "Качественные условия сценария; не полный вычислительный CPM.",
+      "limitations": [
+        "Нет количественных прогнозов эмоции или действия.",
+        "Учебные варианты действия не исчерпывают возможные ответы."
+      ],
+      "invariants": [
+        {
+          "id": "unknown-control-stays-unknown",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "input.control"
+                  },
+                  null
+                ]
+              },
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "derived.canInfluence"
+                  },
+                  null
+                ]
+              },
+              {
+                "op": "known",
+                "args": [
+                  {
+                    "ref": "derived.canInfluence"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "emotions-comparison",
+      "version": "0.1.0",
+      "label": "Один факт — два способа объяснения",
+      "engine": "comparison-v1",
+      "theoryId": "comparison-didactic",
+      "mechanismIds": [
+        "e-compare-mechanism"
+      ],
+      "conceptIds": [
+        "e-affect",
+        "e-episode",
+        "e-scenario"
+      ],
+      "claimIds": [
+        "e-dimensions",
+        "e-no-category",
+        "e-ordinal",
+        "e-appraisal",
+        "e-affordance",
+        "e-unknown",
+        "e-isolation",
+        "e-scenario-claim",
+        "e-snapshot"
+      ],
+      "sourceIds": [
+        "e-lecture",
+        "e-russell",
+        "e-scherer",
+        "e-design"
+      ],
+      "inputs": {
+        "reportedValence": {
+          "type": "enum",
+          "label": "Самоописание: приятность",
+          "enum": [
+            "unpleasant",
+            "neutral",
+            "pleasant"
+          ],
+          "initial": null,
+          "nullable": true
+        },
+        "reportedArousal": {
+          "type": "enum",
+          "label": "Самоописание: возбуждение",
+          "enum": [
+            "low",
+            "moderate",
+            "high"
+          ],
+          "initial": null,
+          "nullable": true
+        },
+        "goal": {
+          "type": "enum",
+          "label": "Влияние на цель",
+          "enum": [
+            "hinders",
+            "supports",
+            "irrelevant"
+          ],
+          "initial": "hinders",
+          "nullable": true
+        },
+        "control": {
+          "type": "enum",
+          "label": "Возможность влиять",
+          "enum": [
+            "low",
+            "high"
+          ],
+          "initial": "low",
+          "nullable": true
+        },
+        "expectation": {
+          "type": "enum",
+          "label": "Ожидание исхода",
+          "enum": [
+            "unfavorable",
+            "favorable"
+          ],
+          "initial": null,
+          "nullable": true
+        }
+      },
+      "states": {
+        "baseline": {
+          "type": "object",
+          "nullable": true,
+          "initial": null,
+          "fields": {
+            "reportedValence": {
+              "type": "enum",
+              "label": "Самоописание: приятность",
+              "enum": [
+                "unpleasant",
+                "neutral",
+                "pleasant"
+              ],
+              "initial": null,
+              "nullable": true
+            },
+            "reportedArousal": {
+              "type": "enum",
+              "label": "Самоописание: возбуждение",
+              "enum": [
+                "low",
+                "moderate",
+                "high"
+              ],
+              "initial": null,
+              "nullable": true
+            },
+            "goal": {
+              "type": "enum",
+              "label": "Влияние на цель",
+              "enum": [
+                "hinders",
+                "supports",
+                "irrelevant"
+              ],
+              "initial": "hinders",
+              "nullable": true
+            },
+            "control": {
+              "type": "enum",
+              "label": "Возможность влиять",
+              "enum": [
+                "low",
+                "high"
+              ],
+              "initial": "low",
+              "nullable": true
+            },
+            "expectation": {
+              "type": "enum",
+              "label": "Ожидание исхода",
+              "enum": [
+                "unfavorable",
+                "favorable"
+              ],
+              "initial": null,
+              "nullable": true
+            }
+          }
+        },
+        "captures": {
+          "type": "number",
+          "integer": true,
+          "min": 0,
+          "initial": 0
+        }
+      },
+      "events": {
+        "capture": {
+          "assign": {
+            "state.baseline": {
+              "record": {
+                "reportedValence": {
+                  "ref": "input.reportedValence"
+                },
+                "reportedArousal": {
+                  "ref": "input.reportedArousal"
+                },
+                "goal": {
+                  "ref": "input.goal"
+                },
+                "control": {
+                  "ref": "input.control"
+                },
+                "expectation": {
+                  "ref": "input.expectation"
+                }
+              }
+            },
+            "state.captures": {
+              "op": "add",
+              "args": [
+                {
+                  "ref": "state.captures"
+                },
+                1
+              ]
+            }
+          },
+          "claimIds": [
+            "e-snapshot"
+          ]
+        }
+      },
+      "rules": [
+        {
+          "id": "changedFields",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "state.baseline"
+                  },
+                  null
+                ]
+              },
+              [],
+              {
+                "op": "compact",
+                "args": [
+                  [
+                    {
+                      "op": "if",
+                      "args": [
+                        {
+                          "op": "ne",
+                          "args": [
+                            {
+                              "ref": "input.reportedValence"
+                            },
+                            {
+                              "ref": "state.baseline.reportedValence"
+                            }
+                          ]
+                        },
+                        "reportedValence",
+                        null
+                      ]
+                    },
+                    {
+                      "op": "if",
+                      "args": [
+                        {
+                          "op": "ne",
+                          "args": [
+                            {
+                              "ref": "input.reportedArousal"
+                            },
+                            {
+                              "ref": "state.baseline.reportedArousal"
+                            }
+                          ]
+                        },
+                        "reportedArousal",
+                        null
+                      ]
+                    },
+                    {
+                      "op": "if",
+                      "args": [
+                        {
+                          "op": "ne",
+                          "args": [
+                            {
+                              "ref": "input.goal"
+                            },
+                            {
+                              "ref": "state.baseline.goal"
+                            }
+                          ]
+                        },
+                        "goal",
+                        null
+                      ]
+                    },
+                    {
+                      "op": "if",
+                      "args": [
+                        {
+                          "op": "ne",
+                          "args": [
+                            {
+                              "ref": "input.control"
+                            },
+                            {
+                              "ref": "state.baseline.control"
+                            }
+                          ]
+                        },
+                        "control",
+                        null
+                      ]
+                    },
+                    {
+                      "op": "if",
+                      "args": [
+                        {
+                          "op": "ne",
+                          "args": [
+                            {
+                              "ref": "input.expectation"
+                            },
+                            {
+                              "ref": "state.baseline.expectation"
+                            }
+                          ]
+                        },
+                        "expectation",
+                        null
+                      ]
+                    }
+                  ]
+                ]
+              }
+            ]
+          },
+          "claimIds": [
+            "e-snapshot"
+          ]
+        }
+      ],
+      "outputs": {
+        "dimensions": {
+          "expr": {
+            "ref": "adapter.dimensions"
+          },
+          "type": "object",
+          "claimIds": [
+            "e-dimensions",
+            "e-ordinal"
+          ],
+          "nullable": false
+        },
+        "appraisal": {
+          "expr": {
+            "ref": "adapter.appraisal"
+          },
+          "type": "object",
+          "claimIds": [
+            "e-appraisal",
+            "e-affordance"
+          ],
+          "nullable": false
+        },
+        "changedFields": {
+          "expr": {
+            "ref": "derived.changedFields"
+          },
+          "type": "array",
+          "claimIds": [
+            "e-snapshot"
+          ],
+          "nullable": false
+        },
+        "baseline": {
+          "expr": {
+            "ref": "state.baseline"
+          },
+          "type": "object",
+          "claimIds": [
+            "e-snapshot"
+          ],
+          "nullable": true
+        }
+      },
+      "assumptions": [
+        "e-unknown",
+        "e-isolation",
+        "e-affordance"
+      ],
+      "validityDomain": "Сопоставление двух ограниченных перспектив на одном учебном факте.",
+      "limitations": [
+        "Входы задаёт пользователь; они не выведены автоматически из задержки.",
+        "Изменение условий в модели не является наблюдением изменения реального переживания."
+      ],
+      "invariants": [
+        {
+          "id": "descriptive-category-not-inferred",
+          "expr": {
+            "op": "eq",
+            "args": [
+              {
+                "ref": "adapter.dimensions.emotionCategory"
+              },
+              null
+            ]
+          }
+        },
+        {
+          "id": "appraisal-category-not-inferred",
+          "expr": {
+            "op": "eq",
+            "args": [
+              {
+                "ref": "adapter.appraisal.emotionCategory"
+              },
+              null
+            ]
+          }
+        }
+      ],
+      "scenarioId": "delayed-result",
+      "adapterIds": [
+        "dimensions",
+        "appraisal"
+      ]
+    }
+  ],
+  "versions": [
+    {
+      "id": "emotions-dimensions.v0-1-0",
+      "modelId": "emotions-dimensions",
+      "version": "0.1.0",
+      "schemaVersion": "model-package/0.1",
+      "changeSummary": "Первый исполняемый пилот; учебные правила и ограничения отделены от положений теории."
+    },
+    {
+      "id": "emotions-appraisal.v0-1-0",
+      "modelId": "emotions-appraisal",
+      "version": "0.1.0",
+      "schemaVersion": "model-package/0.1",
+      "changeSummary": "Первый исполняемый пилот; учебные правила и ограничения отделены от положений теории."
+    },
+    {
+      "id": "emotions-comparison.v0-1-0",
+      "modelId": "emotions-comparison",
+      "version": "0.1.0",
+      "schemaVersion": "model-package/0.1",
+      "changeSummary": "Первый исполняемый пилот; учебные правила и ограничения отделены от положений теории."
+    }
+  ],
+  "scenarios": [
+    {
+      "id": "delayed-result",
+      "label": "Результат задерживается",
+      "fact": "Результат работы задерживается, срок неизвестен. Это общий факт для обеих перспектив.",
+      "fields": {
+        "reportedValence": {
+          "type": "enum",
+          "label": "Самоописание: приятность",
+          "enum": [
+            "unpleasant",
+            "neutral",
+            "pleasant"
+          ],
+          "initial": null,
+          "nullable": true
+        },
+        "reportedArousal": {
+          "type": "enum",
+          "label": "Самоописание: возбуждение",
+          "enum": [
+            "low",
+            "moderate",
+            "high"
+          ],
+          "initial": null,
+          "nullable": true
+        },
+        "goal": {
+          "type": "enum",
+          "label": "Влияние на цель",
+          "enum": [
+            "hinders",
+            "supports",
+            "irrelevant"
+          ],
+          "initial": "hinders",
+          "nullable": true
+        },
+        "control": {
+          "type": "enum",
+          "label": "Возможность влиять",
+          "enum": [
+            "low",
+            "high"
+          ],
+          "initial": "low",
+          "nullable": true
+        },
+        "expectation": {
+          "type": "enum",
+          "label": "Ожидание исхода",
+          "enum": [
+            "unfavorable",
+            "favorable"
+          ],
+          "initial": null,
+          "nullable": true
+        }
+      },
+      "claimIds": [
+        "e-scenario-claim"
+      ]
+    }
+  ],
+  "adapters": [
+    {
+      "id": "dimensions",
+      "theoryId": "russell-descriptive",
+      "modelId": "emotions-dimensions",
+      "scenarioId": "delayed-result",
+      "mapping": {
+        "valence": "reportedValence",
+        "arousal": "reportedArousal"
+      },
+      "claimIds": [
+        "e-isolation"
+      ]
+    },
+    {
+      "id": "appraisal",
+      "theoryId": "appraisal-qualitative",
+      "modelId": "emotions-appraisal",
+      "scenarioId": "delayed-result",
+      "mapping": {
+        "goal": "goal",
+        "control": "control",
+        "expectation": "expectation"
+      },
+      "claimIds": [
+        "e-isolation"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1139 @@
+{
+  "schemaVersion": "model-package/0.1",
+  "id": "berne-pilot",
+  "theories": [
+    {
+      "id": "berne-structural",
+      "label": "Берн · структурная модель и трансакции",
+      "scope": "Разметка эго-состояний задана пользователем, не распознаётся из речи.",
+      "sourceIds": [
+        "b-atlas",
+        "b-overview"
+      ]
+    },
+    {
+      "id": "berne-functional",
+      "label": "Функциональное описание поведения",
+      "scope": "Наблюдаемые способы проявления; не синоним происхождения опыта.",
+      "sourceIds": [
+        "b-atlas",
+        "b-handbook"
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "id": "b-parent",
+      "term": "Родитель",
+      "theoryId": "berne-structural",
+      "definition": "Усвоенные образцы значимых взрослых.",
+      "sourceIds": [
+        "b-atlas"
+      ],
+      "atlasBinding": {
+        "atlas": "berne",
+        "conceptId": "parent"
+      }
+    },
+    {
+      "id": "b-adult",
+      "term": "Взрослый",
+      "theoryId": "berne-structural",
+      "definition": "Обработка текущей информации и действительности.",
+      "sourceIds": [
+        "b-atlas"
+      ],
+      "atlasBinding": {
+        "atlas": "berne",
+        "conceptId": "adult"
+      }
+    },
+    {
+      "id": "b-child",
+      "term": "Ребёнок",
+      "theoryId": "berne-structural",
+      "definition": "Переживания и способы реагирования раннего опыта.",
+      "sourceIds": [
+        "b-atlas"
+      ],
+      "atlasBinding": {
+        "atlas": "berne",
+        "conceptId": "child"
+      }
+    },
+    {
+      "id": "b-stimulus",
+      "term": "Стимул",
+      "theoryId": "berne-structural",
+      "definition": "Обращение участника к определённому эго-состоянию другого.",
+      "sourceIds": [
+        "b-atlas"
+      ],
+      "atlasBinding": {
+        "atlas": "berne",
+        "conceptId": "stim"
+      }
+    },
+    {
+      "id": "b-response",
+      "term": "Ответ",
+      "theoryId": "berne-structural",
+      "definition": "Ответное обращение другого участника.",
+      "sourceIds": [
+        "b-atlas"
+      ],
+      "atlasBinding": {
+        "atlas": "berne",
+        "conceptId": "resp"
+      }
+    },
+    {
+      "id": "b-transaction",
+      "term": "Трансакция",
+      "theoryId": "berne-structural",
+      "definition": "Единица обмена стимулом и ответом.",
+      "sourceIds": [
+        "b-atlas"
+      ],
+      "atlasBinding": {
+        "atlas": "berne",
+        "conceptId": "trans"
+      }
+    },
+    {
+      "id": "b-functional-parent",
+      "term": "Родитель",
+      "theoryId": "berne-functional",
+      "definition": "Функциональные формы контроля и заботы; этот смысл не равен структурному происхождению опыта.",
+      "sourceIds": [
+        "b-atlas",
+        "b-handbook"
+      ],
+      "atlasBinding": {
+        "atlas": "berne",
+        "conceptId": "func"
+      }
+    },
+    {
+      "id": "b-functional-child",
+      "term": "Ребёнок",
+      "theoryId": "berne-functional",
+      "definition": "Функциональные формы спонтанности и адаптации.",
+      "sourceIds": [
+        "b-atlas",
+        "b-handbook"
+      ]
+    }
+  ],
+  "claims": [
+    {
+      "id": "b-reversal",
+      "theoryId": "berne-structural",
+      "text": "Дополнительный ответ возвращается из адресованного эго-состояния к исходному состоянию отправителя.",
+      "status": "accepted-within-theory",
+      "sourceIds": [
+        "b-atlas",
+        "b-overview"
+      ],
+      "scope": "Пара заданных векторов одного уровня.",
+      "limitation": "Формальная классификация не устанавливает эго-состояния реальных людей.",
+      "predicate": "complementary-iff-reversed-endpoints",
+      "roles": [
+        {
+          "role": "stimulus",
+          "conceptId": "b-stimulus"
+        },
+        {
+          "role": "response",
+          "conceptId": "b-response"
+        },
+        {
+          "role": "unit",
+          "conceptId": "b-transaction"
+        }
+      ]
+    },
+    {
+      "id": "b-crossed",
+      "theoryId": "berne-structural",
+      "text": "Если источник или адресат ответа не совпадает с ожидаемым обратным вектором, трансакция классифицируется как пересекающаяся.",
+      "status": "accepted-within-theory",
+      "sourceIds": [
+        "b-atlas",
+        "b-overview"
+      ],
+      "scope": "Один явно заданный уровень.",
+      "limitation": "Пересечение нарисованных линий само по себе не определяет класс.",
+      "predicate": "mismatch",
+      "roles": [
+        {
+          "role": "stimulus",
+          "conceptId": "b-stimulus"
+        },
+        {
+          "role": "response",
+          "conceptId": "b-response"
+        },
+        {
+          "role": "unit",
+          "conceptId": "b-transaction"
+        }
+      ]
+    },
+    {
+      "id": "b-hidden",
+      "theoryId": "berne-structural",
+      "text": "Скрытая трансакция рассматривает социальное и психологическое сообщения одновременно.",
+      "status": "accepted-within-theory",
+      "sourceIds": [
+        "b-atlas",
+        "b-overview"
+      ],
+      "scope": "Два явно различаемых уровня.",
+      "limitation": "Программа не обнаруживает скрытый мотив: наличие второго уровня задаётся как учебная гипотеза.",
+      "predicate": "two-levels",
+      "roles": [
+        {
+          "role": "stimulus",
+          "conceptId": "b-stimulus"
+        },
+        {
+          "role": "response",
+          "conceptId": "b-response"
+        },
+        {
+          "role": "unit",
+          "conceptId": "b-transaction"
+        }
+      ]
+    },
+    {
+      "id": "b-no-prediction",
+      "theoryId": "berne-structural",
+      "text": "Из класса одной пары векторов нельзя вычислить, продолжится ли общение.",
+      "status": "didactic",
+      "sourceIds": [
+        "b-design"
+      ],
+      "scope": "Граница данного вычислительного пилота.",
+      "limitation": "Пересекающийся ответ может потребовать изменения позиции; прекращение разговора не запрограммировано.",
+      "predicate": "limits-inference",
+      "roles": [
+        {
+          "role": "stimulus",
+          "conceptId": "b-stimulus"
+        },
+        {
+          "role": "response",
+          "conceptId": "b-response"
+        },
+        {
+          "role": "unit",
+          "conceptId": "b-transaction"
+        }
+      ]
+    },
+    {
+      "id": "b-structural",
+      "theoryId": "berne-structural",
+      "text": "Структурная модель различает Родителя, Взрослого и Ребёнка по происхождению опыта.",
+      "status": "accepted-within-theory",
+      "sourceIds": [
+        "b-atlas",
+        "b-handbook"
+      ],
+      "scope": "Первый порядок структурной модели.",
+      "limitation": "Родитель и Ребёнок — названия эго-состояний, не возраст или роль участника.",
+      "predicate": "describes",
+      "roles": [
+        {
+          "role": "parent",
+          "conceptId": "b-parent"
+        },
+        {
+          "role": "adult",
+          "conceptId": "b-adult"
+        },
+        {
+          "role": "child",
+          "conceptId": "b-child"
+        }
+      ]
+    },
+    {
+      "id": "b-functional",
+      "theoryId": "berne-functional",
+      "text": "Функциональное описание различает контроль, заботу, спонтанность и адаптацию; оно отвечает на вопрос о проявлении поведения.",
+      "status": "accepted-within-theory",
+      "sourceIds": [
+        "b-atlas",
+        "b-handbook"
+      ],
+      "scope": "Функциональная модель исходного атласа.",
+      "limitation": "Поведенческая пометка не переопределяет структурную гипотезу автоматически.",
+      "predicate": "describes",
+      "roles": [
+        {
+          "role": "parent",
+          "conceptId": "b-functional-parent"
+        },
+        {
+          "role": "child",
+          "conceptId": "b-functional-child"
+        }
+      ]
+    },
+    {
+      "id": "b-didactic",
+      "theoryId": "berne-structural",
+      "text": "Выбор состояний и второго уровня — условие мысленного опыта; измените ответ и проверьте правило.",
+      "status": "didactic",
+      "sourceIds": [
+        "b-design"
+      ],
+      "scope": "Два участника, один стимул и один ответ на каждом уровне.",
+      "limitation": "Нет распознавания речи, клинической диагностики, причинных вероятностей или модели личности.",
+      "predicate": "stipulates",
+      "roles": [
+        {
+          "role": "stimulus",
+          "conceptId": "b-stimulus"
+        },
+        {
+          "role": "response",
+          "conceptId": "b-response"
+        },
+        {
+          "role": "unit",
+          "conceptId": "b-transaction"
+        }
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "b-relation-response",
+      "predicate": "expected-response",
+      "roles": [
+        {
+          "role": "stimulus",
+          "conceptId": "b-stimulus"
+        },
+        {
+          "role": "response",
+          "conceptId": "b-response"
+        },
+        {
+          "role": "unit",
+          "conceptId": "b-transaction"
+        }
+      ],
+      "claimIds": [
+        "b-reversal"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "b-atlas",
+      "title": "Исходный атлас Берна",
+      "kind": "atlas",
+      "locator": "public/berne_nodes.csv: строки 4–12, 17–22",
+      "access": "public",
+      "verification": "Нормализованная экспериментальная сеть. Библиография и страницы исходного CSV неизвестны."
+    },
+    {
+      "id": "b-overview",
+      "title": "EricBerne.com: Transactional Analysis",
+      "kind": "overview",
+      "locator": "Разделы Ego States / Transactions",
+      "access": "public",
+      "verification": "Проверены определения векторов и двух уровней; обзор, не эмпирическая калибровка.",
+      "url": "https://ericberne.com/transactional-analysis/"
+    },
+    {
+      "id": "b-handbook",
+      "title": "ITAA IBOC Handbook, 2024",
+      "kind": "professional-standard",
+      "locator": "§4.3.2, вопросы 2a/2b/3: structural vs functional, transactions",
+      "access": "public",
+      "verification": "Проверено раздельное рассмотрение структурной/функциональной моделей; не доказательство диагностики.",
+      "url": "https://itaaworld.com/wp-admin/iboc-forms/Handbook_Binder_Nov_2024.pdf"
+    },
+    {
+      "id": "b-design",
+      "title": "Правила учебного пилота Model Laboratory",
+      "kind": "design",
+      "locator": "docs/model-lab/DESIGN.md",
+      "access": "public",
+      "verification": "Сверено с указанным материалом; не независимая экспертиза."
+    }
+  ],
+  "mechanisms": [
+    {
+      "id": "b-vector-mechanism",
+      "theoryId": "berne-structural",
+      "claimIds": [
+        "b-reversal",
+        "b-crossed",
+        "b-hidden"
+      ],
+      "conceptIds": [
+        "b-stimulus",
+        "b-response",
+        "b-transaction"
+      ],
+      "description": "Вычислить обратный вектор и проверить равенство обоих концов на каждом уровне."
+    }
+  ],
+  "models": [
+    {
+      "id": "berne-transactions",
+      "version": "0.1.0",
+      "label": "Векторы трансакции",
+      "engine": "rules-v1",
+      "theoryId": "berne-structural",
+      "mechanismIds": [
+        "b-vector-mechanism"
+      ],
+      "conceptIds": [
+        "b-stimulus",
+        "b-response",
+        "b-transaction"
+      ],
+      "claimIds": [
+        "b-reversal",
+        "b-crossed",
+        "b-hidden",
+        "b-no-prediction",
+        "b-structural",
+        "b-functional",
+        "b-didactic"
+      ],
+      "sourceIds": [
+        "b-atlas",
+        "b-overview",
+        "b-handbook",
+        "b-design"
+      ],
+      "inputs": {
+        "initiator": {
+          "type": "enum",
+          "label": "Инициатор",
+          "enum": [
+            "left",
+            "right"
+          ],
+          "initial": "left",
+          "nullable": false
+        },
+        "stimulusFrom": {
+          "type": "enum",
+          "label": "Стимул: из",
+          "enum": [
+            "P",
+            "A",
+            "C"
+          ],
+          "initial": "A",
+          "nullable": false
+        },
+        "stimulusTo": {
+          "type": "enum",
+          "label": "Стимул: к",
+          "enum": [
+            "P",
+            "A",
+            "C"
+          ],
+          "initial": "A",
+          "nullable": false
+        },
+        "responseFrom": {
+          "type": "enum",
+          "label": "Ответ: из",
+          "enum": [
+            "P",
+            "A",
+            "C"
+          ],
+          "initial": "A",
+          "nullable": false
+        },
+        "responseTo": {
+          "type": "enum",
+          "label": "Ответ: к",
+          "enum": [
+            "P",
+            "A",
+            "C"
+          ],
+          "initial": "A",
+          "nullable": false
+        },
+        "hidden": {
+          "type": "boolean",
+          "label": "Задать гипотезу психологического уровня",
+          "initial": false
+        },
+        "psychStimulusFrom": {
+          "type": "enum",
+          "label": "Психологический стимул: из",
+          "enum": [
+            "P",
+            "A",
+            "C"
+          ],
+          "initial": "C",
+          "nullable": true
+        },
+        "psychStimulusTo": {
+          "type": "enum",
+          "label": "Психологический стимул: к",
+          "enum": [
+            "P",
+            "A",
+            "C"
+          ],
+          "initial": "C",
+          "nullable": true
+        },
+        "psychResponseFrom": {
+          "type": "enum",
+          "label": "Психологический ответ: из",
+          "enum": [
+            "P",
+            "A",
+            "C"
+          ],
+          "initial": "C",
+          "nullable": true
+        },
+        "psychResponseTo": {
+          "type": "enum",
+          "label": "Психологический ответ: к",
+          "enum": [
+            "P",
+            "A",
+            "C"
+          ],
+          "initial": "C",
+          "nullable": true
+        },
+        "leftFunction": {
+          "type": "enum",
+          "label": "Функциональная пометка участника 1",
+          "enum": [
+            "controlling",
+            "nurturing",
+            "adult",
+            "free",
+            "adapted"
+          ],
+          "initial": null,
+          "nullable": true
+        },
+        "rightFunction": {
+          "type": "enum",
+          "label": "Функциональная пометка участника 2",
+          "enum": [
+            "controlling",
+            "nurturing",
+            "adult",
+            "free",
+            "adapted"
+          ],
+          "initial": null,
+          "nullable": true
+        }
+      },
+      "states": {},
+      "events": {
+        "swap-roles": {
+          "assign": {
+            "input.initiator": {
+              "op": "if",
+              "args": [
+                {
+                  "op": "eq",
+                  "args": [
+                    {
+                      "ref": "input.initiator"
+                    },
+                    "left"
+                  ]
+                },
+                "right",
+                "left"
+              ]
+            }
+          },
+          "claimIds": [
+            "b-didactic"
+          ]
+        }
+      },
+      "rules": [
+        {
+          "id": "responder",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "input.initiator"
+                  },
+                  "left"
+                ]
+              },
+              "right",
+              "left"
+            ]
+          },
+          "claimIds": [
+            "b-didactic"
+          ]
+        },
+        {
+          "id": "stimulus",
+          "expr": {
+            "record": {
+              "sender": {
+                "ref": "input.initiator"
+              },
+              "source": {
+                "ref": "input.stimulusFrom"
+              },
+              "receiver": {
+                "ref": "derived.responder"
+              },
+              "target": {
+                "ref": "input.stimulusTo"
+              }
+            }
+          },
+          "claimIds": [
+            "b-didactic"
+          ]
+        },
+        {
+          "id": "response",
+          "expr": {
+            "record": {
+              "sender": {
+                "ref": "derived.responder"
+              },
+              "source": {
+                "ref": "input.responseFrom"
+              },
+              "receiver": {
+                "ref": "input.initiator"
+              },
+              "target": {
+                "ref": "input.responseTo"
+              }
+            }
+          },
+          "claimIds": [
+            "b-didactic"
+          ]
+        },
+        {
+          "id": "expected",
+          "expr": {
+            "record": {
+              "sender": {
+                "ref": "derived.responder"
+              },
+              "source": {
+                "ref": "input.stimulusTo"
+              },
+              "receiver": {
+                "ref": "input.initiator"
+              },
+              "target": {
+                "ref": "input.stimulusFrom"
+              }
+            }
+          },
+          "claimIds": [
+            "b-reversal"
+          ]
+        },
+        {
+          "id": "sourceMatch",
+          "expr": {
+            "op": "eq",
+            "args": [
+              {
+                "ref": "input.responseFrom"
+              },
+              {
+                "ref": "input.stimulusTo"
+              }
+            ]
+          },
+          "claimIds": [
+            "b-reversal"
+          ]
+        },
+        {
+          "id": "targetMatch",
+          "expr": {
+            "op": "eq",
+            "args": [
+              {
+                "ref": "input.responseTo"
+              },
+              {
+                "ref": "input.stimulusFrom"
+              }
+            ]
+          },
+          "claimIds": [
+            "b-reversal"
+          ]
+        },
+        {
+          "id": "socialClass",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "op": "and",
+                "args": [
+                  {
+                    "ref": "derived.sourceMatch"
+                  },
+                  {
+                    "ref": "derived.targetMatch"
+                  }
+                ]
+              },
+              "complementary",
+              "crossed"
+            ]
+          },
+          "claimIds": [
+            "b-reversal",
+            "b-crossed"
+          ]
+        },
+        {
+          "id": "psychKnown",
+          "expr": {
+            "op": "and",
+            "args": [
+              {
+                "ref": "input.hidden"
+              },
+              {
+                "op": "known",
+                "args": [
+                  {
+                    "ref": "input.psychStimulusFrom"
+                  },
+                  {
+                    "ref": "input.psychStimulusTo"
+                  },
+                  {
+                    "ref": "input.psychResponseFrom"
+                  },
+                  {
+                    "ref": "input.psychResponseTo"
+                  }
+                ]
+              }
+            ]
+          },
+          "claimIds": [
+            "b-didactic"
+          ]
+        },
+        {
+          "id": "psychStimulus",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "ref": "input.hidden"
+              },
+              {
+                "record": {
+                  "sender": {
+                    "ref": "input.initiator"
+                  },
+                  "source": {
+                    "ref": "input.psychStimulusFrom"
+                  },
+                  "receiver": {
+                    "ref": "derived.responder"
+                  },
+                  "target": {
+                    "ref": "input.psychStimulusTo"
+                  }
+                }
+              },
+              null
+            ]
+          },
+          "claimIds": [
+            "b-hidden"
+          ]
+        },
+        {
+          "id": "psychResponse",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "ref": "input.hidden"
+              },
+              {
+                "record": {
+                  "sender": {
+                    "ref": "derived.responder"
+                  },
+                  "source": {
+                    "ref": "input.psychResponseFrom"
+                  },
+                  "receiver": {
+                    "ref": "input.initiator"
+                  },
+                  "target": {
+                    "ref": "input.psychResponseTo"
+                  }
+                }
+              },
+              null
+            ]
+          },
+          "claimIds": [
+            "b-hidden"
+          ]
+        },
+        {
+          "id": "psychExpected",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "ref": "input.hidden"
+              },
+              {
+                "record": {
+                  "sender": {
+                    "ref": "derived.responder"
+                  },
+                  "source": {
+                    "ref": "input.psychStimulusTo"
+                  },
+                  "receiver": {
+                    "ref": "input.initiator"
+                  },
+                  "target": {
+                    "ref": "input.psychStimulusFrom"
+                  }
+                }
+              },
+              null
+            ]
+          },
+          "claimIds": [
+            "b-reversal",
+            "b-hidden"
+          ]
+        },
+        {
+          "id": "psychClass",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "ref": "derived.psychKnown"
+              },
+              {
+                "op": "if",
+                "args": [
+                  {
+                    "op": "and",
+                    "args": [
+                      {
+                        "op": "eq",
+                        "args": [
+                          {
+                            "ref": "input.psychResponseFrom"
+                          },
+                          {
+                            "ref": "input.psychStimulusTo"
+                          }
+                        ]
+                      },
+                      {
+                        "op": "eq",
+                        "args": [
+                          {
+                            "ref": "input.psychResponseTo"
+                          },
+                          {
+                            "ref": "input.psychStimulusFrom"
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  "complementary",
+                  "crossed"
+                ]
+              },
+              "not-represented"
+            ]
+          },
+          "claimIds": [
+            "b-reversal",
+            "b-hidden"
+          ]
+        },
+        {
+          "id": "kind",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "ref": "input.hidden"
+              },
+              "ulterior",
+              {
+                "ref": "derived.socialClass"
+              }
+            ]
+          },
+          "claimIds": [
+            "b-hidden",
+            "b-crossed",
+            "b-reversal"
+          ]
+        }
+      ],
+      "outputs": {
+        "stimulus": {
+          "expr": {
+            "ref": "derived.stimulus"
+          },
+          "type": "object",
+          "claimIds": [
+            "b-didactic"
+          ],
+          "nullable": false
+        },
+        "response": {
+          "expr": {
+            "ref": "derived.response"
+          },
+          "type": "object",
+          "claimIds": [
+            "b-didactic"
+          ],
+          "nullable": false
+        },
+        "expected": {
+          "expr": {
+            "ref": "derived.expected"
+          },
+          "type": "object",
+          "claimIds": [
+            "b-reversal"
+          ],
+          "nullable": false
+        },
+        "psychStimulus": {
+          "expr": {
+            "ref": "derived.psychStimulus"
+          },
+          "type": "object",
+          "claimIds": [
+            "b-hidden"
+          ],
+          "nullable": true
+        },
+        "psychResponse": {
+          "expr": {
+            "ref": "derived.psychResponse"
+          },
+          "type": "object",
+          "claimIds": [
+            "b-hidden"
+          ],
+          "nullable": true
+        },
+        "psychExpected": {
+          "expr": {
+            "ref": "derived.psychExpected"
+          },
+          "type": "object",
+          "claimIds": [
+            "b-hidden"
+          ],
+          "nullable": true
+        },
+        "kind": {
+          "expr": {
+            "ref": "derived.kind"
+          },
+          "type": "string",
+          "claimIds": [
+            "b-reversal",
+            "b-hidden"
+          ],
+          "nullable": false
+        },
+        "socialClass": {
+          "expr": {
+            "ref": "derived.socialClass"
+          },
+          "type": "string",
+          "claimIds": [
+            "b-reversal",
+            "b-hidden"
+          ],
+          "nullable": false
+        },
+        "psychClass": {
+          "expr": {
+            "ref": "derived.psychClass"
+          },
+          "type": "string",
+          "claimIds": [
+            "b-reversal",
+            "b-hidden"
+          ],
+          "nullable": false
+        },
+        "sourceMatch": {
+          "expr": {
+            "ref": "derived.sourceMatch"
+          },
+          "type": "boolean",
+          "claimIds": [
+            "b-reversal"
+          ],
+          "nullable": false
+        },
+        "targetMatch": {
+          "expr": {
+            "ref": "derived.targetMatch"
+          },
+          "type": "boolean",
+          "claimIds": [
+            "b-reversal"
+          ],
+          "nullable": false
+        },
+        "functional": {
+          "expr": {
+            "record": {
+              "left": {
+                "ref": "input.leftFunction"
+              },
+              "right": {
+                "ref": "input.rightFunction"
+              }
+            }
+          },
+          "type": "object",
+          "claimIds": [
+            "b-functional"
+          ],
+          "nullable": false
+        }
+      },
+      "assumptions": [
+        "b-didactic",
+        "b-no-prediction"
+      ],
+      "validityDomain": "Учебная проверка заданных векторов; не анализ реальной беседы.",
+      "limitations": [
+        "Один стимул/ответ; не моделируются игры и история отношений.",
+        "Скрытый уровень задан, а не обнаружен.",
+        "Структурные состояния не выводятся из функциональной пометки."
+      ],
+      "invariants": [
+        {
+          "id": "different-participants",
+          "expr": {
+            "op": "ne",
+            "args": [
+              {
+                "ref": "input.initiator"
+              },
+              {
+                "ref": "derived.responder"
+              }
+            ]
+          }
+        },
+        {
+          "id": "complementary-iff-both-match",
+          "expr": {
+            "op": "eq",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "derived.socialClass"
+                  },
+                  "complementary"
+                ]
+              },
+              {
+                "op": "and",
+                "args": [
+                  {
+                    "ref": "derived.sourceMatch"
+                  },
+                  {
+                    "ref": "derived.targetMatch"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "hidden-is-stipulated",
+          "expr": {
+            "op": "eq",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "derived.kind"
+                  },
+                  "ulterior"
+                ]
+              },
+              {
+                "ref": "input.hidden"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "versions": [
+    {
+      "id": "berne-transactions.v0-1-0",
+      "modelId": "berne-transactions",
+      "version": "0.1.0",
+      "schemaVersion": "model-package/0.1",
+      "changeSummary": "Первый исполняемый пилот; учебные правила и ограничения отделены от положений теории."
+    }
+  ],
+  "scenarios": [],
+  "adapters": []
+}
