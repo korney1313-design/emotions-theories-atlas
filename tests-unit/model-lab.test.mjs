@@ -58,6 +58,32 @@ test("unknown provenance must be explicit and cannot be silently accepted", () =
   p.claims[0].status = "candidate";
   assert.equal(validatePackage(p).valid, true);
 });
+test("source spans identify a listed source, locator, basis and review status", () => {
+  for (const p of [bp(), ep()]) {
+    assert.equal(validatePackage(p).valid, true);
+    assert.ok(p.claims.some((c) => c.sourceSpan?.status === "didactic"));
+    assert.ok(p.models.some((m) => m.rules.some((r) => r.sourceSpan)));
+  }
+  const valid = bp().claims.find((c) => c.sourceSpan).sourceSpan;
+  for (const span of [
+    null,
+    { ...valid, sourceId: "absent" },
+    { ...valid, sourceId: "b-overview" },
+    { ...valid, locator: "" },
+    { ...valid, locator: "line 1\nsecret text" },
+    { ...valid, basis: "experiment" },
+    { ...valid, status: "verified-science" },
+    { ...valid, excerpt: "unreviewed material" },
+  ]) {
+    const p = bp();
+    p.claims.find((c) => c.sourceSpan).sourceSpan = span;
+    assert.equal(validatePackage(p).valid, false);
+  }
+  const p = ep();
+  p.models.find((m) => m.id === "emotions-appraisal")
+    .rules.find((r) => r.sourceSpan).sourceSpan.sourceId = "e-russell";
+  assert.equal(validatePackage(p).valid, false);
+});
 test("all 81 structural stimulus/response pairs: endpoints determine class, not drawn geometry", () => {
   const r = startLaboratory("berne-transactions");
   let checked = 0;
@@ -121,11 +147,53 @@ test("ulterior hypothesis preserves both levels; incomplete psychology remains u
   assert.equal(o.psychStimulus.source, "C");
   assert.equal(o.psychResponse.source, "P");
   r.intervene("psychStimulusTo", null);
+  assert.equal(r.getObservables().kind, "insufficient-data");
   assert.equal(r.getObservables().psychClass, "not-represented");
   assert.equal(r.getObservables().psychExpected.source, null);
   r.intervene("hidden", false);
   assert.equal(r.getObservables().psychStimulus, null);
   assert.equal(r.getObservables().kind, "complementary");
+});
+test("all psychological endpoint combinations preserve unknowns and role symmetry", () => {
+  const r = startLaboratory("berne-transactions");
+  const values = ["P", "A", "C", null];
+  let checked = 0;
+  for (const initiator of ["left", "right"])
+    for (const stimulusFrom of values)
+      for (const stimulusTo of values)
+        for (const responseFrom of values)
+          for (const responseTo of values) {
+            r.reset({
+              initiator,
+              hidden: true,
+              psychStimulusFrom: stimulusFrom,
+              psychStimulusTo: stimulusTo,
+              psychResponseFrom: responseFrom,
+              psychResponseTo: responseTo,
+            });
+            const before = r.getObservables();
+            const known = [stimulusFrom, stimulusTo, responseFrom, responseTo]
+              .every((v) => v !== null);
+            assert.equal(before.kind, known ? "ulterior" : "insufficient-data");
+            assert.equal(
+              before.psychClass,
+              known
+                ? responseFrom === stimulusTo && responseTo === stimulusFrom
+                  ? "complementary"
+                  : "crossed"
+                : "not-represented",
+            );
+            r.step("swap-roles");
+            const after = r.getObservables();
+            assert.equal(after.kind, before.kind);
+            assert.equal(after.psychClass, before.psychClass);
+            assert.notEqual(after.stimulus.sender, before.stimulus.sender);
+            r.intervene("hidden", false);
+            assert.equal(r.getObservables().kind, before.socialClass);
+            assert.equal(r.getObservables().psychStimulus, null);
+            checked++;
+          }
+  assert.equal(checked, 512);
 });
 test("functional annotations do not silently reclassify structural transactions", () => {
   const r = startLaboratory("berne-transactions"),
@@ -186,6 +254,8 @@ test("rejected interventions/events/invariants are atomic", () => {
     () => r.step({ type: "swap-roles", payload: 1 }),
     () => r.step("absent"),
     () => r.reset({ hidden: "yes" }),
+    () => r.reset({ psychStimulusFrom: "unknown-state" }),
+    () => r.intervene("leftFunction", "unknown-state"),
     () => r.reset({}, NaN),
   ])
     assert.throws(f);

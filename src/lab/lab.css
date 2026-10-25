@@ -366,6 +366,10 @@
   border-left: 3px solid #7da78e;
   font-size: 11px;
 }
+.lab-didactic-tag {
+  color: #315b53;
+  font-weight: 700;
+}
 .lab-counterfactual {
   margin-top: 14px;
 }
@@ -424,6 +428,13 @@
   font-size: 10px;
   color: #728479;
 }
+.lab-source-span {
+  display: block;
+  color: #526b61;
+  font-size: 11px;
+  line-height: 1.45;
+  margin: 7px 0;
+}
 .lab-trace-rule {
   display: grid;
   grid-template-columns: minmax(150px, 1fr) minmax(0, 2fr);
@@ -436,6 +447,10 @@
 }
 .lab-trace-rule .lab-citations {
   grid-column: 1/-1;
+}
+.lab-trace-rule .lab-source-span {
+  grid-column: 1/-1;
+  margin: 0;
 }
 .lab-trace-adapter h4 {
   margin: 18px 0 6px;

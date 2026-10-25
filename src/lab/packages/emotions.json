@@ -199,6 +199,12 @@
       "text": "Для помехи цели возможность влияния меняет учебные варианты: изменение условий или поддержка и адаптация. Если задержка помогает цели, рассматривается использование дополнительного времени.",
       "status": "didactic",
       "sourceIds": ["e-lecture", "e-design"],
+      "sourceSpan": {
+        "sourceId": "e-design",
+        "locator": "docs/model-lab/DESIGN.md, раздел Pilot 2: emotions, предложение 3",
+        "basis": "project-design",
+        "status": "didactic"
+      },
       "scope": "Учебный набор вариантов ответа в сценарии задержки.",
       "limitation": "Набор не предсказывает реальное действие, эмоцию, эффективность стратегии или единственно правильный выбор.",
       "predicate": "illustrative-affordance-rule",
@@ -840,7 +846,13 @@
               }
             ]
           },
-          "claimIds": ["e-affordance"]
+          "claimIds": ["e-affordance"],
+          "sourceSpan": {
+            "sourceId": "e-design",
+            "locator": "docs/model-lab/DESIGN.md, раздел Pilot 2: emotions, предложение 3",
+            "basis": "project-design",
+            "status": "didactic"
+          }
         }
       ],
       "outputs": {

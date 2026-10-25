@@ -6,6 +6,13 @@ export const CLAIM_STATUSES = [
   "didactic",
   "candidate",
 ];
+export const SOURCE_SPAN_STATUSES = ["reviewed", "candidate", "didactic"];
+export const SOURCE_BASIS = [
+  "theoretical-text",
+  "lecture",
+  "atlas-data",
+  "project-design",
+];
 // Declarative entity vocabulary plus semantic cross-reference validation below.
 export const ENTITY_SCHEMA = {
   theories: ["id", "label", "scope", "sourceIds"],
@@ -148,6 +155,39 @@ function validatePackageInternal(pkg) {
       require(maps[kind].has(id), `${label}: unknown ${kind} ${id}`),
     );
   }
+  function sourceSpan(span, sourceIds, label) {
+    if (span === undefined) return;
+    if (!plain(span)) {
+      fail(`${label}: sourceSpan must be an object`);
+      return;
+    }
+    require(
+      Object.keys(span).every((key) =>
+        ["sourceId", "locator", "basis", "status"].includes(key),
+      ),
+      `${label}: sourceSpan has unknown fields`,
+    );
+    require(
+      nonempty(span.sourceId) &&
+        maps.sources.has(span.sourceId) &&
+        sourceIds?.includes(span.sourceId),
+      `${label}: sourceSpan must reference a listed source`,
+    );
+    require(
+      nonempty(span.locator) &&
+        span.locator.length <= 240 &&
+        !/[\r\n]/.test(span.locator),
+      `${label}: sourceSpan needs a short exact locator`,
+    );
+    require(
+      SOURCE_BASIS.includes(span.basis),
+      `${label}: invalid sourceSpan basis`,
+    );
+    require(
+      SOURCE_SPAN_STATUSES.includes(span.status),
+      `${label}: invalid sourceSpan status`,
+    );
+  }
   const theory = (v, label) =>
     require(maps.theories.has(v), `${label}: unknown theory ${v}`);
   function roles(roles, label) {
@@ -181,6 +221,7 @@ function validatePackageInternal(pkg) {
     require(CLAIM_STATUSES.includes(c.status), `${c.id}: invalid status`);
     roles(c.roles, c.id);
     refs(c.sourceIds, "sources", c.id);
+    sourceSpan(c.sourceSpan, c.sourceIds, c.id);
     require(c.sourceIds?.length > 0 ||
       nonempty(
         c.unknownProvenance,
@@ -319,6 +360,7 @@ function validatePackageInternal(pkg) {
       require(safeKey(r.id) &&
         !roots.derived.has(r.id), `${m.id}: invalid/duplicate rule`);
       refs(r.claimIds, "claims", r.id, true);
+      sourceSpan(r.sourceSpan, m.sourceIds, `${m.id}.${r.id}`);
       expression(r.expr, `${m.id}.${r.id}`, roots);
       roots.derived.add(r.id);
     }

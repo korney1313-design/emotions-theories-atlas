@@ -21,6 +21,7 @@ const words = {
   complementary: "Дополнительная",
   crossed: "Пересекающаяся",
   ulterior: "Скрытая · задана гипотезой",
+  "insufficient-data": "Скрытый уровень · данных недостаточно",
   "not-represented": "Не представлено",
   unpleasant: "Неприятно",
   neutral: "Нейтрально",
@@ -62,6 +63,21 @@ const statuses = {
   didactic: "Учебная операционализация",
   candidate: "Кандидат · требует проверки",
 };
+const spanStatuses = {
+  reviewed: "Локатор проверен",
+  candidate: "Локатор требует проверки",
+  didactic: "Фрагмент учебного правила",
+};
+const spanBasis = {
+  "theoretical-text": "Теоретический текст",
+  lecture: "Материал лекции",
+  "atlas-data": "Данные атласа",
+  "project-design": "Проектное учебное правило",
+};
+const spanNote = (span) =>
+  span
+    ? `<span class="lab-source-span">${esc(spanBasis[span.basis])} · ${esc(spanStatuses[span.status])}: ${esc(span.locator)}. Это локатор основания, а не подтверждение научной модели.</span>`
+    : `<span class="lab-source-span">Точный фрагмент для этого утверждения пока не указан.</span>`;
 const evidence = (...ids) =>
   `<div class="lab-citations">${ids.map((id) => `<button type="button" data-claim="${id}" aria-label="Основание ${id}">${active?.claims.get(id)?.status === "didactic" ? "Учебное правило" : (statuses[active?.claims.get(id)?.status] ?? "Утверждение")} ↗</button>`).join("")}</div>`;
 const value = (v) => (v === null ? "Не представлено" : v ? "Да" : "Нет");
@@ -71,7 +87,7 @@ function input(spec, key) {
   const d = spec.inputs[key];
   if (d.type === "boolean")
     return `<label class="lab-check"><input type="checkbox" data-variable="${key}" id="lab-${key}">${esc(d.label)}</label>`;
-  return `<label class="lab-field" for="lab-${key}"><span>${esc(d.label)}</span><select id="lab-${key}" data-variable="${key}">${d.nullable ? '<option value="__unknown__">Не представлено</option>' : ""}${d.enum.map((v) => `<option value="${v}">${esc(key === "control" ? (v === "high" ? "Есть способы влияния" : "Мало возможностей") : word(v))}</option>`).join("")}</select></label>`;
+  return `<label class="lab-field" for="lab-${key}"><span>${esc(d.label)}</span><select id="lab-${key}" data-variable="${key}">${d.nullable ? '<option value="__unknown__">Не задано</option>' : ""}${d.enum.map((v) => `<option value="${v}">${esc(key === "control" ? (v === "high" ? "Есть способы влияния" : "Мало возможностей") : word(v))}</option>`).join("")}</select></label>`;
 }
 function vectorText(v) {
   return v
@@ -118,7 +134,7 @@ function transactionDiagram(o) {
 }
 function berneResult(o) {
   return `<section class="lab-panel lab-vector-panel"><div class="lab-panel-heading"><h3>Структурная разметка</h3><span class="lab-badge" data-output="kind">${word(o.kind)}</span></div>
- <div class="lab-verdict"><p>Социальный уровень: <strong data-output="socialClass">${word(o.socialClass)}</strong>${o.psychStimulus ? ` · психологический: <strong data-output="psychClass">${word(o.psychClass)}</strong>` : ""}.</p><div class="lab-match-row"><span>Источник ответа: <b data-output="sourceMatch">${o.sourceMatch ? "совпал" : "не совпал"}</b></span><span>Адресат ответа: <b data-output="targetMatch">${o.targetMatch ? "совпал" : "не совпал"}</b></span></div>${evidence("b-reversal", "b-crossed")}</div>
+ <div class="lab-verdict"><p>Социальный уровень: <strong data-output="socialClass">${word(o.socialClass)}</strong>${o.psychStimulus ? ` · психологический: <strong data-output="psychClass">${word(o.psychClass)}</strong>` : ""}.</p>${o.kind === "insufficient-data" ? '<p class="lab-boundary" data-psych-incomplete>Гипотеза о втором уровне включена, но не все четыре психологических конца заданы. Класс скрытой трансакции не установлен.</p>' : ""}<div class="lab-match-row"><span>Источник ответа: <b data-output="sourceMatch">${o.sourceMatch ? "совпал" : "не совпал"}</b></span><span>Адресат ответа: <b data-output="targetMatch">${o.targetMatch ? "совпал" : "не совпал"}</b></span></div>${evidence("b-reversal", "b-crossed")}</div>
  <div class="lab-line-legend"><span>━━ Социальный уровень</span><span class="psych">┄┄ Психологический · гипотеза</span></div>${transactionDiagram(o)}
  <div class="lab-vector-table"><div><b>Стимул</b><span data-output="stimulus">${esc(vectorText(o.stimulus))}</span></div><div><b>Ожидаемый ответ</b><span data-output="expected">${esc(vectorText(o.expected))}</span></div><div><b>Выбранный ответ</b><span data-output="response">${esc(vectorText(o.response))}</span></div>${o.psychStimulus ? `<div class="psych"><b>Психологический стимул</b><span>${esc(vectorText(o.psychStimulus))}</span></div><div class="psych"><b>Психологический ответ</b><span>${esc(vectorText(o.psychResponse))}</span></div>` : ""}</div>${evidence("b-structural", "b-hidden")}
  <p class="lab-boundary">${esc(active.claims.get("b-no-prediction").text)} ${esc(active.claims.get("b-no-prediction").limitation)}</p>${evidence("b-no-prediction")}</section>`;
@@ -151,7 +167,7 @@ function appraisalDiagram(a) {
     ["Доступно влияние", a.canInfluence],
     ["Ожидается затруднение", a.expectedObstacle],
   ];
-  return `<div class="lab-appraisal-network" aria-label="Качественный профиль оценки"><div class="lab-fact">Факт: результат задерживается</div><div class="lab-check-nodes">${items.map(([label, v]) => `<div class="lab-appraisal-node ${v === null ? "unknown" : v ? "active" : "inactive"}"><span>${esc(label)}</span><strong>${value(v)}</strong></div>`).join("")}</div><div class="lab-computation-arrow">↓ Условия для учебного набора вариантов</div><ul class="lab-options" data-output="options">${a.options.length ? a.options.map((x) => `<li data-option="${x}">${esc(word(x))}</li>`).join("") : "<li>Для незатронутой цели правило не строит варианты действия.</li>"}</ul></div>`;
+  return `<div class="lab-appraisal-network" aria-label="Качественный профиль оценки"><div class="lab-fact">Факт: результат задерживается</div><div class="lab-check-nodes">${items.map(([label, v]) => `<div class="lab-appraisal-node ${v === null ? "unknown" : v ? "active" : "inactive"}"><span>${esc(label)}</span><strong>${value(v)}</strong></div>`).join("")}</div><div class="lab-computation-arrow">↓ Учебные варианты действий · не научный прогноз</div><ul class="lab-options" data-output="options">${a.options.length ? a.options.map((x) => `<li data-option="${x}"><span class="lab-didactic-tag">Учебная ветвь</span> ${esc(word(x))}</li>`).join("") : "<li>Для незатронутой цели правило не строит варианты действия.</li>"}</ul></div>`;
 }
 function emotionResult(o) {
   return `<div class="lab-comparison-grid"><section class="lab-panel"><div class="lab-panel-heading"><h3>Описание аффекта</h3><span class="lab-badge">Russell · измерения</span></div><p class="lab-receives">Получает: самоописание приятности и возбуждения.</p>${affectDiagram(o.dimensions, o.baseline)}<p class="lab-chart-legend">● Сейчас${o.baseline ? " · ◯ Сохранённое условие" : ""}</p><p class="lab-point-caption" data-output="affect-description">${word(o.dimensions.point.valence)} · ${word(o.dimensions.point.arousal)}</p><p class="lab-subtle">${esc(active.claims.get("e-ordinal").text)}</p>${evidence("e-dimensions", "e-ordinal")}<p class="lab-boundary">${esc(active.claims.get("e-no-category").text)}</p>${evidence("e-no-category")}</section>
@@ -173,7 +189,7 @@ function evidencePanel(pkg) {
   return `<details id="lab-evidence" class="lab-details"><summary>Утверждения, статусы и источники</summary><p class="lab-subtle">«Положение подхода» означает принятие внутри указанной теории, а не универсальный научный консенсус.</p>${pkg.claims
     .map(
       (c) =>
-        `<article id="lab-claim-${c.id}" class="lab-claim"><div class="lab-claim-meta"><strong>${esc(statuses[c.status])}</strong> · ${esc(pkg.theories.find((t) => t.id === c.theoryId).label)}</div><p>${esc(c.text)}</p><p class="lab-subtle"><b>Область:</b> ${esc(c.scope)}<br><b>Ограничение:</b> ${esc(c.limitation)}</p>${c.sourceIds
+        `<article id="lab-claim-${c.id}" class="lab-claim"><div class="lab-claim-meta"><strong>${esc(statuses[c.status])}</strong> · ${esc(pkg.theories.find((t) => t.id === c.theoryId).label)}</div><p>${esc(c.text)}</p><p class="lab-subtle"><b>Область:</b> ${esc(c.scope)}<br><b>Ограничение:</b> ${esc(c.limitation)}</p>${spanNote(c.sourceSpan)}${c.sourceIds
           .map((id) => {
             const s = pkg.sources.find((v) => v.id === id);
             return `<div class="lab-source">${s.url ? `<a href="${esc(s.url)}" target="_blank" rel="noreferrer">${esc(s.title)} ↗</a>` : esc(s.title)}<small>${esc(s.locator)} · ${s.access === "local-only" ? "Локальный оригинал; полный текст не опубликован" : "Публичная ссылка или материал проекта"}</small><small>${esc(s.verification)}</small></div>`;
@@ -216,13 +232,13 @@ function traceView(trace) {
     obstruction: "Препятствие для цели",
     canInfluence: "Возможность влияния",
     expectedObstacle: "Ожидание затруднения",
-    options: "Вычисленное множество вариантов",
+    options: "Учебные варианты действий · не прогноз",
     changedFields: "Изменённые переменные",
   };
   const rule = (e) =>
     e.adapter
       ? `<section class="lab-trace-adapter"><h4>${e.adapter === "dimensions" ? "Адаптер описания аффекта" : "Адаптер оценки"}</h4><p>Входы: ${esc(describeValue(e.inputs))}</p>${e.rules.map(rule).join("")}</section>`
-      : `<div class="lab-trace-rule"><b>${esc(titles[e.rule] ?? e.rule)}</b><span>${esc(describeValue(e.value))}</span>${evidence(...e.claimIds)}</div>`;
+      : `<div class="lab-trace-rule"><b>${esc(titles[e.rule] ?? e.rule)}</b><span>${esc(describeValue(e.value))}</span>${e.sourceSpan ? spanNote(e.sourceSpan) : ""}${evidence(...e.claimIds)}</div>`;
   const frame = trace.at(-1);
   return `<p class="lab-subtle">Событий после сброса: <strong data-trace-count>${trace.length}</strong>. Последнее: ${esc(frame.event.type === "intervene" ? `${word(frame.event.variable)} → ${word(frame.event.value)}` : frame.event.type === "reset" ? "Сброс / начальные значения" : frame.event.type === "capture" ? "Сохранение условия" : "Смена инициатора")}. Правила ниже исполнены заново, значения взяты из runtime.</p>${frame.evaluations.map(rule).join("")}<details><summary>История вмешательств</summary><ol>${trace.map((t) => `<li>${esc(t.event.type)}${t.event.variable ? ` · ${esc(word(t.event.variable))}: ${esc(word(t.event.value))}` : ""}</li>`).join("")}</ol></details>`;
 }

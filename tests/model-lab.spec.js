@@ -107,6 +107,15 @@ test("hidden transaction retains simultaneous social and psychological vectors a
   await expect(page.locator('[data-output="psychClass"]')).toHaveText(
     "Не представлено",
   );
+  await expect(page.locator('[data-output="kind"]')).toHaveText(
+    "Скрытый уровень · данных недостаточно",
+  );
+  await expect(page.locator("[data-psych-incomplete]")).toContainText(
+    "Класс скрытой трансакции не установлен",
+  );
+  fs.mkdirSync("artifacts/qa/issue-4", { recursive: true });
+  await page.locator("#model-laboratory").evaluate((el) => (el.scrollTop = 0));
+  await page.screenshot({ path: "artifacts/qa/issue-4/berne-incomplete.png" });
   await expect(
     page.locator('[data-vector="psychological-stimulus"]'),
   ).toHaveCount(0);
@@ -132,6 +141,9 @@ test("emotion adapters execute independent scenario changes, baseline comparison
   expect(after.appraisal.options).not.toEqual(before.appraisal.options);
   expect(after.changedFields).toEqual(["control"]);
   await expect(page.locator('[data-option="change-conditions"]')).toBeVisible();
+  await expect(page.locator('.lab-options [data-option="change-conditions"]')).toContainText(
+    "Учебная ветвь",
+  );
   await page.screenshot({ path: `${qa}/emotions-comparison.png` });
   await page.locator("#lab-trace summary").first().click();
   await expect(page.locator("#lab-trace-content")).toContainText(
@@ -139,6 +151,15 @@ test("emotion adapters execute independent scenario changes, baseline comparison
   );
   await expect(page.locator("#lab-trace-content")).toContainText(
     "Адаптер оценки",
+  );
+  await expect(page.locator("#lab-trace-content")).toContainText(
+    "Учебные варианты действий · не прогноз",
+  );
+  await expect(page.locator("#lab-trace-content .lab-source-span").first()).toContainText(
+    "Фрагмент учебного правила",
+  );
+  await expect(page.locator("#lab-trace-content .lab-source-span").first()).toContainText(
+    "Проектное учебное правило",
   );
   const frames = await page.evaluate(
     () => window.atlas.laboratory().getTrace().at(-1).evaluations,
@@ -195,7 +216,17 @@ test("mobile laboratory remains operable with unknown values, reset and readable
       .evaluate((el) => el.scrollWidth <= el.clientWidth + 1),
   ).toBe(true);
   await page.locator(".lab-comparison-grid").scrollIntoViewIfNeeded();
+  await page.locator("#lab-trace summary").first().click();
+  await expect(page.locator("#lab-trace-content .lab-source-span").first()).toBeVisible();
+  await page.locator("#lab-evidence summary").click();
+  await expect(page.locator("#lab-claim-e-affordance .lab-source-span")).toBeVisible();
+  expect(
+    await page
+      .locator("#model-laboratory")
+      .evaluate((el) => el.scrollWidth <= el.clientWidth + 1),
+  ).toBe(true);
   await page.screenshot({ path: `${qa}/emotions-mobile.png` });
+  await page.screenshot({ path: "artifacts/qa/issue-4/emotions-mobile-trace.png" });
   await page.locator("#lab-reset").click();
   await page.locator("#lab-close").click();
 });

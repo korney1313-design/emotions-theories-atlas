@@ -291,6 +291,12 @@
       "sourceIds": [
         "b-design"
       ],
+      "sourceSpan": {
+        "sourceId": "b-design",
+        "locator": "docs/model-lab/DESIGN.md, раздел Pilot 1: Berne, предложения 6–7",
+        "basis": "project-design",
+        "status": "didactic"
+      },
       "scope": "Два участника, один стимул и один ответ на каждом уровне.",
       "limitation": "Нет распознавания речи, клинической диагностики, причинных вероятностей или модели личности.",
       "predicate": "stipulates",
@@ -750,7 +756,13 @@
           },
           "claimIds": [
             "b-didactic"
-          ]
+          ],
+          "sourceSpan": {
+            "sourceId": "b-design",
+            "locator": "docs/model-lab/DESIGN.md, раздел Pilot 1: Berne, предложение 6",
+            "basis": "project-design",
+            "status": "didactic"
+          }
         },
         {
           "id": "psychStimulus",
@@ -904,7 +916,16 @@
               {
                 "ref": "input.hidden"
               },
-              "ulterior",
+              {
+                "op": "if",
+                "args": [
+                  {
+                    "ref": "derived.psychKnown"
+                  },
+                  "ulterior",
+                  "insufficient-data"
+                ]
+              },
               {
                 "ref": "derived.socialClass"
               }
@@ -914,7 +935,13 @@
             "b-hidden",
             "b-crossed",
             "b-reversal"
-          ]
+          ],
+          "sourceSpan": {
+            "sourceId": "b-design",
+            "locator": "docs/model-lab/DESIGN.md, раздел Pilot 1: Berne, предложения 6–7",
+            "basis": "project-design",
+            "status": "didactic"
+          }
         }
       ],
       "outputs": {
@@ -1103,7 +1130,7 @@
           }
         },
         {
-          "id": "hidden-is-stipulated",
+          "id": "hidden-requires-known-psychology",
           "expr": {
             "op": "eq",
             "args": [
@@ -1117,7 +1144,48 @@
                 ]
               },
               {
-                "ref": "input.hidden"
+                "op": "and",
+                "args": [
+                  {
+                    "ref": "input.hidden"
+                  },
+                  {
+                    "ref": "derived.psychKnown"
+                  }
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "id": "incomplete-hidden-remains-unclassified",
+          "expr": {
+            "op": "eq",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "derived.kind"
+                  },
+                  "insufficient-data"
+                ]
+              },
+              {
+                "op": "and",
+                "args": [
+                  {
+                    "ref": "input.hidden"
+                  },
+                  {
+                    "op": "not",
+                    "args": [
+                      {
+                        "ref": "derived.psychKnown"
+                      }
+                    ]
+                  }
+                ]
               }
             ]
           }

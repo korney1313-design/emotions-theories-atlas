@@ -52,6 +52,7 @@ export function createRuntime(packageData, modelId) {
         expression: copy(rule.expr),
         value: copy(value),
         claimIds: copy(rule.claimIds),
+        sourceSpan: rule.sourceSpan ? copy(rule.sourceSpan) : null,
       });
     }
     const outputs = Object.fromEntries(
