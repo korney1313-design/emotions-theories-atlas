@@ -14,24 +14,33 @@ const esc = (s) =>
         c
       ],
   );
-const atlasId =
-  new URLSearchParams(location.search).get("atlas") === "emotions"
-    ? "emotions"
-    : "berne";
+const requestedAtlas = new URLSearchParams(location.search).get("atlas");
+const atlasId = ["emotions", "leontiev"].includes(requestedAtlas)
+  ? requestedAtlas
+  : "berne";
 const isEmotions = atlasId === "emotions";
-const directionExplanation = isEmotions
-  ? "Направление и тип — содержательная нормализация лекции; положение подхода не равно установленному факту."
-  : "Направления интерпретируются по Source → Target CSV; GEXF ненаправленный.";
+const isLeontiev = atlasId === "leontiev";
+const directionExplanation = isLeontiev
+  ? "Направление показывает теоретическое отношение; расстояние не измеряет смысловую близость."
+  : isEmotions
+    ? "Направление и тип — содержательная нормализация лекции; положение подхода не равно установленному факту."
+    : "Направления интерпретируются по Source → Target CSV; GEXF ненаправленный.";
 const provenanceLabel = (p) =>
-  isEmotions
-    ? `Лекция · слайды ${p.slides?.join(", ") || p.row}`
-    : `${p.file}:${p.row}`;
+  isLeontiev
+    ? `${p.locator} · ${p.verification === "candidate" ? "требует проверки" : "локатор проверен"}`
+    : isEmotions
+      ? `Лекция · слайды ${p.slides?.join(", ") || p.row}`
+      : `${p.file}:${p.row}`;
 $("#app").innerHTML =
   `<header><a class="brand" href="/">◈ <strong>KNOWLEDGE ATLAS</strong></a><span>Психология / Эрик Берн</span><span class="local">● Локальная библиотека</span></header><main><aside class="library"><div class="eyebrow">ПРОСТРАНСТВО ЗНАНИЙ / 3D</div><h1>Транзактный<br>анализ</h1><p class="sub">От структуры личности<br>к смыслу взаимодействия</p><label class="search">⌕ <input id="search" type="search" placeholder="Найти понятие…" aria-label="Поиск понятий"><kbd>/</kbd></label><div id="results" aria-live="polite"></div><div class="label">ОРГАНИЗАЦИЯ КАРТЫ</div><div class="segmented"><button id="sections" class="active">Разделы</button><button id="communities">Сообщества</button></div><p id="group-note" class="hint">Содержательная классификация исходной сети</p><div id="legend"></div><details open><summary>Отношения <span id="edge-total"></span></summary><div id="filters"></div><label class="label">Тип отношения<select id="relation" aria-label="Тип отношения"><option value="">Все типы</option></select></label></details><div class="library-bottom"><button id="about">ⓘ О данных и методе</button><p>Экспериментальная сеть · 37 понятий<br>Источник сохранён в проекте</p></div></aside><section class="workspace"><div class="map-top"><div><span class="eyebrow" id="view-title">ОБЩАЯ 3D-КАРТА</span><p id="status" aria-live="polite">Загрузка сети…</p></div><button id="home">↗ Вся карта</button></div><div id="graph" aria-label="Интерактивная карта понятий"></div><div id="semantic-guide" hidden><span>Входящие →</span><strong>Понятие</strong><span>→ Исходящие</span><small>Соседи сгруппированы по отношению · второй шаг уходит в глубину</small></div><div id="annotations" aria-label="Подписи трёхмерной карты"></div><div class="scene-tools"><span class="dimension-badge">3D</span><span id="layout-state">Расчёт пространства…</span><button id="save-layout" title="Скачать координаты обеих группировок">↓ Координаты</button></div><div id="breadcrumbs" aria-label="История исследования"></div><div class="map-bottom"><span id="level">Общая карта</span><span class="map-help">Мышь — вращение · Колесо — масштаб · ПКМ — сдвиг</span><div class="zoom"><button id="out" aria-label="Уменьшить">−</button><button id="fit" aria-label="Вписать карту">⊡</button><button id="in" aria-label="Увеличить">+</button></div></div></section><aside id="card" class="card"></aside></main><dialog id="info"><button id="close-info" class="close" aria-label="Закрыть">×</button><div class="eyebrow">ОБ ЭТОМ АТЛАСЕ</div><h2>Карта — способ задавать вопросы</h2><p>Найденная экспериментальная сеть: 37 понятий и 59 отношений. Учебная модель; библиографические ссылки и страницы в исходниках отсутствуют.</p><p>CSV и GEXF совпадают по понятиям и тройкам отношений. GEXF объявляет рёбра ненаправленными. Стрелки рабочей модели интерпретируют порядок Source → Target из CSV.</p><p>Разделы взяты из исходных данных. Сообщества Louvain вычислены по структуре связей и не равнозначны разделам теории. d3-force-3d рассчитывает реальные координаты x, y, z. Группирующие силы разделяют области, столкновения предотвращаются физической моделью. Координаты сохраняются в этом браузере. PageRank определяет размер узла и характеризует только положение в этой сети.</p><p><a href="https://live.yworks.com/demos/showcase/knowledge-graphs/" target="_blank" rel="noreferrer">Референс взаимодействия: yWorks</a> · Three.js / 3d-force-graph / Graphology</p></dialog>`;
 
 try {
   const response = await fetch(
-    isEmotions ? "/atlases/emotions.json" : "/atlas.json",
+    isLeontiev
+      ? "/atlases/leontiev.json"
+      : isEmotions
+        ? "/atlases/emotions.json"
+        : "/atlas.json",
   );
   if (!response.ok)
     throw new Error("Не удалось загрузить семантическую модель");
@@ -39,7 +48,7 @@ try {
   const picker = document.createElement("label");
   picker.className = "atlas-picker";
   picker.innerHTML =
-    '<span>АТЛАС</span><select id="atlas-picker" aria-label="Выбрать атлас"><option value="berne">Транзактный анализ · Берн</option><option value="emotions">Психология эмоций · лекция</option></select>';
+    '<span>АТЛАС</span><select id="atlas-picker" aria-label="Выбрать атлас"><option value="berne">Транзактный анализ · Берн</option><option value="emotions">Психология эмоций · лекция</option><option value="leontiev">Теория деятельности · Леонтьев</option></select>';
   document.querySelector(".library").prepend(picker);
   picker.querySelector("select").value = atlasId;
   picker.querySelector("select").onchange = (e) => {
@@ -56,6 +65,18 @@ try {
     document.querySelector("#info").innerHTML =
       `<button id="close-info" class="close" aria-label="Закрыть">×</button><div class="eyebrow">ПСИХОЛОГИЯ ЭМОЦИЙ</div><h2>От вопроса к ограниченному выводу</h2><p>${esc(data.provenance.summary)}</p><p>${esc(data.provenance.bibliography)}</p><p>Разделы отражают содержательную организацию лекции. Louvain — другая группировка по сети. PageRank характеризует только положение в этой сети. Координаты не являются научно измеренной близостью. ${esc(directionExplanation)}</p><p>Выбор понятия открывает интерактивную модель; вернуться к связям можно крестиком или Escape.</p>`;
     ensureModelDialog();
+  }
+  if (isLeontiev) {
+    document.title = "Knowledge Atlas · Теория деятельности";
+    document.querySelector(".library h1").innerHTML = "Теория<br>деятельности";
+    document.querySelector(".library .sub").textContent =
+      "А. Н. Леонтьев · сознание, личность и эмоции";
+    document.querySelector("header>span").textContent =
+      "Психология / А. Н. Леонтьев";
+    document.querySelector(".library-bottom p").innerHTML =
+      `${data.nodes.length} понятий · ${data.edges.length} отношений<br>1975: локаторы; 1971: сверка ожидается`;
+    document.querySelector("#info").innerHTML =
+      `<button id="close-info" class="close" aria-label="Закрыть">×</button><div class="eyebrow">ТЕОРИЯ ДЕЯТЕЛЬНОСТИ</div><h2>Карта научной системы</h2><p>${esc(data.provenance.summary)}</p><p>${esc(data.provenance.bibliography)}</p><p>Четыре области связывают предметность, строение, сознание и личность. Источники и ограничения открываются в лаборатории. Геометрические расстояния не являются научной мерой близости.</p>`;
   }
   const model = createModel(data),
     { graph } = model;
@@ -267,13 +288,13 @@ try {
   function renderCard() {
     if (!selected) {
       $("#card").innerHTML =
-        `<div class="eyebrow">ПУТЕВОДИТЕЛЬ / 3D</div><h2>Как устроена<br>теория?</h2><p class="sub">${mode === "section" ? "Области показывают разделы теории." : "Области показывают сообщества Louvain, а не разделы теории."} Межраздельные подписи называют источник, цель, отношение и число связей. Выберите понятие: его окружение раскроется по направлениям и типам отношений.</p><div class="guide-visual"><span class="orbit-icon">◌</span><span>↗</span>◉</div><div class="label">ТОЧКИ ВХОДА</div>${(data.entryPoints || ["ego", "adult", "trans", "games", "time"]).map((id) => `<button class="entry" data-node="${id}">${esc(graph.getNodeAttribute(id, "label"))}<span>↗</span></button>`).join("")}<div class="note"><b>Цвет</b> — ${mode === "section" ? "теоретический раздел" : "сообщество Louvain"}.<br><b>Размер</b> — PageRank в этой сети.<br><b>Стрелка</b> — ${isEmotions ? "направление отношения лекции" : "направление по CSV"}.<br><br>ЛКМ + движение — вращение.<br>ПКМ + движение — сдвиг.<br>Колесо — приближение.<br>Названия появляются по мере приближения. Наведите на узел для подсказки.</div>`;
+        `<div class="eyebrow">ПУТЕВОДИТЕЛЬ / 3D</div><h2>Как устроена<br>теория?</h2><p class="sub">${mode === "section" ? "Области показывают разделы теории." : "Области показывают сообщества Louvain, а не разделы теории."} Межраздельные подписи называют источник, цель, отношение и число связей. Выберите понятие: его окружение раскроется по направлениям и типам отношений.</p>${isLeontiev ? `<div class="teacher-guide"><b>Показ на занятии · 7–10 минут</b><p>1. Четыре области → 2. Строение → 3. Значение и смысл → 4. Мотивы и эмоции → 5. Возврат к карте.</p><p>Выберите понятие и откройте его модель; источник и граница вывода показаны внутри.</p></div>` : ""}<div class="guide-visual"><span class="orbit-icon">◌</span><span>↗</span>◉</div><div class="label">ТОЧКИ ВХОДА</div>${(data.entryPoints || ["ego", "adult", "trans", "games", "time"]).map((id) => `<button class="entry" data-node="${id}">${esc(graph.getNodeAttribute(id, "label"))}<span>↗</span></button>`).join("")}<div class="note"><b>Цвет</b> — ${mode === "section" ? "теоретический раздел" : "сообщество Louvain"}.<br><b>Размер</b> — PageRank в этой сети.<br><b>Стрелка</b> — ${isEmotions ? "направление отношения лекции" : isLeontiev ? "тип теоретического отношения" : "направление по CSV"}.<br><br>ЛКМ + движение — вращение.<br>ПКМ + движение — сдвиг.<br>Колесо — приближение.<br>Названия появляются по мере приближения. Наведите на узел для подсказки.</div>`;
     } else {
       const node = graph.getNodeAttributes(selected),
         edges = graph.edges(selected).filter((e) => visibleEdges.has(e));
       const edge = focusedEdge ? graph.getEdgeAttributes(focusedEdge) : null;
       $("#card").innerHTML =
-        `<div class="card-nav"><button id="back" ${historyIndex <= 0 ? "disabled" : ""}>← Назад</button><button id="forward" ${historyIndex >= history.length - 1 ? "disabled" : ""} aria-label="Вперёд">→</button><button id="clear" aria-label="Закрыть понятие">×</button></div><div class="eyebrow">${esc(node.section)}</div><h2>${esc(node.label)}</h2><p class="definition">${esc(node.definition)}</p>${isEmotions ? `<p class="concept-kind">${esc(node.kind)}</p><button id="open-model" class="primary">Открыть интерактивную модель ↗</button><p class="hint">${esc(node.limit)}</p>` : ""}${laboratoryForConcept(atlasId, selected) ? `<button id="open-lab" class="lab-card-entry">${esc(laboratoryForConcept(atlasId, selected).label)} ↗</button>` : ""}<div class="metrics"><span><strong>${graph.degree(selected)}</strong> связей</span><span><strong>${node.pagerank.toFixed(3)}</strong> PageRank</span></div><p class="hint">PageRank — положение в этой сети, не теоретическая значимость.</p><div class="depth-control"><button id="expand" class="primary">${expanded ? "Глубина 2 · свернуть до 1 шага" : "Глубина 1 · раскрыть 2-й шаг"}</button><button id="fit-neighbors" class="secondary">Все соседи в кадре ↗</button></div>${edge ? `<section id="edge-inspector"><div class="eyebrow">ВЫБРАННОЕ ОТНОШЕНИЕ</div><p><strong>${esc(graph.getNodeAttribute(graph.source(focusedEdge), "label"))}</strong><br><span>↓ ${esc(edge.relation)}</span><br><strong>${esc(graph.getNodeAttribute(graph.target(focusedEdge), "label"))}</strong></p><small>${esc(edge.status)} · ${esc(provenanceLabel(edge.provenance))}</small><p class="hint">${esc(directionExplanation)}</p></section>` : ""}<div class="label">ОТНОШЕНИЯ · ${edges.length}</div><p class="hint">Нажмите тип связи для подробностей, понятие — для перехода. На карте одинаковые отношения объединены подписью с числом связей. Слева — источники входящих, справа — цели исходящих.</p><div id="relations">${
+        `<div class="card-nav"><button id="back" ${historyIndex <= 0 ? "disabled" : ""}>← Назад</button><button id="forward" ${historyIndex >= history.length - 1 ? "disabled" : ""} aria-label="Вперёд">→</button><button id="clear" aria-label="Закрыть понятие">×</button></div><div class="eyebrow">${esc(node.section)}</div><h2>${esc(node.label)}</h2><p class="definition">${esc(node.definition)}</p>${isEmotions ? `<p class="concept-kind">${esc(node.kind)}</p><button id="open-model" class="primary">Открыть интерактивную модель ↗</button><p class="hint">${esc(node.limit)}</p>` : ""}${isLeontiev ? `<p class="hint">${esc(provenanceLabel(node.provenance))}</p>` : ""}${laboratoryForConcept(atlasId, selected) ? `<button id="open-lab" class="lab-card-entry">${esc(laboratoryForConcept(atlasId, selected).label)} ↗</button>` : ""}<div class="metrics"><span><strong>${graph.degree(selected)}</strong> связей</span><span><strong>${node.pagerank.toFixed(3)}</strong> PageRank</span></div><p class="hint">PageRank — положение в этой сети, не теоретическая значимость.</p><div class="depth-control"><button id="expand" class="primary">${expanded ? "Глубина 2 · свернуть до 1 шага" : "Глубина 1 · раскрыть 2-й шаг"}</button><button id="fit-neighbors" class="secondary">Все соседи в кадре ↗</button></div>${edge ? `<section id="edge-inspector"><div class="eyebrow">ВЫБРАННОЕ ОТНОШЕНИЕ</div><p><strong>${esc(graph.getNodeAttribute(graph.source(focusedEdge), "label"))}</strong><br><span>↓ ${esc(edge.relation)}</span><br><strong>${esc(graph.getNodeAttribute(graph.target(focusedEdge), "label"))}</strong></p><small>${esc(edge.status)} · ${esc(provenanceLabel(edge.provenance))}</small><p class="hint">${esc(directionExplanation)}</p></section>` : ""}<div class="label">ОТНОШЕНИЯ · ${edges.length}</div><p class="hint">Нажмите тип связи для подробностей, понятие — для перехода. На карте одинаковые отношения объединены подписью с числом связей. Слева — источники входящих, справа — цели исходящих.</p><div id="relations">${
           edges.length
             ? edges
                 .map((id) => {
@@ -285,7 +306,7 @@ try {
                 })
                 .join("")
             : '<p class="hint">Отношения скрыты фильтрами. Измените тип или статус в левой панели.</p>'
-        }</div><details><summary>Происхождение и анализ</summary><p class="hint">${esc(provenanceLabel(node.provenance))}.<br>Сообщество Louvain: ${node.community + 1}.<br>${esc(directionExplanation)}<br>${isEmotions ? "Источники и полные заметки доступны в интерактивной модели." : "Страницы первоисточников не указаны."}</p></details>`;
+        }</div><details><summary>Происхождение и анализ</summary><p class="hint">${esc(provenanceLabel(node.provenance))}.<br>Сообщество Louvain: ${node.community + 1}.<br>${esc(directionExplanation)}<br>${isEmotions ? "Источники и полные заметки доступны в интерактивной модели." : isLeontiev ? "Источники и ограничения открываются в лаборатории." : "Страницы первоисточников не указаны."}</p></details>`;
       if (isEmotions)
         $("#open-model").onclick = () => openConceptModel(node, data);
       const laboratory = laboratoryForConcept(atlasId, selected);

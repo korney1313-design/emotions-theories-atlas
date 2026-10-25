@@ -4,6 +4,7 @@ import {
   listLaboratories,
   laboratoryPreset,
 } from "./registry.js";
+import { openLeontievLaboratory } from "./leontiev-view.js";
 const esc = (s) =>
   String(s ?? "").replace(
     /[&<>"']/g,
@@ -245,6 +246,20 @@ function traceView(trace) {
 export function openLaboratory(id, { conceptId = "", conceptLabel = "" } = {}) {
   const entry = listLaboratories().find((e) => e.id === id);
   if (!entry) throw Error("Unknown laboratory");
+  if (entry.renderer === "leontiev") {
+    active?.unsubscribe?.();
+    active = {
+      id,
+      runtime: openLeontievLaboratory(
+        id,
+        { conceptId, conceptLabel },
+        (nextId, runtime) => {
+          active = { id: nextId, runtime };
+        },
+      ),
+    };
+    return;
+  }
   let dialog = document.querySelector("#model-laboratory");
   if (!dialog) {
     dialog = document.createElement("dialog");

@@ -1,0 +1,1456 @@
+{
+  "schemaVersion": "model-package/0.1",
+  "id": "leontiev-pilot",
+  "theories": [
+    {
+      "id": "leontiev-theory",
+      "label": "Теория деятельности А. Н. Леонтьева",
+      "scope": "Научная реконструкция положений внутри теории, без диагностики.",
+      "sourceIds": [
+        "l-p52",
+        "l-p54",
+        "l-p55",
+        "l-p56",
+        "l-p69",
+        "l-p78",
+        "l-p80",
+        "l-p98",
+        "l-p99",
+        "l-p102",
+        "l-p103",
+        "l-1971",
+        "l-design"
+      ]
+    }
+  ],
+  "concepts": [
+    {
+      "id": "lc-theory",
+      "term": "Теория деятельности",
+      "theoryId": "leontiev-theory",
+      "definition": "Предметная деятельность рассматривается как категория психологического анализа.",
+      "sourceIds": [
+        "l-design"
+      ],
+      "atlasBinding": {
+        "atlas": "leontiev",
+        "conceptId": "theory"
+      }
+    },
+    {
+      "id": "lc-object",
+      "term": "Предметность",
+      "theoryId": "leontiev-theory",
+      "definition": "Деятельность направлена на предмет, который имеет значение для субъекта.",
+      "sourceIds": [
+        "l-design"
+      ],
+      "atlasBinding": {
+        "atlas": "leontiev",
+        "conceptId": "object"
+      }
+    },
+    {
+      "id": "lc-reflection",
+      "term": "Психическое отражение",
+      "theoryId": "leontiev-theory",
+      "definition": "Отражение включено в предметные отношения, а не представлено изолированной реакцией.",
+      "sourceIds": [
+        "l-design"
+      ],
+      "atlasBinding": {
+        "atlas": "leontiev",
+        "conceptId": "reflection"
+      }
+    },
+    {
+      "id": "lc-mediation",
+      "term": "Общественное опосредствование",
+      "theoryId": "leontiev-theory",
+      "definition": "Человеческая деятельность и сознание формируются в общественных отношениях.",
+      "sourceIds": [
+        "l-p69"
+      ],
+      "atlasBinding": {
+        "atlas": "leontiev",
+        "conceptId": "mediation"
+      }
+    },
+    {
+      "id": "lc-activity",
+      "term": "Деятельность",
+      "theoryId": "leontiev-theory",
+      "definition": "Особенная деятельность выделяется по побуждающему её мотиву.",
+      "sourceIds": [
+        "l-p56"
+      ],
+      "atlasBinding": {
+        "atlas": "leontiev",
+        "conceptId": "activity"
+      }
+    },
+    {
+      "id": "lc-action",
+      "term": "Действие",
+      "theoryId": "leontiev-theory",
+      "definition": "Процесс, подчинённый сознательной цели; может реализовать разные деятельности.",
+      "sourceIds": [
+        "l-p54"
+      ],
+      "atlasBinding": {
+        "atlas": "leontiev",
+        "conceptId": "action"
+      }
+    },
+    {
+      "id": "lc-operation",
+      "term": "Операция",
+      "theoryId": "leontiev-theory",
+      "definition": "Способ выполнения действия, зависящий от условий достижения цели.",
+      "sourceIds": [
+        "l-p56"
+      ],
+      "atlasBinding": {
+        "atlas": "leontiev",
+        "conceptId": "operation"
+      }
+    },
+    {
+      "id": "lc-motive",
+      "term": "Мотив",
+      "theoryId": "leontiev-theory",
+      "definition": "Предмет, в котором опредмечена потребность и который побуждает деятельность.",
+      "sourceIds": [
+        "l-p99"
+      ],
+      "atlasBinding": {
+        "atlas": "leontiev",
+        "conceptId": "motive"
+      }
+    },
+    {
+      "id": "lc-goal",
+      "term": "Цель",
+      "theoryId": "leontiev-theory",
+      "definition": "Осознаваемый результат, которому подчинено действие.",
+      "sourceIds": [
+        "l-p54"
+      ],
+      "atlasBinding": {
+        "atlas": "leontiev",
+        "conceptId": "goal"
+      }
+    },
+    {
+      "id": "lc-conditions",
+      "term": "Условия",
+      "theoryId": "leontiev-theory",
+      "definition": "Предметные обстоятельства достижения цели, определяющие операционный аспект.",
+      "sourceIds": [
+        "l-p56"
+      ],
+      "atlasBinding": {
+        "atlas": "leontiev",
+        "conceptId": "conditions"
+      }
+    },
+    {
+      "id": "lc-external",
+      "term": "Внешняя деятельность",
+      "theoryId": "leontiev-theory",
+      "definition": "Практическая форма деятельности, связанная с внутренней общим строением.",
+      "sourceIds": [
+        "l-p52"
+      ],
+      "atlasBinding": {
+        "atlas": "leontiev",
+        "conceptId": "external"
+      }
+    },
+    {
+      "id": "lc-internal",
+      "term": "Внутренняя деятельность",
+      "theoryId": "leontiev-theory",
+      "definition": "Внутренняя форма деятельности сохраняет двустороннюю связь с внешней.",
+      "sourceIds": [
+        "l-p52"
+      ],
+      "atlasBinding": {
+        "atlas": "leontiev",
+        "conceptId": "internal"
+      }
+    },
+    {
+      "id": "lc-consciousness",
+      "term": "Сознание",
+      "theoryId": "leontiev-theory",
+      "definition": "Индивидуальное сознание формируется в связи с деятельностью и общественными отношениями.",
+      "sourceIds": [
+        "l-p69"
+      ],
+      "atlasBinding": {
+        "atlas": "leontiev",
+        "conceptId": "consciousness"
+      }
+    },
+    {
+      "id": "lc-sensory",
+      "term": "Чувственная ткань",
+      "theoryId": "leontiev-theory",
+      "definition": "Чувственное предъявление предметного мира — одна из образующих сознания.",
+      "sourceIds": [
+        "l-design"
+      ],
+      "atlasBinding": {
+        "atlas": "leontiev",
+        "conceptId": "sensory"
+      }
+    },
+    {
+      "id": "lc-meaning",
+      "term": "Значение",
+      "theoryId": "leontiev-theory",
+      "definition": "Общественно-историческое содержание, функционирующее в индивидуальном сознании.",
+      "sourceIds": [
+        "l-p78"
+      ],
+      "atlasBinding": {
+        "atlas": "leontiev",
+        "conceptId": "meaning"
+      }
+    },
+    {
+      "id": "lc-sense",
+      "term": "Личностный смысл",
+      "theoryId": "leontiev-theory",
+      "definition": "Жизненное значение обстоятельств и действий для субъекта в отношении к мотиву.",
+      "sourceIds": [
+        "l-p80"
+      ],
+      "atlasBinding": {
+        "atlas": "leontiev",
+        "conceptId": "sense"
+      }
+    },
+    {
+      "id": "lc-personality",
+      "term": "Личность",
+      "theoryId": "leontiev-theory",
+      "definition": "В основании личности — отношения соподчинённости деятельностей.",
+      "sourceIds": [
+        "l-p98"
+      ],
+      "atlasBinding": {
+        "atlas": "leontiev",
+        "conceptId": "personality"
+      }
+    },
+    {
+      "id": "lc-need",
+      "term": "Потребность",
+      "theoryId": "leontiev-theory",
+      "definition": "Получает предметное содержание в ходе деятельности.",
+      "sourceIds": [
+        "l-p99"
+      ],
+      "atlasBinding": {
+        "atlas": "leontiev",
+        "conceptId": "need"
+      }
+    },
+    {
+      "id": "lc-hierarchy",
+      "term": "Иерархия мотивов",
+      "theoryId": "leontiev-theory",
+      "definition": "Соподчинение деятельностей обнаруживает отношения мотивов.",
+      "sourceIds": [
+        "l-p98"
+      ],
+      "atlasBinding": {
+        "atlas": "leontiev",
+        "conceptId": "hierarchy"
+      }
+    },
+    {
+      "id": "lc-emotion",
+      "term": "Эмоция",
+      "theoryId": "leontiev-theory",
+      "definition": "Внутренний сигнал отношения мотива к ходу и возможности реализации деятельности.",
+      "sourceIds": [
+        "l-p103"
+      ],
+      "atlasBinding": {
+        "atlas": "leontiev",
+        "conceptId": "emotion"
+      }
+    },
+    {
+      "id": "lc-outcome",
+      "term": "Результат действия",
+      "theoryId": "leontiev-theory",
+      "definition": "Успех отдельного действия не определяет однозначно эмоциональное переживание.",
+      "sourceIds": [
+        "l-p103"
+      ],
+      "atlasBinding": {
+        "atlas": "leontiev",
+        "conceptId": "outcome"
+      }
+    }
+  ],
+  "claims": [
+    {
+      "id": "l-structure",
+      "theoryId": "leontiev-theory",
+      "predicate": "l-structure",
+      "roles": [
+        {
+          "role": "activity",
+          "conceptId": "lc-activity"
+        },
+        {
+          "role": "action",
+          "conceptId": "lc-action"
+        },
+        {
+          "role": "operation",
+          "conceptId": "lc-operation"
+        },
+        {
+          "role": "motive",
+          "conceptId": "lc-motive"
+        },
+        {
+          "role": "goal",
+          "conceptId": "lc-goal"
+        },
+        {
+          "role": "conditions",
+          "conceptId": "lc-conditions"
+        }
+      ],
+      "status": "accepted-within-theory",
+      "text": "Деятельность соотнесена с мотивом, действие — с целью, операция — с условиями.",
+      "sourceIds": [
+        "l-p56"
+      ],
+      "scope": "В рамках теории деятельности Леонтьева.",
+      "limitation": "Не является прогнозом индивидуального поведения.",
+      "sourceSpan": {
+        "sourceId": "l-p56",
+        "locator": "Гл. III §5, с. 56",
+        "basis": "theoretical-text",
+        "status": "reviewed"
+      }
+    },
+    {
+      "id": "l-transition",
+      "theoryId": "leontiev-theory",
+      "predicate": "l-transition",
+      "roles": [
+        {
+          "role": "action",
+          "conceptId": "lc-action"
+        },
+        {
+          "role": "motive",
+          "conceptId": "lc-motive"
+        },
+        {
+          "role": "operation",
+          "conceptId": "lc-operation"
+        }
+      ],
+      "status": "accepted-within-theory",
+      "text": "Одно действие может реализовать разные деятельности; смена условий меняет операционный состав.",
+      "sourceIds": [
+        "l-p55"
+      ],
+      "scope": "В рамках теории деятельности Леонтьева.",
+      "limitation": "Не является прогнозом индивидуального поведения.",
+      "sourceSpan": {
+        "sourceId": "l-p55",
+        "locator": "Гл. III §5, с. 55",
+        "basis": "theoretical-text",
+        "status": "reviewed"
+      }
+    },
+    {
+      "id": "l-meaning",
+      "theoryId": "leontiev-theory",
+      "predicate": "l-meaning",
+      "roles": [
+        {
+          "role": "motive",
+          "conceptId": "lc-motive"
+        },
+        {
+          "role": "meaning",
+          "conceptId": "lc-meaning"
+        },
+        {
+          "role": "sense",
+          "conceptId": "lc-sense"
+        }
+      ],
+      "status": "accepted-within-theory",
+      "text": "Личностный смысл действия связан с мотивом и может не совпадать с общественным значением.",
+      "sourceIds": [
+        "l-p80"
+      ],
+      "scope": "В рамках теории деятельности Леонтьева.",
+      "limitation": "Не является прогнозом индивидуального поведения.",
+      "sourceSpan": {
+        "sourceId": "l-p80",
+        "locator": "Гл. IV, с. 80",
+        "basis": "theoretical-text",
+        "status": "reviewed"
+      }
+    },
+    {
+      "id": "l-emotion",
+      "theoryId": "leontiev-theory",
+      "predicate": "l-emotion",
+      "roles": [
+        {
+          "role": "emotion",
+          "conceptId": "lc-emotion"
+        },
+        {
+          "role": "motive",
+          "conceptId": "lc-motive"
+        },
+        {
+          "role": "outcome",
+          "conceptId": "lc-outcome"
+        }
+      ],
+      "status": "accepted-within-theory",
+      "text": "Эмоции сигнализируют отношение мотива к ходу деятельности; успех отдельного действия не гарантирует положительной эмоции.",
+      "sourceIds": [
+        "l-p103"
+      ],
+      "scope": "В рамках теории деятельности Леонтьева.",
+      "limitation": "Не является прогнозом индивидуального поведения.",
+      "sourceSpan": {
+        "sourceId": "l-p103",
+        "locator": "Гл. V §3–4, с. 103",
+        "basis": "theoretical-text",
+        "status": "reviewed"
+      }
+    },
+    {
+      "id": "l-personality",
+      "theoryId": "leontiev-theory",
+      "predicate": "l-personality",
+      "roles": [
+        {
+          "role": "personality",
+          "conceptId": "lc-personality"
+        },
+        {
+          "role": "hierarchy",
+          "conceptId": "lc-hierarchy"
+        },
+        {
+          "role": "activity",
+          "conceptId": "lc-activity"
+        }
+      ],
+      "status": "accepted-within-theory",
+      "text": "Отношения соподчинения деятельностей лежат в основании личности.",
+      "sourceIds": [
+        "l-p98"
+      ],
+      "scope": "В рамках теории деятельности Леонтьева.",
+      "limitation": "Не является прогнозом индивидуального поведения.",
+      "sourceSpan": {
+        "sourceId": "l-p98",
+        "locator": "Гл. V §3–4, с. 98",
+        "basis": "theoretical-text",
+        "status": "reviewed"
+      }
+    },
+    {
+      "id": "l-didactic",
+      "theoryId": "leontiev-theory",
+      "predicate": "l-didactic",
+      "roles": [
+        {
+          "role": "activity",
+          "conceptId": "lc-activity"
+        },
+        {
+          "role": "motive",
+          "conceptId": "lc-motive"
+        },
+        {
+          "role": "emotion",
+          "conceptId": "lc-emotion"
+        }
+      ],
+      "status": "didactic",
+      "text": "Переключаемые ситуации заранее заданы для показа различий. Интерфейс не выводит фактический мотив и эмоцию человека.",
+      "sourceIds": [
+        "l-design"
+      ],
+      "scope": "Преподавательская иллюстрация.",
+      "limitation": "Сценарии не являются эмпирическими случаями или диагностикой.",
+      "sourceSpan": {
+        "sourceId": "l-design",
+        "locator": "Раздел «Пространство и преподавательский показ»",
+        "basis": "project-design",
+        "status": "didactic"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "id": "lr-7",
+      "predicate": "побуждается",
+      "roles": [
+        {
+          "role": "source",
+          "conceptId": "lc-activity"
+        },
+        {
+          "role": "target",
+          "conceptId": "lc-motive"
+        }
+      ],
+      "claimIds": [
+        "l-structure"
+      ]
+    },
+    {
+      "id": "lr-8",
+      "predicate": "направлено на",
+      "roles": [
+        {
+          "role": "source",
+          "conceptId": "lc-action"
+        },
+        {
+          "role": "target",
+          "conceptId": "lc-goal"
+        }
+      ],
+      "claimIds": [
+        "l-structure"
+      ]
+    },
+    {
+      "id": "lr-9",
+      "predicate": "зависит от",
+      "roles": [
+        {
+          "role": "source",
+          "conceptId": "lc-operation"
+        },
+        {
+          "role": "target",
+          "conceptId": "lc-conditions"
+        }
+      ],
+      "claimIds": [
+        "l-structure"
+      ]
+    },
+    {
+      "id": "lr-18",
+      "predicate": "может не совпадать",
+      "roles": [
+        {
+          "role": "source",
+          "conceptId": "lc-meaning"
+        },
+        {
+          "role": "target",
+          "conceptId": "lc-sense"
+        }
+      ],
+      "claimIds": [
+        "l-meaning"
+      ]
+    },
+    {
+      "id": "lr-24",
+      "predicate": "связан с сигналом",
+      "roles": [
+        {
+          "role": "source",
+          "conceptId": "lc-motive"
+        },
+        {
+          "role": "target",
+          "conceptId": "lc-emotion"
+        }
+      ],
+      "claimIds": [
+        "l-emotion"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "l-p52",
+      "title": "А. Н. Леонтьев. Деятельность. Сознание. Личность (1975)",
+      "kind": "primary-text",
+      "locator": "Гл. III §4, с. 52",
+      "access": "public",
+      "verification": "Локатор сверён с доступной электронной страницей; интерпретация ограничена теорией.",
+      "url": "https://www.pedlib.ru/Books/3/0010/3_0010-52.shtml"
+    },
+    {
+      "id": "l-p54",
+      "title": "А. Н. Леонтьев. Деятельность. Сознание. Личность (1975)",
+      "kind": "primary-text",
+      "locator": "Гл. III §5, с. 54",
+      "access": "public",
+      "verification": "Локатор сверён с доступной электронной страницей; интерпретация ограничена теорией.",
+      "url": "https://www.pedlib.ru/Books/3/0010/3_0010-54.shtml"
+    },
+    {
+      "id": "l-p55",
+      "title": "А. Н. Леонтьев. Деятельность. Сознание. Личность (1975)",
+      "kind": "primary-text",
+      "locator": "Гл. III §5, с. 55",
+      "access": "public",
+      "verification": "Локатор сверён с доступной электронной страницей; интерпретация ограничена теорией.",
+      "url": "https://www.pedlib.ru/Books/3/0010/3_0010-55.shtml"
+    },
+    {
+      "id": "l-p56",
+      "title": "А. Н. Леонтьев. Деятельность. Сознание. Личность (1975)",
+      "kind": "primary-text",
+      "locator": "Гл. III §5, с. 56",
+      "access": "public",
+      "verification": "Локатор сверён с доступной электронной страницей; интерпретация ограничена теорией.",
+      "url": "https://www.pedlib.ru/Books/3/0010/3_0010-56.shtml"
+    },
+    {
+      "id": "l-p69",
+      "title": "А. Н. Леонтьев. Деятельность. Сознание. Личность (1975)",
+      "kind": "primary-text",
+      "locator": "Гл. IV, с. 69",
+      "access": "public",
+      "verification": "Локатор сверён с доступной электронной страницей; интерпретация ограничена теорией.",
+      "url": "https://www.pedlib.ru/Books/3/0010/3_0010-69.shtml"
+    },
+    {
+      "id": "l-p78",
+      "title": "А. Н. Леонтьев. Деятельность. Сознание. Личность (1975)",
+      "kind": "primary-text",
+      "locator": "Гл. IV, с. 78",
+      "access": "public",
+      "verification": "Локатор сверён с доступной электронной страницей; интерпретация ограничена теорией.",
+      "url": "https://www.pedlib.ru/Books/3/0010/3_0010-78.shtml"
+    },
+    {
+      "id": "l-p80",
+      "title": "А. Н. Леонтьев. Деятельность. Сознание. Личность (1975)",
+      "kind": "primary-text",
+      "locator": "Гл. IV, с. 80",
+      "access": "public",
+      "verification": "Локатор сверён с доступной электронной страницей; интерпретация ограничена теорией.",
+      "url": "https://www.pedlib.ru/Books/3/0010/3_0010-80.shtml"
+    },
+    {
+      "id": "l-p98",
+      "title": "А. Н. Леонтьев. Деятельность. Сознание. Личность (1975)",
+      "kind": "primary-text",
+      "locator": "Гл. V §3–4, с. 98",
+      "access": "public",
+      "verification": "Локатор сверён с доступной электронной страницей; интерпретация ограничена теорией.",
+      "url": "https://www.pedlib.ru/Books/3/0010/3_0010-98.shtml"
+    },
+    {
+      "id": "l-p99",
+      "title": "А. Н. Леонтьев. Деятельность. Сознание. Личность (1975)",
+      "kind": "primary-text",
+      "locator": "Гл. V §3–4, с. 99",
+      "access": "public",
+      "verification": "Локатор сверён с доступной электронной страницей; интерпретация ограничена теорией.",
+      "url": "https://www.pedlib.ru/Books/3/0010/3_0010-99.shtml"
+    },
+    {
+      "id": "l-p102",
+      "title": "А. Н. Леонтьев. Деятельность. Сознание. Личность (1975)",
+      "kind": "primary-text",
+      "locator": "Гл. V §3–4, с. 102",
+      "access": "public",
+      "verification": "Локатор сверён с доступной электронной страницей; интерпретация ограничена теорией.",
+      "url": "https://www.pedlib.ru/Books/3/0010/3_0010-102.shtml"
+    },
+    {
+      "id": "l-p103",
+      "title": "А. Н. Леонтьев. Деятельность. Сознание. Личность (1975)",
+      "kind": "primary-text",
+      "locator": "Гл. V §3–4, с. 103",
+      "access": "public",
+      "verification": "Локатор сверён с доступной электронной страницей; интерпретация ограничена теорией.",
+      "url": "https://www.pedlib.ru/Books/3/0010/3_0010-103.shtml"
+    },
+    {
+      "id": "l-1971",
+      "title": "А. Н. Леонтьев. Потребности, мотивы и эмоции (1971)",
+      "kind": "primary-text",
+      "locator": "Точные страницы требуют сверки",
+      "access": "catalog",
+      "verification": "Библиография проверена в каталоге РГБ, положения текста пока не сверены.",
+      "url": "https://search.rsl.ru/ru/record/01007153365"
+    },
+    {
+      "id": "l-design",
+      "title": "Спецификация атласа Леонтьева",
+      "kind": "project-design",
+      "locator": "docs/LEONTIEV_ATLAS_SPEC.md",
+      "access": "project",
+      "verification": "Учебные сценарии, не первоисточник"
+    }
+  ],
+  "mechanisms": [
+    {
+      "id": "lm-levels",
+      "theoryId": "leontiev-theory",
+      "claimIds": [
+        "l-structure",
+        "l-transition",
+        "l-didactic"
+      ],
+      "conceptIds": [
+        "lc-activity",
+        "lc-action",
+        "lc-operation",
+        "lc-motive",
+        "lc-goal",
+        "lc-conditions"
+      ],
+      "description": "Соотнесение уровней и заданных контекстов."
+    },
+    {
+      "id": "lm-sense",
+      "theoryId": "leontiev-theory",
+      "claimIds": [
+        "l-meaning",
+        "l-didactic"
+      ],
+      "conceptIds": [
+        "lc-consciousness",
+        "lc-meaning",
+        "lc-sense",
+        "lc-motive"
+      ],
+      "description": "Различение значения и личностного смысла."
+    },
+    {
+      "id": "lm-emotion",
+      "theoryId": "leontiev-theory",
+      "claimIds": [
+        "l-emotion",
+        "l-personality",
+        "l-didactic"
+      ],
+      "conceptIds": [
+        "lc-motive",
+        "lc-emotion",
+        "lc-outcome",
+        "lc-hierarchy"
+      ],
+      "description": "Отношение результата к заданному мотивному контексту."
+    }
+  ],
+  "models": [
+    {
+      "id": "leontiev-levels",
+      "version": "0.1.0",
+      "label": "Строение и преобразования",
+      "engine": "rules-v1",
+      "theoryId": "leontiev-theory",
+      "mechanismIds": [
+        "lm-levels"
+      ],
+      "claimIds": [
+        "l-structure",
+        "l-transition",
+        "l-didactic"
+      ],
+      "sourceIds": [
+        "l-p52",
+        "l-p54",
+        "l-p55",
+        "l-p56",
+        "l-p69",
+        "l-p78",
+        "l-p80",
+        "l-p98",
+        "l-p99",
+        "l-p102",
+        "l-p103",
+        "l-design"
+      ],
+      "conceptIds": [
+        "lc-activity",
+        "lc-action",
+        "lc-operation",
+        "lc-motive",
+        "lc-goal",
+        "lc-conditions"
+      ],
+      "inputs": {
+        "motiveContext": {
+          "type": "enum",
+          "label": "Заданный мотив",
+          "enum": [
+            "learning",
+            "recognition"
+          ],
+          "initial": "learning"
+        },
+        "conditions": {
+          "type": "enum",
+          "label": "Условия выполнения",
+          "enum": [
+            "paper",
+            "digital"
+          ],
+          "initial": "paper"
+        }
+      },
+      "states": {},
+      "events": {},
+      "rules": [
+        {
+          "id": "operationLabel",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "input.conditions"
+                  },
+                  "paper"
+                ]
+              },
+              "Записи на бумаге",
+              "Работа в цифровой среде"
+            ]
+          },
+          "claimIds": [
+            "l-structure",
+            "l-transition",
+            "l-didactic"
+          ],
+          "sourceSpan": {
+            "sourceId": "l-design",
+            "locator": "docs/LEONTIEV_ATLAS_SPEC.md, раздел «Пространство и преподавательский показ»",
+            "basis": "project-design",
+            "status": "didactic"
+          }
+        },
+        {
+          "id": "activityLabel",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "input.motiveContext"
+                  },
+                  "learning"
+                ]
+              },
+              "Освоение материала",
+              "Получение признания"
+            ]
+          },
+          "claimIds": [
+            "l-structure",
+            "l-transition",
+            "l-didactic"
+          ],
+          "sourceSpan": {
+            "sourceId": "l-design",
+            "locator": "docs/LEONTIEV_ATLAS_SPEC.md, раздел «Пространство и преподавательский показ»",
+            "basis": "project-design",
+            "status": "didactic"
+          }
+        }
+      ],
+      "outputs": {
+        "activity": {
+          "type": "string",
+          "expr": {
+            "ref": "derived.activityLabel"
+          },
+          "claimIds": [
+            "l-structure",
+            "l-didactic"
+          ]
+        },
+        "motive": {
+          "type": "string",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "input.motiveContext"
+                  },
+                  "learning"
+                ]
+              },
+              "Предмет изучения",
+              "Признание результата"
+            ]
+          },
+          "claimIds": [
+            "l-structure",
+            "l-didactic"
+          ]
+        },
+        "action": {
+          "type": "string",
+          "expr": "Подготовить объяснение",
+          "claimIds": [
+            "l-transition",
+            "l-didactic"
+          ]
+        },
+        "goal": {
+          "type": "string",
+          "expr": "Готовое объяснение",
+          "claimIds": [
+            "l-structure",
+            "l-didactic"
+          ]
+        },
+        "operation": {
+          "type": "string",
+          "expr": {
+            "ref": "derived.operationLabel"
+          },
+          "claimIds": [
+            "l-transition",
+            "l-didactic"
+          ]
+        },
+        "conditions": {
+          "type": "string",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "input.conditions"
+                  },
+                  "paper"
+                ]
+              },
+              "Бумага и ручка",
+              "Цифровой редактор"
+            ]
+          },
+          "claimIds": [
+            "l-structure",
+            "l-didactic"
+          ]
+        }
+      },
+      "assumptions": [
+        "l-structure",
+        "l-transition",
+        "l-didactic"
+      ],
+      "validityDomain": "Качественная демонстрация отношений внутри теории при явно заданных учебных условиях.",
+      "limitations": [
+        "Не определяет реальные мотивы, смысл или эмоции человека.",
+        "Переключение сценария — учебное допущение, не психологический прогноз."
+      ],
+      "invariants": [
+        {
+          "id": "outputs-known",
+          "expr": true
+        }
+      ],
+      "presentation": {
+        "mode": "levels",
+        "introClaimId": "l-structure",
+        "columns": [
+          {
+            "title": "Деятельность ↔ мотив",
+            "items": [
+              "activity",
+              "motive"
+            ]
+          },
+          {
+            "title": "Действие ↔ цель",
+            "items": [
+              "action",
+              "goal"
+            ]
+          },
+          {
+            "title": "Операция ↔ условия",
+            "items": [
+              "operation",
+              "conditions"
+            ]
+          }
+        ],
+        "labels": {
+          "activity": "Деятельность",
+          "motive": "Мотив",
+          "action": "Действие",
+          "goal": "Цель",
+          "operation": "Операция",
+          "conditions": "Условия"
+        },
+        "caption": "То же заданное действие может входить в разные деятельности; смена условий меняет способ. Иллюстрация, не предсказание."
+      }
+    },
+    {
+      "id": "leontiev-sense",
+      "version": "0.1.0",
+      "label": "Значение и личностный смысл",
+      "engine": "rules-v1",
+      "theoryId": "leontiev-theory",
+      "mechanismIds": [
+        "lm-sense"
+      ],
+      "claimIds": [
+        "l-meaning",
+        "l-didactic"
+      ],
+      "sourceIds": [
+        "l-p52",
+        "l-p54",
+        "l-p55",
+        "l-p56",
+        "l-p69",
+        "l-p78",
+        "l-p80",
+        "l-p98",
+        "l-p99",
+        "l-p102",
+        "l-p103",
+        "l-design"
+      ],
+      "conceptIds": [
+        "lc-consciousness",
+        "lc-meaning",
+        "lc-sense",
+        "lc-motive"
+      ],
+      "inputs": {
+        "motiveContext": {
+          "type": "enum",
+          "label": "Заданный мотив",
+          "enum": [
+            "learning",
+            "recognition"
+          ],
+          "initial": "learning"
+        }
+      },
+      "states": {},
+      "events": {},
+      "rules": [
+        {
+          "id": "senseLabel",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "input.motiveContext"
+                  },
+                  "learning"
+                ]
+              },
+              "Способ освоить материал",
+              "Способ получить признание"
+            ]
+          },
+          "claimIds": [
+            "l-meaning",
+            "l-didactic"
+          ],
+          "sourceSpan": {
+            "sourceId": "l-design",
+            "locator": "docs/LEONTIEV_ATLAS_SPEC.md, раздел «Пространство и преподавательский показ»",
+            "basis": "project-design",
+            "status": "didactic"
+          }
+        }
+      ],
+      "outputs": {
+        "sensory": {
+          "type": "string",
+          "expr": "Видимый текст объяснения",
+          "claimIds": [
+            "l-meaning",
+            "l-didactic"
+          ]
+        },
+        "meaning": {
+          "type": "string",
+          "expr": "Текст объясняет понятие",
+          "claimIds": [
+            "l-meaning",
+            "l-didactic"
+          ]
+        },
+        "sense": {
+          "type": "string",
+          "expr": {
+            "ref": "derived.senseLabel"
+          },
+          "claimIds": [
+            "l-meaning",
+            "l-didactic"
+          ]
+        },
+        "motive": {
+          "type": "string",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "input.motiveContext"
+                  },
+                  "learning"
+                ]
+              },
+              "Освоение материала",
+              "Признание результата"
+            ]
+          },
+          "claimIds": [
+            "l-meaning",
+            "l-didactic"
+          ]
+        }
+      },
+      "assumptions": [
+        "l-meaning",
+        "l-didactic"
+      ],
+      "validityDomain": "Качественная демонстрация отношений внутри теории при явно заданных учебных условиях.",
+      "limitations": [
+        "Не определяет реальные мотивы, смысл или эмоции человека.",
+        "Переключение сценария — учебное допущение, не психологический прогноз."
+      ],
+      "invariants": [
+        {
+          "id": "outputs-known",
+          "expr": true
+        }
+      ],
+      "presentation": {
+        "mode": "sense",
+        "introClaimId": "l-meaning",
+        "columns": [
+          {
+            "title": "Чувственная ткань",
+            "items": [
+              "sensory"
+            ]
+          },
+          {
+            "title": "Общественное значение",
+            "items": [
+              "meaning"
+            ]
+          },
+          {
+            "title": "Личностный смысл",
+            "items": [
+              "sense",
+              "motive"
+            ]
+          }
+        ],
+        "labels": {
+          "sensory": "В данном примере",
+          "meaning": "Что означает текст",
+          "sense": "Что значит для субъекта",
+          "motive": "Заданный мотив"
+        },
+        "caption": "Значение текста не меняется при переключении заданного мотивного контекста. Это учебная схема, не измерение смысла."
+      }
+    },
+    {
+      "id": "leontiev-emotion",
+      "version": "0.1.0",
+      "label": "Мотивы и эмоции",
+      "engine": "rules-v1",
+      "theoryId": "leontiev-theory",
+      "mechanismIds": [
+        "lm-emotion"
+      ],
+      "claimIds": [
+        "l-emotion",
+        "l-personality",
+        "l-didactic"
+      ],
+      "sourceIds": [
+        "l-p52",
+        "l-p54",
+        "l-p55",
+        "l-p56",
+        "l-p69",
+        "l-p78",
+        "l-p80",
+        "l-p98",
+        "l-p99",
+        "l-p102",
+        "l-p103",
+        "l-design"
+      ],
+      "conceptIds": [
+        "lc-motive",
+        "lc-emotion",
+        "lc-outcome",
+        "lc-hierarchy"
+      ],
+      "inputs": {
+        "motiveContext": {
+          "type": "enum",
+          "label": "Заданный ведущий мотив",
+          "enum": [
+            "learning",
+            "recognition"
+          ],
+          "initial": "learning"
+        },
+        "actionResult": {
+          "type": "enum",
+          "label": "Результат отдельного действия",
+          "enum": [
+            "success",
+            "setback"
+          ],
+          "initial": "success"
+        }
+      },
+      "states": {},
+      "events": {},
+      "rules": [
+        {
+          "id": "relation",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "input.motiveContext"
+                  },
+                  "learning"
+                ]
+              },
+              "Результат рассматривается относительно освоения",
+              "Результат рассматривается относительно признания"
+            ]
+          },
+          "claimIds": [
+            "l-emotion",
+            "l-didactic"
+          ],
+          "sourceSpan": {
+            "sourceId": "l-design",
+            "locator": "docs/LEONTIEV_ATLAS_SPEC.md, раздел «Пространство и преподавательский показ»",
+            "basis": "project-design",
+            "status": "didactic"
+          }
+        },
+        {
+          "id": "signal",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "input.actionResult"
+                  },
+                  "success"
+                ]
+              },
+              "Успех действия сам по себе не задаёт эмоцию",
+              "Неудача действия сама по себе не задаёт эмоцию"
+            ]
+          },
+          "claimIds": [
+            "l-emotion",
+            "l-didactic"
+          ],
+          "sourceSpan": {
+            "sourceId": "l-design",
+            "locator": "docs/LEONTIEV_ATLAS_SPEC.md, раздел «Пространство и преподавательский показ»",
+            "basis": "project-design",
+            "status": "didactic"
+          }
+        }
+      ],
+      "outputs": {
+        "motive": {
+          "type": "string",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "input.motiveContext"
+                  },
+                  "learning"
+                ]
+              },
+              "Освоение материала",
+              "Признание результата"
+            ]
+          },
+          "claimIds": [
+            "l-emotion",
+            "l-didactic"
+          ]
+        },
+        "result": {
+          "type": "string",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "input.actionResult"
+                  },
+                  "success"
+                ]
+              },
+              "Действие выполнено",
+              "Действие не завершено"
+            ]
+          },
+          "claimIds": [
+            "l-emotion",
+            "l-didactic"
+          ]
+        },
+        "relation": {
+          "type": "string",
+          "expr": {
+            "ref": "derived.relation"
+          },
+          "claimIds": [
+            "l-emotion",
+            "l-didactic"
+          ]
+        },
+        "signal": {
+          "type": "string",
+          "expr": {
+            "ref": "derived.signal"
+          },
+          "claimIds": [
+            "l-emotion",
+            "l-didactic"
+          ]
+        }
+      },
+      "assumptions": [
+        "l-emotion",
+        "l-personality",
+        "l-didactic"
+      ],
+      "validityDomain": "Качественная демонстрация отношений внутри теории при явно заданных учебных условиях.",
+      "limitations": [
+        "Не определяет реальные мотивы, смысл или эмоции человека.",
+        "Переключение сценария — учебное допущение, не психологический прогноз."
+      ],
+      "invariants": [
+        {
+          "id": "outputs-known",
+          "expr": true
+        }
+      ],
+      "presentation": {
+        "mode": "emotion",
+        "introClaimId": "l-emotion",
+        "columns": [
+          {
+            "title": "Заданный мотив",
+            "items": [
+              "motive"
+            ]
+          },
+          {
+            "title": "Результат действия",
+            "items": [
+              "result"
+            ]
+          },
+          {
+            "title": "Эмоциональный сигнал",
+            "items": [
+              "relation",
+              "signal"
+            ]
+          }
+        ],
+        "labels": {
+          "motive": "Контекст деятельности",
+          "result": "Наблюдаемый результат",
+          "relation": "Релевантность мотиву",
+          "signal": "Граница вывода"
+        },
+        "caption": "Эмоция не вычисляется из успешности действия; реальное переживание и мотив не определяются интерфейсом."
+      }
+    }
+  ],
+  "versions": [
+    {
+      "id": "lv-0",
+      "modelId": "leontiev-levels",
+      "version": "0.1.0",
+      "schemaVersion": "model-package/0.1",
+      "changeSummary": "Первый преподавательский срез"
+    },
+    {
+      "id": "lv-1",
+      "modelId": "leontiev-sense",
+      "version": "0.1.0",
+      "schemaVersion": "model-package/0.1",
+      "changeSummary": "Первый преподавательский срез"
+    },
+    {
+      "id": "lv-2",
+      "modelId": "leontiev-emotion",
+      "version": "0.1.0",
+      "schemaVersion": "model-package/0.1",
+      "changeSummary": "Первый преподавательский срез"
+    }
+  ],
+  "scenarios": [],
+  "adapters": []
+}

@@ -1,10 +1,12 @@
 import berne from "./packages/berne.json" with { type: "json" };
 import emotions from "./packages/emotions.json" with { type: "json" };
+import leontiev from "./packages/leontiev.json" with { type: "json" };
 import { assertPackage } from "./schema.js";
 import { createRuntime } from "./runtime.js";
 const packages = {
   berne: assertPackage(berne),
   emotions: assertPackage(emotions),
+  leontiev: assertPackage(leontiev),
 };
 const entries = [
   {
@@ -47,6 +49,38 @@ const entries = [
       "emotion",
     ],
   },
+  ...[
+    [
+      "leontiev-levels",
+      "Строение и преобразования",
+      [
+        "activity",
+        "action",
+        "operation",
+        "motive",
+        "goal",
+        "conditions",
+        "external",
+        "internal",
+      ],
+    ],
+    [
+      "leontiev-sense",
+      "Значение и личностный смысл",
+      ["consciousness", "sensory", "meaning", "sense"],
+    ],
+    [
+      "leontiev-emotion",
+      "Мотивы и эмоции",
+      ["personality", "need", "hierarchy", "emotion", "outcome"],
+    ],
+  ].map(([id, label, conceptIds]) => ({
+    id,
+    atlas: "leontiev",
+    renderer: "leontiev",
+    label,
+    conceptIds,
+  })),
 ];
 export function listLaboratories() {
   return structuredClone(entries);

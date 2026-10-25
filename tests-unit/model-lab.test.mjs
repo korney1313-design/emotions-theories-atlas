@@ -11,6 +11,53 @@ import { evaluate } from "../src/lab/expression.js";
 
 const bp = () => laboratoryPackage("berne-transactions");
 const ep = () => laboratoryPackage("emotions-comparison");
+const lp = () => laboratoryPackage("leontiev-levels");
+test("Leontiev package keeps scientific claims, reviewed locators and unverified 1971 distinct", () => {
+  const p = lp();
+  assert.equal(validatePackage(p).valid, true);
+  assert.equal(p.models.length, 3);
+  assert.ok(p.claims.some((c) => c.sourceSpan?.status === "reviewed"));
+  assert.ok(
+    p.sources
+      .find((s) => s.id === "l-1971")
+      .verification.includes("не сверены"),
+  );
+  assert.ok(!p.claims.some((c) => c.sourceSpan?.sourceId === "l-1971"));
+  assert.ok(
+    p.models.every(
+      (m) => m.engine === "rules-v1" && m.presentation.columns.length === 3,
+    ),
+  );
+});
+test("Leontiev interventions change only stipulated educational context", () => {
+  const levels = startLaboratory("leontiev-levels");
+  const first = levels.getObservables();
+  levels.intervene("conditions", "digital");
+  const changed = levels.getObservables();
+  assert.equal(changed.motive, first.motive);
+  assert.equal(changed.action, first.action);
+  assert.notEqual(changed.operation, first.operation);
+  levels.intervene("motiveContext", "recognition");
+  assert.equal(levels.getObservables().operation, changed.operation);
+  assert.notEqual(levels.getObservables().activity, changed.activity);
+  const sense = startLaboratory("leontiev-sense");
+  const before = sense.getObservables();
+  sense.intervene("motiveContext", "recognition");
+  assert.equal(sense.getObservables().meaning, before.meaning);
+  assert.notEqual(sense.getObservables().sense, before.sense);
+  const emotion = startLaboratory("leontiev-emotion");
+  const e0 = emotion.getObservables();
+  emotion.intervene("motiveContext", "recognition");
+  assert.equal(emotion.getObservables().result, e0.result);
+  assert.notEqual(emotion.getObservables().relation, e0.relation);
+  assert.match(emotion.getObservables().signal, /не задаёт эмоцию/);
+  assert.ok(
+    emotion
+      .getTrace()
+      .at(-1)
+      .evaluations.every((r) => r.claimIds.length > 0),
+  );
+});
 test("packages validate, term senses retain theory context and relations retain n-ary roles", () => {
   for (const p of [bp(), ep()]) assert.equal(validatePackage(p).valid, true);
   const senses = ep().concepts.filter((c) => c.term === "Эмоция");
@@ -80,7 +127,8 @@ test("source spans identify a listed source, locator, basis and review status", 
     assert.equal(validatePackage(p).valid, false);
   }
   const p = ep();
-  p.models.find((m) => m.id === "emotions-appraisal")
+  p.models
+    .find((m) => m.id === "emotions-appraisal")
     .rules.find((r) => r.sourceSpan).sourceSpan.sourceId = "e-russell";
   assert.equal(validatePackage(p).valid, false);
 });
@@ -172,8 +220,12 @@ test("all psychological endpoint combinations preserve unknowns and role symmetr
               psychResponseTo: responseTo,
             });
             const before = r.getObservables();
-            const known = [stimulusFrom, stimulusTo, responseFrom, responseTo]
-              .every((v) => v !== null);
+            const known = [
+              stimulusFrom,
+              stimulusTo,
+              responseFrom,
+              responseTo,
+            ].every((v) => v !== null);
             assert.equal(before.kind, known ? "ulterior" : "insufficient-data");
             assert.equal(
               before.psychClass,

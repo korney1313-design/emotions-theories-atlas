@@ -117,6 +117,30 @@ try {
   await page.screenshot({
     path: "artifacts/qa/model-lab/production-comparison.png",
   });
+  await page.goto(`${url}/?atlas=leontiev`);
+  await page.waitForFunction(() => window.atlas?.data.id === "leontiev");
+  if (
+    (await page.locator("#status").textContent()) !==
+    "21 понятий · 27 отношений"
+  )
+    throw Error("Leontiev atlas failed in production");
+  await page.locator("#search").fill("Деятельность");
+  await page.locator('[data-result="activity"]').click();
+  await page.locator("#open-lab").click();
+  await page.locator("#lab-conditions").selectOption("digital");
+  if (
+    (await page.locator('[data-output="operation"]').textContent()) !==
+    "Работа в цифровой среде"
+  )
+    throw Error("Leontiev model failed in production");
+  await page.locator('[data-model="leontiev-sense"]').click();
+  await page.locator('[data-model="leontiev-emotion"]').click();
+  if (
+    !(await page.locator('[data-output="signal"]').textContent()).includes(
+      "не задаёт эмоцию",
+    )
+  )
+    throw Error("Leontiev emotion boundary failed in production");
   if (errors.length) throw Error(errors.join("\n"));
   const report = {
     passed: true,
@@ -124,6 +148,7 @@ try {
     relations: 59,
     webgl: true,
     emotions: { nodes: 48, relations: 77, regulationModel: true },
+    leontiev: { nodes: 21, relations: 27, models: 3 },
     concept: "Взрослый",
     modelLaboratory: { berne: true, emotions: true, adapterIsolation: true },
     consoleAndHttpErrors: errors,

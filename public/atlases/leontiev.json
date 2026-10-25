@@ -1,0 +1,665 @@
+{
+  "id": "leontiev",
+  "title": "Теория деятельности А. Н. Леонтьева",
+  "subtitle": "Предметность · строение · сознание · личность",
+  "entryPoints": [
+    "theory",
+    "activity",
+    "consciousness",
+    "personality",
+    "emotion"
+  ],
+  "nodes": [
+    {
+      "id": "theory",
+      "label": "Теория деятельности",
+      "section": "Метод и предметность",
+      "definition": "Предметная деятельность рассматривается как категория психологического анализа.",
+      "kind": "тезис",
+      "limit": "Положение внутри теории; не диагностический вывод.",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. II–V; точный абзац требует проверки",
+        "url": "https://www.pedlib.ru/Books/3/0010/index.shtml",
+        "verification": "candidate"
+      }
+    },
+    {
+      "id": "object",
+      "label": "Предметность",
+      "section": "Метод и предметность",
+      "definition": "Деятельность направлена на предмет, который имеет значение для субъекта.",
+      "kind": "тезис",
+      "limit": "Положение внутри теории; не диагностический вывод.",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. II–V; точный абзац требует проверки",
+        "url": "https://www.pedlib.ru/Books/3/0010/index.shtml",
+        "verification": "candidate"
+      }
+    },
+    {
+      "id": "reflection",
+      "label": "Психическое отражение",
+      "section": "Метод и предметность",
+      "definition": "Отражение включено в предметные отношения, а не представлено изолированной реакцией.",
+      "kind": "тезис",
+      "limit": "Положение внутри теории; не диагностический вывод.",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. II–V; точный абзац требует проверки",
+        "url": "https://www.pedlib.ru/Books/3/0010/index.shtml",
+        "verification": "candidate"
+      }
+    },
+    {
+      "id": "mediation",
+      "label": "Общественное опосредствование",
+      "section": "Метод и предметность",
+      "definition": "Человеческая деятельность и сознание формируются в общественных отношениях.",
+      "kind": "тезис",
+      "limit": "Положение внутри теории; не диагностический вывод.",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. IV, с. 69",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-69.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "activity",
+      "label": "Деятельность",
+      "section": "Строение и переходы",
+      "definition": "Особенная деятельность выделяется по побуждающему её мотиву.",
+      "kind": "тезис",
+      "limit": "Положение внутри теории; не диагностический вывод.",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. III §5, с. 56",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-56.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "action",
+      "label": "Действие",
+      "section": "Строение и переходы",
+      "definition": "Процесс, подчинённый сознательной цели; может реализовать разные деятельности.",
+      "kind": "тезис",
+      "limit": "Положение внутри теории; не диагностический вывод.",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. III §5, с. 54",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-54.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "operation",
+      "label": "Операция",
+      "section": "Строение и переходы",
+      "definition": "Способ выполнения действия, зависящий от условий достижения цели.",
+      "kind": "тезис",
+      "limit": "Положение внутри теории; не диагностический вывод.",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. III §5, с. 56",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-56.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "motive",
+      "label": "Мотив",
+      "section": "Строение и переходы",
+      "definition": "Предмет, в котором опредмечена потребность и который побуждает деятельность.",
+      "kind": "тезис",
+      "limit": "Положение внутри теории; не диагностический вывод.",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. V §3–4, с. 99",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-99.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "goal",
+      "label": "Цель",
+      "section": "Строение и переходы",
+      "definition": "Осознаваемый результат, которому подчинено действие.",
+      "kind": "тезис",
+      "limit": "Положение внутри теории; не диагностический вывод.",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. III §5, с. 54",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-54.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "conditions",
+      "label": "Условия",
+      "section": "Строение и переходы",
+      "definition": "Предметные обстоятельства достижения цели, определяющие операционный аспект.",
+      "kind": "тезис",
+      "limit": "Положение внутри теории; не диагностический вывод.",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. III §5, с. 56",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-56.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "external",
+      "label": "Внешняя деятельность",
+      "section": "Строение и переходы",
+      "definition": "Практическая форма деятельности, связанная с внутренней общим строением.",
+      "kind": "тезис",
+      "limit": "Положение внутри теории; не диагностический вывод.",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. III §4, с. 52",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-52.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "internal",
+      "label": "Внутренняя деятельность",
+      "section": "Строение и переходы",
+      "definition": "Внутренняя форма деятельности сохраняет двустороннюю связь с внешней.",
+      "kind": "тезис",
+      "limit": "Положение внутри теории; не диагностический вывод.",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. III §4, с. 52",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-52.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "consciousness",
+      "label": "Сознание",
+      "section": "Сознание",
+      "definition": "Индивидуальное сознание формируется в связи с деятельностью и общественными отношениями.",
+      "kind": "тезис",
+      "limit": "Положение внутри теории; не диагностический вывод.",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. IV, с. 69",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-69.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "sensory",
+      "label": "Чувственная ткань",
+      "section": "Сознание",
+      "definition": "Чувственное предъявление предметного мира — одна из образующих сознания.",
+      "kind": "тезис",
+      "limit": "Положение внутри теории; не диагностический вывод.",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. II–V; точный абзац требует проверки",
+        "url": "https://www.pedlib.ru/Books/3/0010/index.shtml",
+        "verification": "candidate"
+      }
+    },
+    {
+      "id": "meaning",
+      "label": "Значение",
+      "section": "Сознание",
+      "definition": "Общественно-историческое содержание, функционирующее в индивидуальном сознании.",
+      "kind": "тезис",
+      "limit": "Положение внутри теории; не диагностический вывод.",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. IV, с. 78",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-78.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "sense",
+      "label": "Личностный смысл",
+      "section": "Сознание",
+      "definition": "Жизненное значение обстоятельств и действий для субъекта в отношении к мотиву.",
+      "kind": "тезис",
+      "limit": "Положение внутри теории; не диагностический вывод.",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. IV, с. 80",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-80.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "personality",
+      "label": "Личность",
+      "section": "Личность, мотивы и эмоции",
+      "definition": "В основании личности — отношения соподчинённости деятельностей.",
+      "kind": "тезис",
+      "limit": "Положение внутри теории; не диагностический вывод.",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. V §3–4, с. 98",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-98.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "need",
+      "label": "Потребность",
+      "section": "Личность, мотивы и эмоции",
+      "definition": "Получает предметное содержание в ходе деятельности.",
+      "kind": "тезис",
+      "limit": "Положение внутри теории; не диагностический вывод.",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. V §3–4, с. 99",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-99.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "hierarchy",
+      "label": "Иерархия мотивов",
+      "section": "Личность, мотивы и эмоции",
+      "definition": "Соподчинение деятельностей обнаруживает отношения мотивов.",
+      "kind": "тезис",
+      "limit": "Положение внутри теории; не диагностический вывод.",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. V §3–4, с. 98",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-98.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "emotion",
+      "label": "Эмоция",
+      "section": "Личность, мотивы и эмоции",
+      "definition": "Внутренний сигнал отношения мотива к ходу и возможности реализации деятельности.",
+      "kind": "тезис",
+      "limit": "Положение внутри теории; не диагностический вывод.",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. V §3–4, с. 103",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-103.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "outcome",
+      "label": "Результат действия",
+      "section": "Личность, мотивы и эмоции",
+      "definition": "Успех отдельного действия не определяет однозначно эмоциональное переживание.",
+      "kind": "тезис",
+      "limit": "Положение внутри теории; не диагностический вывод.",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. V §3–4, с. 103",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-103.shtml",
+        "verification": "reviewed locator"
+      }
+    }
+  ],
+  "edges": [
+    {
+      "id": "l-1",
+      "source": "theory",
+      "target": "object",
+      "relation": "исследует",
+      "status": "требует проверки",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. II–V; точный абзац требует проверки",
+        "url": "https://www.pedlib.ru/Books/3/0010/index.shtml",
+        "verification": "candidate"
+      }
+    },
+    {
+      "id": "l-2",
+      "source": "theory",
+      "target": "reflection",
+      "relation": "объясняет",
+      "status": "требует проверки",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. II–V; точный абзац требует проверки",
+        "url": "https://www.pedlib.ru/Books/3/0010/index.shtml",
+        "verification": "candidate"
+      }
+    },
+    {
+      "id": "l-3",
+      "source": "object",
+      "target": "activity",
+      "relation": "задаёт предмет",
+      "status": "требует проверки",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. II–V; точный абзац требует проверки",
+        "url": "https://www.pedlib.ru/Books/3/0010/index.shtml",
+        "verification": "candidate"
+      }
+    },
+    {
+      "id": "l-4",
+      "source": "reflection",
+      "target": "consciousness",
+      "relation": "развивается в",
+      "status": "требует проверки",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. II–V; точный абзац требует проверки",
+        "url": "https://www.pedlib.ru/Books/3/0010/index.shtml",
+        "verification": "candidate"
+      }
+    },
+    {
+      "id": "l-5",
+      "source": "mediation",
+      "target": "consciousness",
+      "relation": "опосредует",
+      "status": "положение подхода",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. IV, с. 69",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-69.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "l-6",
+      "source": "mediation",
+      "target": "activity",
+      "relation": "исторически формирует",
+      "status": "положение подхода",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. IV, с. 69",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-69.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "l-7",
+      "source": "activity",
+      "target": "motive",
+      "relation": "побуждается",
+      "status": "положение подхода",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. III §5, с. 56",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-56.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "l-8",
+      "source": "action",
+      "target": "goal",
+      "relation": "направлено на",
+      "status": "положение подхода",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. III §5, с. 54",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-54.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "l-9",
+      "source": "operation",
+      "target": "conditions",
+      "relation": "зависит от",
+      "status": "положение подхода",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. III §5, с. 56",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-56.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "l-10",
+      "source": "action",
+      "target": "activity",
+      "relation": "реализует",
+      "status": "положение подхода",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. III §5, с. 54",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-54.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "l-11",
+      "source": "operation",
+      "target": "action",
+      "relation": "реализует",
+      "status": "положение подхода",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. III §5, с. 56",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-56.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "l-12",
+      "source": "motive",
+      "target": "goal",
+      "relation": "отличается от",
+      "status": "положение подхода",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. III §5, с. 54",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-54.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "l-13",
+      "source": "external",
+      "target": "internal",
+      "relation": "взаимопереходит",
+      "status": "положение подхода",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. III §4, с. 52",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-52.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "l-14",
+      "source": "conditions",
+      "target": "operation",
+      "relation": "меняет способ",
+      "status": "положение подхода",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. III §5, с. 56",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-56.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "l-15",
+      "source": "consciousness",
+      "target": "sensory",
+      "relation": "включает",
+      "status": "требует проверки",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. II–V; точный абзац требует проверки",
+        "url": "https://www.pedlib.ru/Books/3/0010/index.shtml",
+        "verification": "candidate"
+      }
+    },
+    {
+      "id": "l-16",
+      "source": "consciousness",
+      "target": "meaning",
+      "relation": "включает",
+      "status": "положение подхода",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. IV, с. 78",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-78.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "l-17",
+      "source": "consciousness",
+      "target": "sense",
+      "relation": "включает",
+      "status": "положение подхода",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. IV, с. 80",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-80.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "l-18",
+      "source": "meaning",
+      "target": "sense",
+      "relation": "может не совпадать",
+      "status": "положение подхода",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. IV, с. 80",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-80.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "l-19",
+      "source": "motive",
+      "target": "sense",
+      "relation": "придаёт",
+      "status": "положение подхода",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. IV, с. 80",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-80.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "l-20",
+      "source": "activity",
+      "target": "consciousness",
+      "relation": "связана с",
+      "status": "положение подхода",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. IV, с. 69",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-69.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "l-21",
+      "source": "personality",
+      "target": "hierarchy",
+      "relation": "основана на",
+      "status": "положение подхода",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. V §3–4, с. 98",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-98.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "l-22",
+      "source": "hierarchy",
+      "target": "motive",
+      "relation": "упорядочивает",
+      "status": "положение подхода",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. V §3–4, с. 98",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-98.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "l-23",
+      "source": "need",
+      "target": "motive",
+      "relation": "опредмечивается в",
+      "status": "положение подхода",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. V §3–4, с. 99",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-99.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "l-24",
+      "source": "motive",
+      "target": "emotion",
+      "relation": "связан с сигналом",
+      "status": "положение подхода",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. V §3–4, с. 103",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-103.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "l-25",
+      "source": "emotion",
+      "target": "outcome",
+      "relation": "не выводится из одного результата",
+      "status": "положение подхода",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. V §3–4, с. 103",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-103.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "l-26",
+      "source": "activity",
+      "target": "personality",
+      "relation": "образует основание",
+      "status": "положение подхода",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. V §3–4, с. 98",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-98.shtml",
+        "verification": "reviewed locator"
+      }
+    },
+    {
+      "id": "l-27",
+      "source": "sense",
+      "target": "personality",
+      "relation": "связан с",
+      "status": "положение подхода",
+      "provenance": {
+        "source": "Леонтьев, Деятельность. Сознание. Личность (1975)",
+        "locator": "Гл. IV, с. 80",
+        "url": "https://www.pedlib.ru/Books/3/0010/3_0010-80.shtml",
+        "verification": "reviewed locator"
+      }
+    }
+  ],
+  "provenance": {
+    "summary": "Учебная карта связей теории деятельности А. Н. Леонтьева по книге 1975 года. Точные локаторы части методологических тезисов требуют проверки.",
+    "bibliography": "А. Н. Леонтьев, «Деятельность. Сознание. Личность» (1975); «Потребности, мотивы и эмоции» (1971) — точные фрагменты ещё требуют сверки."
+  }
+}
