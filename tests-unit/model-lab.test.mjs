@@ -58,6 +58,41 @@ test("Leontiev interventions change only stipulated educational context", () => 
       .evaluations.every((r) => r.claimIds.length > 0),
   );
 });
+test("Leontiev nested scene changes operation identities and dependencies while preserving action and goal", () => {
+  const p = lp();
+  const model = p.models.find((m) => m.id === "leontiev-levels");
+  const scene = model.presentation.visualization;
+  assert.equal(scene.kind, "nested-mechanism");
+  const runtime = startLaboratory("leontiev-levels");
+  const before = runtime.getObservables();
+  assert.deepEqual(before.activeMethods, ["margin-notes", "paper-cards"]);
+  assert.equal(before.activeResource, "paper-tools");
+  runtime.intervene("conditions", "digital");
+  const after = runtime.getObservables();
+  assert.deepEqual(after.activeMethods, [
+    "digital-highlight",
+    "digital-blocks",
+    "digital-outline",
+  ]);
+  assert.equal(after.activeResource, "digital-tools");
+  assert.equal(after.action, before.action);
+  assert.equal(after.goal, before.goal);
+  assert.equal(after.motive, before.motive);
+  runtime.intervene("motiveContext", "recognition");
+  const withNewMotive = runtime.getObservables();
+  assert.equal(withNewMotive.activeActivity, "recognition");
+  assert.deepEqual(withNewMotive.activeMethods, after.activeMethods);
+  assert.equal(withNewMotive.goal, before.goal);
+  assert.ok(
+    p.claims.find((c) => c.id === "l-ways-example").status === "didactic",
+  );
+  assert.ok(
+    model.rules.find((r) => r.id === "activeWays").sourceSpan.status ===
+      "didactic",
+  );
+  for (const id of after.activeMethods)
+    assert.ok(scene.items.some((item) => item.id === id));
+});
 test("packages validate, term senses retain theory context and relations retain n-ary roles", () => {
   for (const p of [bp(), ep()]) assert.equal(validatePackage(p).valid, true);
   const senses = ep().concepts.filter((c) => c.term === "Эмоция");

@@ -3,6 +3,7 @@ import {
   startLaboratory,
   listLaboratories,
 } from "./registry.js";
+import { renderNestedMechanism } from "./mechanism-scene.js";
 const esc = (s) =>
   String(s ?? "").replace(
     /[&<>"']/g,
@@ -41,6 +42,7 @@ export function openLeontievLaboratory(
     onRuntime(id, runtime);
     const p = spec.presentation;
     const claims = new Map(pkg.claims.map((c) => [c.id, c]));
+    let previous = null;
     const source = (span) =>
       span
         ? `${span.locator} · ${span.status === "reviewed" ? "локатор сверён" : span.status === "didactic" ? "учебное правило" : "требует проверки"}`
@@ -72,12 +74,37 @@ export function openLeontievLaboratory(
       dialog.querySelectorAll("[data-variable]").forEach((el) => {
         el.value = state.inputs[el.dataset.variable];
       });
-      dialog.querySelector("#lab-results").innerHTML = p.columns
-        .map(
-          (col, i) =>
-            `<section class="leontiev-column" data-column="${i}"><h3>${esc(col.title)}</h3>${col.items.map((key) => `<div class="leontiev-item"><span>${esc(p.labels[key])}</span><strong data-output="${key}">${esc(output[key])}</strong></div>`).join("")}</section>`,
-        )
-        .join('<div class="leontiev-arrow" aria-hidden="true">→</div>');
+      if (p.visualization?.kind === "nested-mechanism") {
+        const scene = p.visualization;
+        const changes = previous
+          ? Object.keys(state.inputs).filter(
+              (key) => previous.inputs[key] !== state.inputs[key],
+            )
+          : [];
+        const beforeMethods = previous?.outputs?.[scene.itemsOutput] ?? [];
+        const change = changes.length
+          ? changes
+              .map(
+                (key) =>
+                  `${spec.inputs[key].label}: ${options[previous.inputs[key]]} → ${options[state.inputs[key]]}`,
+              )
+              .join("; ")
+          : "Исходный учебный вариант";
+        const observation = changes.includes(scene.methodsChangeInput)
+          ? `${scene.methodsObservation}: ${beforeMethods.length} → ${output[scene.itemsOutput].length}; ${scene.methodsInvariant}`
+          : changes.includes(scene.frameChangeInput)
+            ? scene.frameObservation
+            : scene.initialObservation;
+        dialog.querySelector("#lab-results").innerHTML =
+          `${renderNestedMechanism(scene, output)}<div class="mechanism-explanation"><p><b>Что изменили</b><span>${esc(change)}</span></p><p><b>Что наблюдаем</b><span>${esc(observation)}</span></p><p><b>Почему по Леонтьеву</b><span>${esc(claims.get(scene.whyClaimId).text)} <a href="#lab-claim-${esc(scene.whyClaimId)}">Источник ↗</a></span></p><p><b>Граница иллюстрации</b><span>${esc(claims.get(scene.boundaryClaimId).limitation)}</span></p></div>`;
+      } else {
+        dialog.querySelector("#lab-results").innerHTML = p.columns
+          .map(
+            (col, i) =>
+              `<section class="leontiev-column" data-column="${i}"><h3>${esc(col.title)}</h3>${col.items.map((key) => `<div class="leontiev-item"><span>${esc(p.labels[key])}</span><strong data-output="${key}">${esc(output[key])}</strong></div>`).join("")}</section>`,
+          )
+          .join('<div class="leontiev-arrow" aria-hidden="true">→</div>');
+      }
       const trace = runtime.getTrace();
       dialog.querySelector("#lab-trace-content").innerHTML =
         `<p>Шагов после сброса: ${trace.length - 1}. Правила вычислены из заданных параметров.</p>${trace
@@ -91,12 +118,24 @@ export function openLeontievLaboratory(
     render();
     dialog.onchange = (event) => {
       const el = event.target.closest("[data-variable]");
-      if (el) runtime.intervene(el.dataset.variable, el.value);
+      if (el) {
+        previous = {
+          inputs: runtime.getState().inputs,
+          outputs: runtime.getObservables(),
+        };
+        runtime.intervene(el.dataset.variable, el.value);
+      }
       render();
     };
     dialog.onclick = (event) => {
       if (event.target.closest("#lab-close")) dialog.close();
-      if (event.target.closest("#lab-reset")) runtime.reset();
+      if (event.target.closest("#lab-reset")) {
+        previous = {
+          inputs: runtime.getState().inputs,
+          outputs: runtime.getObservables(),
+        };
+        runtime.reset();
+      }
       const tab = event.target.closest("[data-model]");
       if (tab && tab.dataset.model !== id) {
         display(tab.dataset.model);

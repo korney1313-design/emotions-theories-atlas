@@ -17,15 +17,18 @@ test("four theory areas and three teacher-led models retain graph context", asyn
   await page.locator('[data-result="activity"]').click();
   await expect(page.locator("#open-lab")).toBeVisible();
   await page.locator("#open-lab").click();
-  await expect(page.locator("#lab-results")).toContainText(
-    "Операция ↔ условия",
-  );
-  const original = await page.locator('[data-output="motive"]').textContent();
+  await expect(page.locator('[data-object="margin-notes"]')).toBeVisible();
+  await expect(page.locator('[data-object="paper-cards"]')).toBeVisible();
   await page.locator("#lab-conditions").selectOption("digital");
-  await expect(page.locator('[data-output="operation"]')).toHaveText(
-    "Работа в цифровой среде",
+  await expect(page.locator('[data-object="digital-highlight"]')).toBeVisible();
+  await expect(page.locator('[data-object="digital-outline"]')).toBeVisible();
+  await expect(page.locator('[data-object="margin-notes"]')).toHaveCount(0);
+  await expect(
+    page.locator('[data-object="prepare-explanation"]'),
+  ).toBeVisible();
+  await expect(page.locator('[data-object="goal"]')).toHaveText(
+    /Готовое объяснение/,
   );
-  await expect(page.locator('[data-output="motive"]')).toHaveText(original);
   await page.screenshot({ path: `${qa}/levels.png` });
   await page.locator('[data-model="leontiev-sense"]').click();
   const meaning = await page.locator('[data-output="meaning"]').textContent();

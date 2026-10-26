@@ -129,8 +129,8 @@ try {
   await page.locator("#open-lab").click();
   await page.locator("#lab-conditions").selectOption("digital");
   if (
-    (await page.locator('[data-output="operation"]').textContent()) !==
-    "Работа в цифровой среде"
+    (await page.locator('[data-object="digital-highlight"]').count()) !== 1 ||
+    (await page.locator('[data-object="paper-cards"]').count()) !== 0
   )
     throw Error("Leontiev model failed in production");
   await page.locator('[data-model="leontiev-sense"]').click();

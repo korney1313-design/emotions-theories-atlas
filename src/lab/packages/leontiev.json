@@ -19,7 +19,8 @@
         "l-p102",
         "l-p103",
         "l-1971",
-        "l-design"
+        "l-design",
+        "l-stage-a"
       ]
     }
   ],
@@ -502,6 +503,38 @@
         "basis": "project-design",
         "status": "didactic"
       }
+    },
+    {
+      "id": "l-ways-example",
+      "theoryId": "leontiev-theory",
+      "predicate": "stipulated-ways-by-conditions",
+      "roles": [
+        {
+          "role": "action",
+          "conceptId": "lc-action"
+        },
+        {
+          "role": "operation",
+          "conceptId": "lc-operation"
+        },
+        {
+          "role": "conditions",
+          "conceptId": "lc-conditions"
+        }
+      ],
+      "status": "didactic",
+      "text": "Показанные при бумажных и цифровых условиях способы — заранее заданные варианты осуществления одного действия, а не самостоятельные действия с отдельными целями в этой учебной схеме.",
+      "sourceIds": [
+        "l-stage-a"
+      ],
+      "scope": "Только демонстрационный пример подготовки объяснения.",
+      "limitation": "Состав операций конкретного человека не выводится из носителя и может быть другим.",
+      "sourceSpan": {
+        "sourceId": "l-stage-a",
+        "locator": "Раздел 1, экран и переключение условий",
+        "basis": "project-design",
+        "status": "didactic"
+      }
     }
   ],
   "relations": [
@@ -707,6 +740,14 @@
       "locator": "docs/LEONTIEV_ATLAS_SPEC.md",
       "access": "project",
       "verification": "Учебные сценарии, не первоисточник"
+    },
+    {
+      "id": "l-stage-a",
+      "title": "Научно-визуальный сценарий задачи № 7, этап A",
+      "kind": "project-design",
+      "locator": "docs/leontiev/ISSUE_7_STAGE_A_STORYBOARDS.md, раздел 1",
+      "access": "project",
+      "verification": "Учебный пример, не первоисточник"
     }
   ],
   "mechanisms": [
@@ -716,7 +757,8 @@
       "claimIds": [
         "l-structure",
         "l-transition",
-        "l-didactic"
+        "l-didactic",
+        "l-ways-example"
       ],
       "conceptIds": [
         "lc-activity",
@@ -763,8 +805,8 @@
   "models": [
     {
       "id": "leontiev-levels",
-      "version": "0.1.0",
-      "label": "Строение и преобразования",
+      "version": "0.2.0",
+      "label": "Строение деятельности: условия и операции",
       "engine": "rules-v1",
       "theoryId": "leontiev-theory",
       "mechanismIds": [
@@ -773,7 +815,8 @@
       "claimIds": [
         "l-structure",
         "l-transition",
-        "l-didactic"
+        "l-didactic",
+        "l-ways-example"
       ],
       "sourceIds": [
         "l-p52",
@@ -787,7 +830,8 @@
         "l-p99",
         "l-p102",
         "l-p103",
-        "l-design"
+        "l-design",
+        "l-stage-a"
       ],
       "conceptIds": [
         "lc-activity",
@@ -879,6 +923,71 @@
             "basis": "project-design",
             "status": "didactic"
           }
+        },
+        {
+          "id": "activeWays",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "input.conditions"
+                  },
+                  "paper"
+                ]
+              },
+              [
+                "margin-notes",
+                "paper-cards"
+              ],
+              [
+                "digital-highlight",
+                "digital-blocks",
+                "digital-outline"
+              ]
+            ]
+          },
+          "claimIds": [
+            "l-structure",
+            "l-ways-example"
+          ],
+          "sourceSpan": {
+            "sourceId": "l-stage-a",
+            "locator": "Раздел 1, переключение заданных условий",
+            "basis": "project-design",
+            "status": "didactic"
+          }
+        },
+        {
+          "id": "resourceId",
+          "expr": {
+            "op": "if",
+            "args": [
+              {
+                "op": "eq",
+                "args": [
+                  {
+                    "ref": "input.conditions"
+                  },
+                  "paper"
+                ]
+              },
+              "paper-tools",
+              "digital-tools"
+            ]
+          },
+          "claimIds": [
+            "l-structure",
+            "l-ways-example"
+          ],
+          "sourceSpan": {
+            "sourceId": "l-stage-a",
+            "locator": "Раздел 1, переключение заданных условий",
+            "basis": "project-design",
+            "status": "didactic"
+          }
         }
       ],
       "outputs": {
@@ -963,12 +1072,50 @@
             "l-structure",
             "l-didactic"
           ]
+        },
+        "activeMethods": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "expr": {
+            "ref": "derived.activeWays"
+          },
+          "claimIds": [
+            "l-structure",
+            "l-ways-example"
+          ]
+        },
+        "activeResource": {
+          "type": "string",
+          "expr": {
+            "ref": "derived.resourceId"
+          },
+          "claimIds": [
+            "l-structure",
+            "l-ways-example"
+          ]
+        },
+        "activeActivity": {
+          "type": "enum",
+          "enum": [
+            "learning",
+            "recognition"
+          ],
+          "expr": {
+            "ref": "input.motiveContext"
+          },
+          "claimIds": [
+            "l-transition",
+            "l-ways-example"
+          ]
         }
       },
       "assumptions": [
         "l-structure",
         "l-transition",
-        "l-didactic"
+        "l-didactic",
+        "l-ways-example"
       ],
       "validityDomain": "Качественная демонстрация отношений внутри теории при явно заданных учебных условиях.",
       "limitations": [
@@ -1015,7 +1162,85 @@
           "operation": "Операция",
           "conditions": "Условия"
         },
-        "caption": "То же заданное действие может входить в разные деятельности; смена условий меняет способ. Иллюстрация, не предсказание."
+        "caption": "Действие имеет самостоятельную сознательную цель. Показанные операции — лишь способы его выполнения в заданных условиях; они не образуют цепочку отдельных действий.",
+        "visualization": {
+          "kind": "nested-mechanism",
+          "frameOutput": "activeActivity",
+          "itemsOutput": "activeMethods",
+          "resourceOutput": "activeResource",
+          "frames": [
+            {
+              "id": "learning",
+              "label": "Деятельность: освоение материала",
+              "motive": "Предметный мотив: изучаемое содержание"
+            },
+            {
+              "id": "recognition",
+              "label": "Деятельность: получение признания",
+              "motive": "Предметный мотив: признание результата"
+            }
+          ],
+          "action": {
+            "id": "prepare-explanation",
+            "label": "Действие: подготовить объяснение",
+            "goal": "Сознательная цель: готовое объяснение"
+          },
+          "resources": [
+            {
+              "id": "paper-tools",
+              "label": "Бумага, ручка, карточки"
+            },
+            {
+              "id": "digital-tools",
+              "label": "Цифровой редактор"
+            }
+          ],
+          "items": [
+            {
+              "id": "margin-notes",
+              "label": "Пометки на полях"
+            },
+            {
+              "id": "paper-cards",
+              "label": "Раскладка бумажных карточек"
+            },
+            {
+              "id": "digital-highlight",
+              "label": "Выделение фрагментов"
+            },
+            {
+              "id": "digital-blocks",
+              "label": "Перемещение текстовых блоков"
+            },
+            {
+              "id": "digital-outline",
+              "label": "Сворачивание разделов"
+            }
+          ],
+          "relationLabels": {
+            "resourceToMethod": "условие делает способ доступным",
+            "methodToAction": "способ осуществления действия"
+          },
+          "what": "Условия выполнения или заданный мотив деятельности.",
+          "observe": "Состав способов связан с условиями; действие и цель сохраняются при смене условий.",
+          "whyClaimId": "l-structure",
+          "boundaryClaimId": "l-ways-example",
+          "ariaLabel": "Вложенность деятельности, действия и способов выполнения",
+          "layerLabels": {
+            "frame": "Уровень деятельности",
+            "action": "Уровень действия",
+            "items": "Операции: способы этого действия",
+            "resource": "Заданные условия / средство"
+          },
+          "inactiveLabel": "В этом заданном варианте действие не включено в данную деятельность.",
+          "relationSummary": "Условия → доступные способы · способы ↗ осуществляют одно действие. Линии показывают зависимости, не хронологическую цепочку.",
+          "methodsChangeInput": "conditions",
+          "frameChangeInput": "motiveContext",
+          "initialObservation": "Действие с сознательной целью вложено в деятельность; способы зависят от условий.",
+          "methodsObservation": "Состав способов",
+          "methodsInvariant": "действие и цель сохранены.",
+          "frameObservation": "То же действие включено в другую заданную деятельность; состав способов сохранён."
+        }
       }
     },
     {
@@ -1432,9 +1657,9 @@
     {
       "id": "lv-0",
       "modelId": "leontiev-levels",
-      "version": "0.1.0",
+      "version": "0.2.0",
       "schemaVersion": "model-package/0.1",
-      "changeSummary": "Первый преподавательский срез"
+      "changeSummary": "Вложенная визуальная модель состава операций при смене условий; учебные способы отделены от сознательной цели действия."
     },
     {
       "id": "lv-1",
